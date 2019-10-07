@@ -1,0 +1,2 @@
+module Owner::RoomsHelper
+end

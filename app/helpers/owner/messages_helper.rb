@@ -1,0 +1,2 @@
+module Owner::MessagesHelper
+end

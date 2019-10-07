@@ -1,0 +1,2 @@
+module Owner::ExhibitionSpotsHelper
+end

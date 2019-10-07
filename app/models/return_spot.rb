@@ -1,0 +1,2 @@
+class ReturnSpot < ApplicationRecord
+end

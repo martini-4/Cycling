@@ -1,0 +1,2 @@
+class ExhibitionSpot < ApplicationRecord
+end

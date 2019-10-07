@@ -1,0 +1,2 @@
+class LendSpot < ApplicationRecord
+end

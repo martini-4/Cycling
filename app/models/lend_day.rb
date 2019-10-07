@@ -1,0 +1,2 @@
+class LendDay < ApplicationRecord
+end

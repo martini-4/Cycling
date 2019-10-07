@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  owner_id: 1
+  bicycle_type_id: 1
+  handle_id: 1
+  name: MyString
+  price: 1
+  description: MyString
+  id_picture: MyString
+  buyer_name: MyString
+  approval: false
+
+two:
+  owner_id: 1
+  bicycle_type_id: 1
+  handle_id: 1
+  name: MyString
+  price: 1
+  description: MyString
+  id_picture: MyString
+  buyer_name: MyString
+  approval: false

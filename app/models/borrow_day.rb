@@ -1,0 +1,2 @@
+class BorrowDay < ApplicationRecord
+end

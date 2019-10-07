@@ -1,0 +1,2 @@
+class BicycleAccessory < ApplicationRecord
+end

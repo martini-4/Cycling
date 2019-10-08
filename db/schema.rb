@@ -10,12 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_07_023028) do
+ActiveRecord::Schema.define(version: 2019_10_08_032213) do
 
   create_table "accessories", force: :cascade do |t|
     t.string "accessorie_name", limit: 30, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "admins", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_admins_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
   create_table "bicycle_accessories", force: :cascade do |t|
@@ -128,6 +145,35 @@ ActiveRecord::Schema.define(version: 2019_10_07_023028) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "owners", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.integer "sex_id", null: false
+    t.string "password_confirmation", null: false
+    t.string "lastname_kanji", null: false
+    t.string "firstname_kanji", null: false
+    t.string "lastname_kana", null: false
+    t.string "firstname_kana", null: false
+    t.string "mobile", null: false
+    t.string "address", null: false
+    t.string "id_picture", null: false
+    t.string "nickname", null: false
+    t.string "picture"
+    t.boolean "approval", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_owners_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_owners_on_reset_password_token", unique: true
+  end
+
   create_table "payees", force: :cascade do |t|
     t.integer "owner_id", null: false
     t.integer "deposit_type_id", null: false
@@ -172,6 +218,35 @@ ActiveRecord::Schema.define(version: 2019_10_07_023028) do
     t.string "sex", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.integer "sex_id", null: false
+    t.string "password_confirmation", null: false
+    t.string "lastname_kanji", null: false
+    t.string "firstname_kanji", null: false
+    t.string "lastname_kana", null: false
+    t.string "firstname_kana", null: false
+    t.string "mobile", null: false
+    t.string "address", null: false
+    t.string "id_picture", null: false
+    t.string "nickname", null: false
+    t.string "picture"
+    t.boolean "approval", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end

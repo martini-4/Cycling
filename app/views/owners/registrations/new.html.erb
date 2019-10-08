@@ -1,0 +1,56 @@
+<div class="owner_sign_up">
+
+  <h1>登録画面</h1>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="">
+      <%= f.label :名前 %>
+      <%= f.text_field :lastname_kanji, class: '', placeholder: "性"%>
+      <%= f.text_field :firstname_kanji, class: '', placeholder: "名"%>
+      <%= f.label '名前(カナ)'%>
+      <%= f.text_field :lastname_kana, class: '', placeholder: '性' %>
+      <%= f.text_field :firstname_kana, class: '', placeholder: '名' %>
+    </div>
+    <div class="">
+      <%= f.label :性別 %>
+      <%= f.collection_select(:sex_id, Sex.all, :id, :sex, prompt: "性別") %>
+    </div>
+    <div class="">
+      <%= f.label :ニックネーム %>
+      <%= f.text_field :nickname, class: '', placeholder: ''%>
+    </div>
+    <div class="field">
+      <%= f.label :電話番号 %>
+      <%= f.text_field :mobile, class: '', placeholder: ''%>
+      <%= f.label :住所 %>
+      <%= f.text_field :address, class: '', placeholder: ''%>
+      <%= f.label :アドレス %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :パスワード %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
+
+    <div class="field">
+      <%= f.label 'パスワード(再確認)' %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+    <div class="">
+      <%= f.label :身分証明書 %>
+      <%= f.attachment_field :id_picture %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "登録" %>
+    </div>
+  <% end %>
+
+  <%= render "owners/shared/links" %>
+
+</div>

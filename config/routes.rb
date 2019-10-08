@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :owners
+  devise_for :admins
+  devise_for :users
   namespace :admin do
   	resources :replies, only: [:new, :create]
   	resources :inquiries, only: [:index]

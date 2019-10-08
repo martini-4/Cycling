@@ -1,0 +1,32 @@
+<div class="top">
+	<div class="top_img"></div>
+	<div class="explanation">
+		<div class="explanation_title">
+			<h1>サイト説明</h1>
+		</div>
+		<div class="explanation_text">
+			<p>
+				当サイトは、自転車を借りたい人と使っていない自転車を貸し出したい人とのマッチングをしております。<br>
+				<br>
+				オーナー<br>
+				ご自宅の使っていない自転車を貸し出す事が出来ます。<br>
+				出品の際、貸し出す金額、貸し出し場所、返却場所、貸し出す日などご自身で指定することが出来ます。<br>
+				<br>
+				利用者<br>
+				自転車を持っていないが１時的に自転車を使いたい場合などにご自宅の近くの出品されている自転車を<br>
+				借りることが出来ます。<br>
+				また、貸し出し場所や返却場所に不都合がある場合オーナー様へ問い合わせて頂き、<br>
+				ご相談していただく事も出来ます。
+			</p>
+		</div>
+	</div>
+	<div class="top_link_box clearfix">
+			<h2>利用目的の該当するボタンを押してください。</h2>
+		<div class="owner_link_box">
+			<%= link_to 'オーナー様', city_path, class: 'top_owner'  %>
+		</div>
+		<div class="user_link_box">
+			<%= link_to '利用者様', city_path, class: 'top_user' %>
+		</div>
+	</div>
+</div>

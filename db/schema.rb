@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_08_083906) do
+ActiveRecord::Schema.define(version: 2019_10_09_070944) do
 
   create_table "accessories", force: :cascade do |t|
     t.string "accessorie_name", limit: 30, null: false
@@ -157,7 +157,6 @@ ActiveRecord::Schema.define(version: 2019_10_08_083906) do
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
     t.integer "sex_id", null: false
-    t.string "password_confirmation", null: false
     t.string "lastname_kanji", null: false
     t.string "firstname_kanji", null: false
     t.string "lastname_kana", null: false
@@ -166,22 +165,16 @@ ActiveRecord::Schema.define(version: 2019_10_08_083906) do
     t.string "address", null: false
     t.string "proof_picture_id", null: false
     t.string "nickname", null: false
-    t.string "picture"
+    t.string "picture_id"
     t.boolean "approval", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "bank_stor_name"
+    t.string "bank_account_number"
+    t.string "bank_account_name"
+    t.integer "deposit_type_id"
     t.index ["email"], name: "index_owners_on_email", unique: true
     t.index ["reset_password_token"], name: "index_owners_on_reset_password_token", unique: true
-  end
-
-  create_table "payees", force: :cascade do |t|
-    t.integer "owner_id", null: false
-    t.integer "deposit_type_id", null: false
-    t.string "stor_name", null: false
-    t.string "account_number", null: false
-    t.string "account_name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "replies", force: :cascade do |t|

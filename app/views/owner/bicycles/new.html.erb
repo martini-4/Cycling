@@ -1,2 +1,11 @@
-<h1>Owner::Bicycles#new</h1>
-<p>Find me in app/views/owner/bicycles/new.html.erb</p>
+<div class="bicycle_new">
+	<h1>出品登録</h1>
+
+	<%= form_for(@bicycle,url: owner_bicycles_path) do |f| %>
+		<%= f.label :自転車の商品名 %>
+		<%= f.text_field :name %>
+
+
+		<%= f.submit value: "出品を申し込む" %>
+	<% end %>
+</div>

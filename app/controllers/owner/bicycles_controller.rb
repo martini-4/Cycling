@@ -1,5 +1,6 @@
 class Owner::BicyclesController < ApplicationController
   def new
+    @bicycle = Bicycle.new
   end
 
   def edit

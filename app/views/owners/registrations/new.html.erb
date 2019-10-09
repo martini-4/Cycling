@@ -48,31 +48,23 @@
     <div class="">
       <h3>ゆうちょ銀行の口座を入力してください。</h3>
       <p>商品決済の際の振込先とさせて頂きます。</p>
-      <!-- fields_forでは新しく画面が開かれるたびにフォームを作るので、入力エラー時にフォームが増えてしまうのを防ぐための記述 -->
-      <% if resource.payees.blank? %>
-        <% resource.payees.new %>
-      <% end %>
 
-      <!-- fields_forでテーブルにデータを登録するためのフォームを追加する -->
-      <%= f.fields_for :payees do |y| %>
         <div class="">
-          <%= y.label :支店名 %><br>
-          <%= y.text_field :stor_name, class: '', placeholder: '例：一二〇'%><br>
+          <%= f.label :支店名 %><br>
+          <%= f.text_field :bank_stor_name, class: '', placeholder: '例：一二〇'%><br>
         </div>
         <div class="">
-          <%= y.label :預金種別 %><br>
-          <%= y.collection_select(:deposit_type_id, DepositType.all, :id, :deposit_type, prompt: "") %><br>
+          <%= f.label :預金種別 %><br>
+          <%= f.collection_select(:deposit_type_id, DepositType.all, :id, :deposit_type, prompt: "") %><br>
         </div>
         <div class="">
-          <%= y.label '口座番号(7桁)' %><br>
-          <%= y.text_field :account_number, class: '', placeholder: ''%><br>
+          <%= f.label '口座番号(7桁)' %><br>
+          <%= f.text_field :bank_account_number, class: '', placeholder: ''%><br>
         </div>
         <div class="">
-          <%= y.label '口座名義(カナ)' %><br>
-          <%= y.text_field :account_name, class: '', placeholder: 'ｶﾅ'%><br>
+          <%= f.label '口座名義(カナ)' %><br>
+          <%= f.text_field :bank_account_name, class: '', placeholder: 'ｶﾅ'%><br>
         </div>
-
-      <% end %>
     </div>
     <div class="actions form_center">
       <%= f.submit "登録", class: 'btn btn-success' %>

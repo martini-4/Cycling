@@ -1,3 +1,3 @@
 class Accessory < ApplicationRecord
-	belongs_to :bicycle_accessory
+	has_many :bicycle_accessories
 end

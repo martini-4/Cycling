@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 # 付属品
-Accessory.create(accessorie_name: 'アームミラー')
+Accessory.create!(accessorie_name: 'アームミラー')
 Accessory.create(accessorie_name: 'ハンドルミラー')
 Accessory.create(accessorie_name: 'ボトルケージ')
 Accessory.create(accessorie_name: '補助輪')

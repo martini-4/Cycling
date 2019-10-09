@@ -1,3 +1,3 @@
 class BicycleType < ApplicationRecord
-	belongs_to :bicycle
+	has_many :bicycles
 end

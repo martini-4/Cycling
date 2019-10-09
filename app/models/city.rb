@@ -1,3 +1,3 @@
 class City < ApplicationRecord
-	belongs_to :exhibition_spot
+	has_many :exhibition_spots
 end

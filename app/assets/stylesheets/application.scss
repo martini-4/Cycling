@@ -33,8 +33,39 @@ body{
 
 
 // owner 新規登録
-.owner_sign_up{
-	width: 50%;
+.sign_up{
+	width: 40%;
 	margin: 50px auto;
-	background-color: #d3fcff;
+	background-color: #fef4e3;
+	padding: 30px 100px;
+}
+.sign_up h1{
+	line-height: 50px;
+	text-align: center;
+}
+.sign_up h3{
+	line-height: 50px;
+	text-align: center;
+	font-size: 25px;
+}
+.sing_up_form{
+	margin-left: 30px;
+}
+.form_left{
+	float: left;
+}
+.form_center{
+	text-align: center;
+}
+
+// owner ログイン
+.sign_in{
+	width: 40%;
+	margin: 50px auto;
+	background-color: #fef4e3;
+	padding: 30px 100px;
+}
+.sign_in h1{
+	line-height: 50px;
+	text-align: center;
 }

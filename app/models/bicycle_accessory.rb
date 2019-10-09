@@ -1,4 +1,4 @@
 class BicycleAccessory < ApplicationRecord
-	has_many :bicycles
-	has_one :accessory
+	belongs_to :bicycle
+	belongs_to :accessory
 end

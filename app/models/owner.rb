@@ -4,17 +4,18 @@ class Owner < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  attachment :id_picture
+
+
+  attachment :proof_picture
   attachment :picture
-  has_one  :sex
-  has_many :bicycles, dependent: :destroy
+  belongs_to  :sex
   has_many :payees, dependent: :destroy
+  has_many :bicycles, dependent: :destroy
   has_many :rooms, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :contracts
-
-  validates :email, :encrypted_password, :password_confirmation, :lastname_kanji, :firstname_kanji, :lastname_kana, :firstname_kana,
-            :mobile, :address, :sex_id ,:id_picture, :nicname,
-		     presence: true
+  accepts_nested_attributes_for :payees
+  validates :email, :lastname_kanji, :firstname_kanji, :lastname_kana, :firstname_kana,:mobile, :address, :sex_id ,:proof_picture, :nickname,
+		        presence: true
 
 end

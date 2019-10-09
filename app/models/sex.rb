@@ -1,4 +1,4 @@
 class Sex < ApplicationRecord
-	belongs_to :user
-	belongs_to :owner
+	has_many :users
+	has_many :owners
 end

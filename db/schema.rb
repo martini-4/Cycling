@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_08_032213) do
+ActiveRecord::Schema.define(version: 2019_10_08_083906) do
 
   create_table "accessories", force: :cascade do |t|
     t.string "accessorie_name", limit: 30, null: false
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2019_10_08_032213) do
     t.string "name", null: false
     t.integer "price", null: false
     t.string "description", limit: 200
-    t.string "id_picture", null: false
+    t.string "proof_picture_id", null: false
     t.string "buyer_name", null: false
     t.boolean "approval", default: false, null: false
     t.datetime "created_at", null: false
@@ -164,7 +164,7 @@ ActiveRecord::Schema.define(version: 2019_10_08_032213) do
     t.string "firstname_kana", null: false
     t.string "mobile", null: false
     t.string "address", null: false
-    t.string "id_picture", null: false
+    t.string "proof_picture_id", null: false
     t.string "nickname", null: false
     t.string "picture"
     t.boolean "approval", default: false, null: false
@@ -239,7 +239,7 @@ ActiveRecord::Schema.define(version: 2019_10_08_032213) do
     t.string "firstname_kana", null: false
     t.string "mobile", null: false
     t.string "address", null: false
-    t.string "id_picture", null: false
+    t.string "proof_picture_id", null: false
     t.string "nickname", null: false
     t.string "picture"
     t.boolean "approval", default: false, null: false

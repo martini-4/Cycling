@@ -43,6 +43,7 @@ Rails.application.routes.draw do
   get 'about' => 'root#about'
   get 'top'   => 'root#top'
   get 'city'  => 'root#city'
+  get 'wait'  => 'root#wait'
   get 'bicycle_index' => 'root#bicycle_index'
   get 'bicycle_show'  => 'root#bicycle_show'
   get 'admin_menu'    => 'root#admin_menu'

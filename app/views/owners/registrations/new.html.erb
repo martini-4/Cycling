@@ -1,53 +1,81 @@
-<div class="owner_sign_up">
+<div class="sign_up">
 
   <h1>登録画面</h1>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
     <div class="">
-      <%= f.label :名前 %>
-      <%= f.text_field :lastname_kanji, class: '', placeholder: "性"%>
-      <%= f.text_field :firstname_kanji, class: '', placeholder: "名"%>
-      <%= f.label '名前(カナ)'%>
-      <%= f.text_field :lastname_kana, class: '', placeholder: '性' %>
-      <%= f.text_field :firstname_kana, class: '', placeholder: '名' %>
+      <%= f.label :名前 %><br>
+      <%= f.text_field :lastname_kanji, class: 'form_left sing_up_form', placeholder: "性"%>
+      <%= f.text_field :firstname_kanji, class: 'sing_up_form', placeholder: "名"%><br>
+      <%= f.label '名前(カナ)'%><br>
+      <%= f.text_field :lastname_kana, class: 'form_left sing_up_form', placeholder: 'セイ' %>
+      <%= f.text_field :firstname_kana, class: ' sing_up_form', placeholder: 'メイ' %><br>
     </div>
     <div class="">
       <%= f.label :性別 %>
-      <%= f.collection_select(:sex_id, Sex.all, :id, :sex, prompt: "性別") %>
+      <%= f.collection_select(:sex_id, Sex.all, :id, :sex, prompt: "") %>
     </div>
     <div class="">
-      <%= f.label :ニックネーム %>
-      <%= f.text_field :nickname, class: '', placeholder: ''%>
+      <%= f.label :ニックネーム %><br>
+      <%= f.text_field :nickname, class: '', placeholder: ''%><br>
     </div>
     <div class="field">
-      <%= f.label :電話番号 %>
-      <%= f.text_field :mobile, class: '', placeholder: ''%>
-      <%= f.label :住所 %>
-      <%= f.text_field :address, class: '', placeholder: ''%>
-      <%= f.label :アドレス %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <%= f.label :電話番号 %><br>
+      <%= f.text_field :mobile, class: '', placeholder: ''%><br>
+      <%= f.label :住所 %><br>
+      <%= f.text_field :address, class: '', placeholder: ''%><br>
+      <%= f.label :アドレス %><br>
+      <%= f.email_field :email, autofocus: true, autocomplete: "cycling@gmail.com" %>
     </div>
 
     <div class="field">
       <%= f.label :パスワード %>
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
+      <% end %><br>
       <%= f.password_field :password, autocomplete: "new-password" %>
     </div>
 
     <div class="field">
-      <%= f.label 'パスワード(再確認)' %><br />
+      <%= f.label 'パスワード(再確認)' %><br>
       <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
     </div>
     <div class="">
-      <%= f.label :身分証明書 %>
-      <%= f.attachment_field :id_picture %>
+      <%= f.label :身分証明書 %><br>
+      <%= f.attachment_field :proof_picture %>
     </div>
+    <div class="">
+      <h3>ゆうちょ銀行の口座を入力してください。</h3>
+      <p>商品決済の際の振込先とさせて頂きます。</p>
+      <!-- fields_forでは新しく画面が開かれるたびにフォームを作るので、入力エラー時にフォームが増えてしまうのを防ぐための記述 -->
+      <% if resource.payees.blank? %>
+        <% resource.payees.new %>
+      <% end %>
 
-    <div class="actions">
-      <%= f.submit "登録" %>
+      <!-- fields_forでテーブルにデータを登録するためのフォームを追加する -->
+      <%= f.fields_for :payees do |y| %>
+        <div class="">
+          <%= y.label :支店名 %><br>
+          <%= y.text_field :stor_name, class: '', placeholder: '例：一二〇'%><br>
+        </div>
+        <div class="">
+          <%= y.label :預金種別 %><br>
+          <%= y.collection_select(:deposit_type_id, DepositType.all, :id, :deposit_type, prompt: "") %><br>
+        </div>
+        <div class="">
+          <%= y.label '口座番号(7桁)' %><br>
+          <%= y.text_field :account_number, class: '', placeholder: ''%><br>
+        </div>
+        <div class="">
+          <%= y.label '口座名義(カナ)' %><br>
+          <%= y.text_field :account_name, class: '', placeholder: 'ｶﾅ'%><br>
+        </div>
+
+      <% end %>
+    </div>
+    <div class="actions form_center">
+      <%= f.submit "登録", class: 'btn btn-success' %>
     </div>
   <% end %>
 

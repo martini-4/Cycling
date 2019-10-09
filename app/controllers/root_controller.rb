@@ -13,6 +13,7 @@ class RootController < ApplicationController
 	end
 
 	def city
+		@city = City.all
 	end
 
 

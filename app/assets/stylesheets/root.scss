@@ -85,3 +85,28 @@
     border-radius: 10px;
     margin-right: 40%;
 }
+
+// city
+.city{
+	background-color: #d3fcff;
+	width: 50%;
+    margin: 0 auto;
+}
+.city h3{
+	padding-left: 20%;
+}
+.city_top_img{
+	background-image: url(自転車/bicycle11.jpg);
+	width: 100%;
+	height: 600px;
+	background-size: 100% 600px;
+}
+.city_name{
+	width: 60%;
+	margin: 0 auto;
+	text-align: center;
+	line-height: 60px;
+	background-color: #d3fed0;
+	border: 1px solid #ffffff;
+	border-radius: 10px;
+}

@@ -23,7 +23,9 @@
 	<div class="top_link_box clearfix">
 			<h2>利用目的の該当するボタンを押してください。</h2>
 		<div class="owner_link_box">
-			<%= link_to 'オーナー様', city_path, class: 'top_owner'  %>
+			<%if %>
+				<%= link_to 'オーナー様', new_owner_registration_path, class: 'top_owner'  %>
+			<% end %>
 		</div>
 		<div class="user_link_box">
 			<%= link_to '利用者様', city_path, class: 'top_user' %>

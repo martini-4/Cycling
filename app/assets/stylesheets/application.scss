@@ -29,7 +29,10 @@
 body{
 	background-image: url(img6.png);
 }
-
+h1{
+	line-height: 50px;
+	text-align: center;
+}
 
 
 // owner 新規登録
@@ -39,10 +42,7 @@ body{
 	background-color: #fef4e3;
 	padding: 30px 100px;
 }
-.sign_up h1{
-	line-height: 50px;
-	text-align: center;
-}
+
 .sign_up h3{
 	line-height: 50px;
 	text-align: center;
@@ -61,11 +61,8 @@ body{
 // owner ログイン
 .sign_in{
 	width: 40%;
-	margin: 50px auto;
-	background-color: #fef4e3;
-	padding: 30px 100px;
-}
-.sign_in h1{
-	line-height: 50px;
-	text-align: center;
+    margin: 150px auto;
+    background-color: #fef4e3;
+    padding: 50px 100px;
+    height: 500px;
 }

@@ -1,0 +1,17 @@
+<div class="city_top_img"></div>
+<div class="city">
+		<div class="city_title">
+			<h1 class="">利用地域</h1>
+		</div>
+		<div class="">
+			<h3 class="">利用したい地域を選択してください。</h3>
+			<% @city.each do |city| %>
+				<%= link_to(bicycle_index_path, class: 'city_name_box') do %>
+					<div class="city_name">
+						<%= city.city_name %>
+					</div>
+				<% end %>
+				<br>
+			<% end %>
+		</div>
+</div>

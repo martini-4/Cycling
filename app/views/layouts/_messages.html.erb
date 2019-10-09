@@ -1,0 +1,23 @@
+<div class="flash flash-success">
+  <%= flash[:success] %>
+</div>
+<div class="flash flash-danger">
+  <%= flash[:danger] %>
+</div>
+<div class="flash flash-warning">
+  <%= flash[:warning] %>
+</div>
+<div class="flash flash-notice">
+  <%= flash[:notice] %>
+</div>
+
+<div class="error">
+  <% if flash[:error].present? %>
+    <p><%= flash[:error].count %> 件のエラーがあります。</p>
+    <ul>
+      <% flash[:error].each do |e| %>
+        <li><%= e %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

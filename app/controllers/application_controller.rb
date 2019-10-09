@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
  	    user_user_path
  	# ownerがsign_inした場合
  	elsif current_owner
- 		owner_owner_path
+ 		owner_owner_path(params[current_owner.id])
 	else
  		admin_menu_path
  		#管理者メニューへのパス

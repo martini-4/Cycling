@@ -44,6 +44,7 @@ Rails.application.routes.draw do
   get 'top'   => 'root#top'
   get 'city'  => 'root#city'
   get 'wait'  => 'root#wait'
+  get 'unsubscribe' => 'root#unsubscribe'
   get 'bicycle_index' => 'root#bicycle_index'
   get 'bicycle_show'  => 'root#bicycle_show'
   get 'admin_menu'    => 'root#admin_menu'

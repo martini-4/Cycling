@@ -16,6 +16,8 @@ class RootController < ApplicationController
 		@city = City.all
 	end
 
+	def unsubscribe
+	end
 
 	def admin_menu
 	end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_09_070944) do
+ActiveRecord::Schema.define(version: 2019_10_10_081908) do
 
   create_table "accessories", force: :cascade do |t|
     t.string "accessorie_name", limit: 30, null: false
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2019_10_09_070944) do
 
   create_table "bicycle_pictures", force: :cascade do |t|
     t.integer "bicycle_id", null: false
-    t.string "bicycle_picture", null: false
+    t.string "bicycle_picture_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -104,7 +104,7 @@ ActiveRecord::Schema.define(version: 2019_10_09_070944) do
 
   create_table "exhibition_spots", force: :cascade do |t|
     t.integer "bicycle_id", null: false
-    t.integer "cyty_id", null: false
+    t.integer "city_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

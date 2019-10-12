@@ -6,7 +6,8 @@
 		<div class="">
 			<h3 class="">利用したい地域を選択してください。</h3>
 			<% @city.each do |city| %>
-				<%= link_to(bicycle_index_path, class: 'city_name_box') do %>
+				<%= link_to(:controller=>"root",:action=>"bicycle_index",:q=>{:ExhibitionSpot_city_id_eq=> city.id },
+					 class: 'city_name_box') do %>
 					<div class="city_name">
 						<%= city.city_name %>
 					</div>

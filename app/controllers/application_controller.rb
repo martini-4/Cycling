@@ -7,12 +7,18 @@ class ApplicationController < ActionController::Base
  	    user_user_path
  	# ownerがsign_inした場合
  	elsif current_owner
- 		owner_owner_path(params[current_owner.id])
+ 		top_path
 	else
  		admin_menu_path
  		#管理者メニューへのパス
     end
  end
+ def after_sign_out_path_for(resource)
+	top_path
+ end
+
+
+
 
 protected
 # deviseの初期情報以外のデータを入れる為の記述

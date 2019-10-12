@@ -2,8 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .bicycle_new{
-	width: 40%;
+	width: 60%;
 	margin: 50px auto;
 	background-color: #fef4e3;
 	padding: 30px 100px;
+}
+.bicycle_new p{
+	padding-left: 20%;
+}
+.bicycle_new_form{
+	margin: 10px 0;
+}
+.accessory_form{
+	font-size: 20px;
+}
+.bicycle_description_box{
+	width: 80%;
+	margin: 0 auto;
+}
+.bicycle_description{
+	width: 100%;
+	height: 200px;
+}
+.bicycle_new_submit{
+	text-align: center;
+}
+.bicycle_new_submit input{
+	font-size: 30px;
+    padding: 20px;
 }

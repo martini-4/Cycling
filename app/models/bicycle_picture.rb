@@ -1,5 +1,5 @@
 class BicyclePicture < ApplicationRecord
-	attachment :artist_image
+	attachment :bicycle_picture
 	belongs_to :bicycle
 	validates :bicycle_picture,
 			   presence: true

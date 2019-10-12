@@ -19,14 +19,14 @@ Rails.application.routes.draw do
   	resources :rooms, only: [:index]
   	resources :payees, only: [:edit, :update, :create]
   	resources :contracts, only: [:index, :show]
-  	resources :rend_days, only: [:edit, :create, :destory]
+  	resources :lend_days, only: [:edit, :create, :destory]
   	resources :owners, only: [:show, :edit, :update, :destory]
   	resources :bicycle_pictures, only: [:destory]
   	resources :lend_spots, only: [:destory]
   	resources :return_spots, only: [:destory]
   	resources :exhibition_spots, only: [:destory]
-  	resources :bicycle_accessories, only: [:destory]
-  	resources :bicycles, only: [:new, :edit, :create, :update, :destory]
+  	resources :bicycle_accessories, only: [:destory, :create]
+  	resources :bicycles
   	get 'owners/withdrawal'
   end
   namespace :user do
@@ -40,12 +40,11 @@ Rails.application.routes.draw do
   end
 	resources :inquiries, only: [:new]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get 'about' => 'root#about'
+  get '/' => 'root#about'
   get 'top'   => 'root#top'
   get 'city'  => 'root#city'
   get 'wait'  => 'root#wait'
   get 'unsubscribe' => 'root#unsubscribe'
-  get 'bicycle_index' => 'root#bicycle_index'
-  get 'bicycle_show'  => 'root#bicycle_show'
   get 'admin_menu'    => 'root#admin_menu'
+  get 'bicycle_index' => 'root#bicycle_index'
 end

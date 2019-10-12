@@ -4,31 +4,32 @@
 		<div class="profile_picture_box">
 			<%= attachment_image_tag @owner, :picture, fallback: "img2.png", class: 'profile_picture'  %>
 		</div>
+
 		<div class="">
-			<p>ニックネーム</p>
-			<%= @owner.nickname %>
+			<%= link_to 'プロフィールの変更', edit_owner_owner_path, class: 'owner_edit_link' %>
 		</div>
+
 		<div class="">
-			<%= link_to 'プロフィールの変更', edit_owner_owner_path %>
-		</div>
-		<div class="">
-			<p>住所</p>
-			<%= @owner.address %>
-		</div>
-		<div class="">
+			<p>ニックネーム<br>
+			　　<%= @owner.nickname %><br>
+			住所<br>
+			　　<%= @owner.address %></p>
 			<h4>振り込め先</h4>
-			<p>支店名</p>
-			<%= @owner.bank_stor_name %>
-			<p>口座番号</p>
-			<%= @owner.bank_account_number %>
-			<p>口座名義</p>
-			<%= @owner.bank_account_name %>
+			<p>支店名<br>
+			　　<%= @owner.bank_stor_name %><br>
+			口座番号<br>
+			　　<%= @owner.bank_account_number %><br>
+			口座名義<br>
+			　　<%= @owner.bank_account_name %></p>
 		</div>
 		<div class="">
-			<%= link_to '振り込め先の変更', edit_owner_payee_path(@owner.id) %>
+			<%= link_to '振り込め先の変更', edit_owner_payee_path(@owner.id), class: 'payee_edit_link' %>
 		</div>
-	<div class="owner_show_bicycle">
-	</div>
+		<% @bicycle.each do |bicycle| %>
+			<div class="owner_show_bicycle">
+				<%= link_to '貸し出し日の編集', edit_owner_lend_day_path(bicycle) %>
+			</div>
+		<% end %>
 	<div class="">
 		<%= link_to '退会', unsubscribe_path, class: 'btn btn-danger' %>
 </div>

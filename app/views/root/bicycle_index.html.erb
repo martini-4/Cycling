@@ -1,0 +1,32 @@
+<div class="bicycle_index">
+	<h1><%= @check %>の出品一覧</h1>
+	<% @bicycle.each do |bicycle| %>
+		<div class="">
+			<% bicycle.bicycle_pictures.each do |picture| %>
+<!--  attachment_image_tag picture, :bicycle_picture, fallback: "img2.png", class: ''-->
+			<% end %>
+		</div>
+		<div class="bicycle_index_box">
+			<div class="">
+				<p>自転車名　<%= bicycle.name %></p>
+				<p>１日の料金　<%= bicycle.price %>円</p>
+				<p>出費者　<%= bicycle.owner.nickname %></p>
+				<p>性別　<%= bicycle.owner.sex.sex %></p>
+			</div>
+			<div class="">
+				<p>付属品一覧</p>
+				<% bicycle.bicycle_accessories.each do |a| %>
+					<%= a.accessory %>
+				<% end %>
+			</div>
+			<div class="">
+				<% bicycle.lend_spots.each do |l| %>
+					<%= l.lend_spot %>
+				<% end %>
+				<% bicycle.return_spots.each do |r| %>
+					<%= r.return_spot %>
+				<% end %>
+			</div>
+		</div>
+	<% end %>
+</div>

@@ -8,13 +8,33 @@
 	width: 80%;
     margin: 0 auto;
     border: 1px solid #ffffff;
+    padding: 30px 10%;
+}
+.owner_show h1{
+	font-size: 50px;
+    line-height: 70px;
+}
+.owner_show h4{
+	padding-left: 40%;
+}
+.owner_show p{
+	font-size: 20px;
+	padding-left: 25%;
 }
 .profile_picture_box{
-
+	float: left;
 }
 .profile_picture{
 	width: 200px;
 	height: 200px;
 	border-radius: 100%;
 	background-color: #ffffff;
+}
+.owner_edit_link{
+	float: right;
+	padding-right: 10%;
+}
+.payee_edit_link{
+	float: right;
+	padding-right: 10%;
 }

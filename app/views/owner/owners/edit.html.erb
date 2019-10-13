@@ -1,2 +1,16 @@
-<h1>Owner::Owners#edit</h1>
-<p>Find me in app/views/owner/owners/edit.html.erb</p>
+<div class="owner_edit">
+	<h1>オーナー情報の編集画面</h1>
+	<div class="">
+		<%= form_for(@owner, url: owner_owner_path) do |owner| %>
+			<%= owner.label :ニックネーム %><br>
+			<%= owner.text_field :nickname, class: 'owner_edit_form' %><br>
+			<%= owner.label :性別 %><br>
+			<div class="owner_edit_form">
+		      	<%= owner.collection_select(:sex_id, Sex.all, :id, :sex, prompt: "") %><br>
+		    </div>
+	      	<div class="owner_edit_submit">
+	      		<%= owner.submit value="確定", class: "btn btn-primary" %>
+	      	</div>
+      	<% end %>
+	</div>
+</div>

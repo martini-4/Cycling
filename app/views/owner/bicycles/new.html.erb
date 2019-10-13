@@ -26,7 +26,7 @@
 		</div>
 		<div class="bicycle_new_form">
 			<%= bicycle.label :自転車の種類 %>
-			<%= bicycle.collection_select(:bicycle_type_id, BicycleType.all, :id, :bicycletype, prompt: "") %>
+			<%= bicycle.collection_select(:bicycle_type_id, BicycleType.all, :id, :bicycle_type, prompt: "") %>
 		</div>
 		<div class="bicycle_new_form">
 			<%= bicycle.label :ハンドルタイプ %>

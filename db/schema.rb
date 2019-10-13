@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_10_081908) do
+ActiveRecord::Schema.define(version: 2019_10_12_134012) do
 
   create_table "accessories", force: :cascade do |t|
     t.string "accessorie_name", limit: 30, null: false
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2019_10_10_081908) do
   end
 
   create_table "bicycle_types", force: :cascade do |t|
-    t.string "bicycletype", null: false
+    t.string "bicycle_type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

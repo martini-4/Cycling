@@ -1,0 +1,101 @@
+<div class="bicycle_show_picture">
+</div>
+<div class="bicycle_show">
+	<div class="profile_picture_box">
+			<%= attachment_image_tag @bicycle.owner, :picture, fallback: "img2.png", class: 'profile_picture'  %>
+	</div>
+	<div class="">
+		<h2><%= @bicycle.name %></h2>
+		<p>
+			出品者　　<%= @bicycle.owner.nickname %><br>
+			貸し出し料金　１日<%= @bicycle.price %>円
+		</p>
+	</div>
+	<div class="">
+		 <h4>■貸し出し可能日</h4>
+		 <div id="calendar"></div>
+	</div>
+	<div class="">
+		<h4>■オーナーコメント</h4>
+		<p><%= @bicycle.description %></p>
+	</div>
+	<div class="">
+		<h4>■機能一覧</h4>
+		<div class=""></div>
+		<p>
+			ハンドルタイプ　<%= @bicycle.handle.handle_type %><br>
+			自転車種類　<%= @bicycle.bicycle_type.bicycle_type %>
+	</div>
+	<div class="">
+		<h4>■貸し出し場所</h4>
+		<% @bicycle.lend_spots.each do |l| %>
+			<%= l.lend_spot %>
+		<% end %>
+	</div>
+	<div class="">
+		<h4>■返却場所</h4>
+		<% @bicycle.return_spots.each do |r| %>
+			<%= r.return_spot %>
+		<% end %>
+	</div>
+	<div class="">
+		<%= link_to new_user_contract_path do |c| %>
+			<p>この商品を借りる</p>
+		<% end %>
+	</div>
+	<div class="">
+		<p>メッセージを作る</p>
+	</div>
+	<!-- レビューを書く -->
+	<% if user_signed_in?%>
+		<div class="review_post">
+		    <div class="review_post_title">
+		    	<h2 class="">レビューを書く</h2>
+		    </div>
+		    <div class="review_post_content_box">
+		    	<%= form_for @review, url: user_reviews_path do |review| %>
+		        	<%= review.hidden_field :user_id, :value => current_user.id %>
+		        	<%= review.hidden_field :product_id, :value => @bicycle.id %>
+		        	<%= review.text_area :review_message , class: "review_post_content" %>
+		        	<%= review.submit '投稿する', class: "review_submit" %>
+		      	<% end %>
+	    	</div>
+	  	</div>
+	<% else %>
+	<% end %>
+	<!-- レビュー表示 -->
+	<div class="review_content_box">
+	    <div class="review_post_title">
+	    	<h2 class="">商品レビュー</h2>
+	    </div>
+	    <% @reviews.each do |review| %>
+	    	<div class="review_index_box">
+	    		<div class="review_created_at">
+	        		<%= review.created_at.strftime('%Y年%m月%d日 %H時%M分') %>
+	      		</div>
+		    	<div class="review_user_name">
+		        	<div class="review_destroy">
+		        		<%= review.user.lastname_kanji %>
+		        		<%= review.user.firstname_kanji %>さん
+		        		<% if review.user_id == current_user.id %>
+		        			<%= link_to '削除', review_path, method: :delete, "data-confirm" => "本当に削除しますか？", class: 'review_delete' %>
+		          		<% else %>
+		          		<% end %>
+		        	</div>
+		    	</div>
+
+		      	<div class="review_content clearfix">
+		        	<%= review.review_content %>
+		      	</div>
+	    	</div>
+		<% end %>
+	    <div class="paginate">
+	      <%= paginate @reviews, class: "paginate" %>
+	    </div>
+	</div>
+	<% @bicycle.exhibition_spots.each do |bicycle_index| %>
+		<%= link_to(:controller=>"/root",:action=>"bicycle_index",:q=>{:ExhibitionSpot_city_id_eq=> bicycle_index.city.id }, class: '') do %>
+			<p><%= bicycle_index.city.city_name %>一覧</p>
+		<% end %>
+	<% end %>
+</div>

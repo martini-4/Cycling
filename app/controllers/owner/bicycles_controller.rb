@@ -1,9 +1,10 @@
 class Owner::BicyclesController < ApplicationController
-  before_action :authenticate_owner!
+
   def index
   end
 
   def new
+    authenticate_owner!
     @bicycle = Bicycle.new
     @exhibition_spots = @bicycle.exhibition_spots.build
     @lend_spots =@bicycle.lend_spots.build
@@ -14,6 +15,9 @@ class Owner::BicyclesController < ApplicationController
   end
 
   def show
+    @bicycle = Bicycle.find(params[:id])
+    @review = Review.new
+    @reviews = @bicycle.reviews.page(params[:page]).reverse_order.per(5)
   end
 
   def edit

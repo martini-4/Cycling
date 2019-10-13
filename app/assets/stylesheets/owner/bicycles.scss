@@ -1,6 +1,7 @@
 // Place all the styles related to the owner/bicycles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// 自転車新規登録画面
 .bicycle_new{
 	width: 60%;
 	margin: 50px auto;
@@ -30,4 +31,11 @@
 .bicycle_new_submit input{
 	font-size: 30px;
     padding: 20px;
+}
+// 自転車詳細画面
+.bicycle_show{
+	width: 80%;
+	margin: 50px auto;
+	background-color: #fef4e3;
+	padding: 30px 100px;
 }

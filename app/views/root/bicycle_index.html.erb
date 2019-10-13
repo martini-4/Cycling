@@ -8,7 +8,7 @@
 		</div>
 		<div class="bicycle_index_box">
 			<div class="">
-				<p>自転車名　<%= bicycle.name %></p>
+				<p>自転車名　<%= link_to bicycle.name, owner_bicycle_path(bicycle) %></p>
 				<p>１日の料金　<%= bicycle.price %>円</p>
 				<p>出費者　<%= bicycle.owner.nickname %></p>
 				<p>性別　<%= bicycle.owner.sex.sex %></p>

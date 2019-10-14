@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_12_134012) do
+ActiveRecord::Schema.define(version: 2019_10_13_125151) do
 
   create_table "accessories", force: :cascade do |t|
     t.string "accessorie_name", limit: 30, null: false
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2019_10_12_134012) do
 
   create_table "bicycle_accessories", force: :cascade do |t|
     t.integer "bicycle_id", null: false
-    t.integer "accessorie_id", null: false
+    t.integer "accessory_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

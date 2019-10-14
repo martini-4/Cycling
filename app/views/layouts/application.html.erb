@@ -6,6 +6,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 
   </head>
@@ -14,4 +15,5 @@
     <%= render 'layouts/messages' %>
     <%= yield %>
   </body>
+
 </html>

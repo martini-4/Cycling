@@ -1,6 +1,7 @@
 <div class="bicycle_new">
 	<h1>出品登録</h1>
 
+
 	<h2>自転車情報</h2>
 	<%= form_for(@bicycle,url: owner_bicycles_path) do |bicycle| %>
 		<div class="bicycle_new_form">
@@ -20,7 +21,9 @@
 			<%= bicycle.fields_for :bicycle_accessories do |f| %>
 				<p>該当するものにチェックを入れて下さい</p>
 				<div class="bicycle_new_form accessory_form">
-					 <%= f.collection_check_boxes :accessorie_id, Accessory.all, :id, :accessorie_name,include_hidden: false %>
+
+					<%= f.collection_check_boxes(:accessory_ids, Accessory.all, :id, :accessorie_name) %>
+
 				</div>
 			<% end %>
 		</div>
@@ -33,7 +36,7 @@
 			<%= bicycle.collection_select(:handle_id, Handle.all, :id, :handle_type, prompt: "") %>
 		</div>
 		<%= bicycle.label :自転車の写真を添付して下さい。 %>
-		<div class="bicycle_new_form">
+		<div class="bicycle_new_form　links">
 			<%= link_to_add_association "写真の追加", bicycle, :bicycle_pictures, class: "btn btn-primary" %>
 		</div>
 		<p>自転車の写真は出来るだけ多い方が好ましいです。</p>

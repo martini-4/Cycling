@@ -12,16 +12,17 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require jquery
-//= require moment
-//= require fullcalendar
-//= require fullcalendar/locale-all
-//= require_tree .
+//= require jquery_ujs
 //= require cocoon
-//= require jquery3
+//= require turbolinks
 //= require popper
 //= require bootstrap-sprockets
+//= require_tree .
+
+
+
+
 
 $(document).ready(function(){
   $('#calendar').fullCalendar({

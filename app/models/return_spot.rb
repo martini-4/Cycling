@@ -1,5 +1,5 @@
 class ReturnSpot < ApplicationRecord
-	belongs_to :bicycle
-	validates :return_spot,
-			   presence: true
+	belongs_to :bicycle, optional: true
+	# validates :return_spot,
+	# 		   presence: true
 end

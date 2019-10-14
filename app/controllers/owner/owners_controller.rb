@@ -26,6 +26,6 @@ class Owner::OwnersController < ApplicationController
   end
   protected
     def owner_params
-      params.require(:owner).permit(:nickname, :sex_id)
+      params.require(:owner).permit(:nickname, :sex_id, :picture)
     end
 end

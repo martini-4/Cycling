@@ -63,8 +63,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 
-gem 'cocoon'
-
 gem 'kaminari'
 
 gem "refile", require: "refile/rails", github: 'manfe/refile'
@@ -90,5 +88,3 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 
 # カレンダー
-gem 'momentjs-rails'
-gem 'fullcalendar-rails'

@@ -1,5 +1,4 @@
 <div class="owner_show">
-	<%= link_to "ログアウト", destroy_owner_session_path, method: :delete,:class => 'header_btn' %>
 	<h1>マイページ</h1>
 	<div class="owner_information">
 		<div class="profile_picture_box">
@@ -26,11 +25,15 @@
 		<div class="">
 			<%= link_to '振り込め先の変更', edit_owner_payee_path(@owner.id), class: 'payee_edit_link' %>
 		</div>
-		<% @bicycle.each do |bicycle| %>
-			<div class="owner_show_bicycle">
-				<%= link_to '貸し出し日の編集', edit_owner_lend_day_path(bicycle) %>
-			</div>
+		<%= link_to(new_owner_bicycle_path, class: '') do %>
+			<div class="owner_show_new_bicycle">自転車を出品する</div>
 		<% end %>
-	<div class="">
-		<%= link_to '退会', unsubscribe_path, class: 'btn btn-danger' %>
+		<div class="">
+			<% @bicycle.each do |bicycle| %>
+				<div class="owner_show_bicycle">
+					<%= link_to '貸し出し日の編集', edit_owner_lend_day_path(bicycle) %>
+				</div>
+			<% end %>
+		</div>
+	</div>
 </div>

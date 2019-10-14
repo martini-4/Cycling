@@ -12,8 +12,73 @@
   </head>
 
   <body>
+
+    <!-- ここからヘッダーです。 -->
+    <header class="clearfix navbar-fixed-top">
+      <div class="">
+        <% if admin_signed_in? %>
+         <%= link_to 'Cycling', admin_menu_path, class: 'header_logo' %>
+        <% else %>
+         <%= link_to 'Cycling', top_path, class: 'header_logo' %>
+        <% end %>
+
+      </div>
+
+      <div class="">
+        <% if user_signed_in? %>
+          <div class="">
+            <div class="header_name"><%= current_ueer.nickname %>様</div>
+          </div>
+          <div class="">
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'header_link' %>
+            <%= link_to 'マイページ', user_user_path(current_user), class: 'header_link' %>
+            <%= link_to '契約一覧', user_contracts_path, class: 'header_link' %>
+            <%= link_to '出品地域一覧', city_path, class: 'header_link' %>
+            <%= link_to 'メッセージ', user_rooms_path, class: 'header_link' %>
+
+        <% elsif owner_signed_in? %>
+
+            <div class="header_name"><%= current_owner.nickname %>様</div>
+
+            <%= link_to 'ログアウト', destroy_owner_session_path, method: :delete,:class => 'header_link' %>
+            <%= link_to 'マイページ', owner_owner_path(current_owner), class: 'header_link' %>
+            <%= link_to '契約一覧', owner_contracts_path, class: 'header_link' %>
+            <%= link_to '出品地域一覧', city_path, class: 'header_link' %>
+            <%= link_to 'メッセージ', owner_rooms_path, class: 'header_link' %>
+          </div>
+        <% elsif admin_signed_in? %>
+          <div class="">
+            <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete,:class => 'header_link' %>
+            <%= link_to 'メニュー', admin_menu_path, class: 'header_link' %>
+            <%= link_to '出品地域一覧', city_path, class: 'header_link' %>
+          </div>
+        <% else %>
+          <div class="">
+            <%= link_to 'オーナー様', new_owner_session_path, class: 'header_link' %>
+            <%= link_to 'ユーザー様', new_user_session_path, class: 'header_link' %>
+            <%= link_to '出品地域一覧', city_path, class: 'header_link' %>
+          </div>
+        <% end %>
+      </div>
+    </header>
     <%= render 'layouts/messages' %>
-    <%= yield %>
+    <div id="wrapper">
+
+      <%= yield %>
+      <!-- ここからフッターです。 -->
+      <footer>
+          <div class="footer_box">
+            Cycling
+              <%= link_to 'お問い合わせ', new_inquiry_path %>
+
+              <a href="">個人情報保護方針</a>
+              <a href="">ご利用にあたって</a>
+          <i class="copyright">©2019 cycling.Japan Inc.</i>
+        </div>
+      </footer>
+    </div>
+
   </body>
+
 
 </html>

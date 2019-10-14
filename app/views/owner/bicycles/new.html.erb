@@ -21,9 +21,10 @@
 			<%= bicycle.fields_for :bicycle_accessories do |f| %>
 				<p>該当するものにチェックを入れて下さい</p>
 				<div class="bicycle_new_form accessory_form">
-
-					<%= f.collection_check_boxes(:accessory_ids, Accessory.all, :id, :accessorie_name) %>
-
+					<% Accessory.all.each do |accessory| %>
+				        <%= check_box_tag "bicycle[accessory_ids][]", accessory.id %>
+				        <%= accessory.accessorie_name %>
+				    <% end %>
 				</div>
 			<% end %>
 		</div>

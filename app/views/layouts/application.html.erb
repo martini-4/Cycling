@@ -27,7 +27,7 @@
       <div class="">
         <% if user_signed_in? %>
           <div class="">
-            <div class="header_name"><%= current_ueer.nickname %>様</div>
+            <div class="header_name"><%= current_user.nickname %>様</div>
           </div>
           <div class="">
             <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'header_link' %>

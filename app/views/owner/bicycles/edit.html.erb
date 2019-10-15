@@ -1,2 +1,84 @@
-<h1>Owner::Bicycles#edit</h1>
-<p>Find me in app/views/owner/bicycles/edit.html.erb</p>
+<div class="bicycle_new">
+	<h1>自転車情報の編集</h1>
+
+
+	<h2><%= @bicycle.name %></h2>
+	<%= form_for(@bicycle,url: owner_bicycle_path) do |bicycle| %>
+		<div class="bicycle_new_form">
+			<h2>自転車装備</h2>
+			<%= bicycle.fields_for :bicycle_accessories do |f| %>
+				<p>該当するものにチェックを入れて下さい</p>
+				<div class="bicycle_new_form accessory_form">
+					<% Accessory.all.each do |accessory| %>
+				        <%= check_box_tag "bicycle[accessory_ids][]",f, accessory.id %>
+				        <%= accessory.accessorie_name %>
+				    <% end %>
+					<%= f.collection_check_boxes(:accessory_ids, Accessory.all, :id, :accessorie_name) do |b| %>
+ 						<%= b.label { b.check_box + b.text } %>
+ 					<% end %>
+				</div>
+			<% end %>
+		</div>
+		<div class="bicycle_new_form">
+			<%= bicycle.label :ハンドルタイプ %>
+			<%= bicycle.collection_select(:handle_id, Handle.all, :id, :handle_type, prompt: "") %>
+		</div>
+		<%= bicycle.label :自転車の写真を添付して下さい。 %>
+		<%= bicycle.fields_for :bicycle_pictures do |bicycle_picture| %>
+            <div class="">
+           		 <%= render 'edit_bicycle_picture_fields', f: @picture   %>
+    		</div>
+	    <% end %>
+		<div class="bicycle_new_form　links">
+			<%= link_to_add_association "写真の追加", bicycle, :bicycle_pictures, class: "btn btn-primary" %>
+		</div>
+		<p>自転車の写真は出来るだけ多い方が好ましいです。</p>
+		<h4>出品詳細情報</h4>
+		<div class="bicycle_new_form">
+			<%= bicycle.label '１日の料金' %>
+			<%= bicycle.text_field :price %>円
+		</div>
+		<p>(相場1000円)</p>
+		<%= bicycle.label :出品地域の選択 %>
+	    <div class="bicycle_new_form">
+	    	<%= bicycle.fields_for :exhibition_spots do |exhibition| %>
+	                <div class="">
+	               		 <%= render 'edit_exhibition_spot_fields', f: exhibition  %>
+	        		</div>
+	        <% end %>
+		    <%= link_to_add_association "出品場所の追加", bicycle, :exhibition_spots, class: "btn btn-primary" %>
+		    <p>自身が貸し出しができる場所の地域を選択して下さい。<br>
+    		地域がまたがるなどの場合は２箇所選択して下さい。</p>
+		    <br><br>
+		</div>
+		<%= bicycle.label :貸し出し場所の指定 %>
+		<div class="bicycle_new_form">
+			<%= bicycle.fields_for :lend_spots do |lend_spot| %>
+	                <div class="">
+	               		 <%= render 'edit_lend_spot_fields', f: lend_spot  %>
+	        		</div>
+	        <% end %>
+			<%= link_to_add_association "貸し出し場所の追加", bicycle, :lend_spots, class: "btn btn-primary" %>
+		</div>
+		<%= bicycle.label :返却場所の指定 %>
+		<div class="bicycle_new_form">
+			<%= link_to_add_association "返却場所の追加", bicycle, :return_spots, class: "btn btn-primary" %>
+			<p>
+			貸し出し場所・返却場所はご自身の都合の良い場所を指定ください。<br>
+			また、その他、相談可など入れておくと問い合わせ数が上がる可能性がございます。
+			</p>
+		</div>
+		<p>その他特筆事項（利用者に伝えたい事や注意点など御座いましたらご記入下さい。）</p>
+		<div class="bicycle_new_form bicycle_description_box">
+			<%= bicycle.text_area :description,placeholder: "200文字まで", class: 'bicycle_description' %>
+		</div>
+		<div class="bicycle_new_submit">
+			<%= bicycle.submit value: "更新", class: 'btn btn-success bicycle_new_form' %>
+		</div>
+	<% end %>
+	 <p>管理者が確認し、問題が無ければ出品されます。<br>
+		今一度不備等が無いかご確認下さいませ。<br>
+		３日以内に出品がされ無ければ内容に不備があった<br>
+		可能性が御座います。内容をご確認の上再度お申し込みくださいませ。
+	</p>
+</div>

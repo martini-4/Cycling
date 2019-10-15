@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_13_125151) do
+ActiveRecord::Schema.define(version: 2019_10_15_045743) do
 
   create_table "accessories", force: :cascade do |t|
     t.string "accessorie_name", limit: 30, null: false
@@ -225,7 +225,6 @@ ActiveRecord::Schema.define(version: 2019_10_13_125151) do
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
     t.integer "sex_id", null: false
-    t.string "password_confirmation", null: false
     t.string "lastname_kanji", null: false
     t.string "firstname_kanji", null: false
     t.string "lastname_kana", null: false
@@ -234,7 +233,7 @@ ActiveRecord::Schema.define(version: 2019_10_13_125151) do
     t.string "address", null: false
     t.string "proof_picture_id", null: false
     t.string "nickname", null: false
-    t.string "picture"
+    t.string "picture_id"
     t.boolean "approval", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

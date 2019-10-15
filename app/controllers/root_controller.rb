@@ -15,7 +15,7 @@ end
 	end
 
 	def bicycle_index
-		@bicycle = Bicycle.includes([:exhibition_spots]).page(params[:page]).reverse_order.per(20)
+		@bicycle = Bicycle.includes([:exhibition_spots]).page(params[:page]).reverse_order.per(20).includes(:bicycle_pictures)
     	@check = params[:q][:exhibition_spot_city_id_eq]#検索ワードを持つ
 	end
 

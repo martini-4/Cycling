@@ -1,2 +1,20 @@
-<h1>User::Users#show</h1>
-<p>Find me in app/views/user/users/show.html.erb</p>
+<div class="user_show">
+	<h1>マイページ</h1>
+	<div class="user_information">
+		<div class="profile_picture_box">
+			<%= attachment_image_tag @user, :picture, fallback: "img2.png", format: 'jpeg', class: 'profile_picture'  %>
+		</div>
+
+		<div class="">
+			<%= link_to 'プロフィールの変更', edit_user_user_path, class: 'user_edit_link' %>
+		</div>
+
+		<div class="">
+			<p>ニックネーム<br>
+			　　<%= @user.nickname %><br>
+			住所<br>
+			　　<%= @user.address %></p>
+		</div>
+
+	</div>
+</div>

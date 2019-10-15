@@ -1,29 +1,58 @@
-<h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<div class="sign_up">
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+  <h1>登録画面</h1>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="">
+      <%= f.label :名前 %><br>
+      <%= f.text_field :lastname_kanji, class: 'form_left sing_up_form', placeholder: "性"%>
+      <%= f.text_field :firstname_kanji, class: 'sing_up_form', placeholder: "名"%><br>
+      <%= f.label '名前(カナ)'%><br>
+      <%= f.text_field :lastname_kana, class: 'form_left sing_up_form', placeholder: 'セイ' %>
+      <%= f.text_field :firstname_kana, class: ' sing_up_form', placeholder: 'メイ' %><br>
+    </div>
+    <div class="">
+      <%= f.label :性別 %>
+      <%= f.collection_select(:sex_id, Sex.all, :id, :sex, prompt: "") %>
+    </div>
+    <div class="">
+      <%= f.label :ニックネーム %><br>
+      <%= f.text_field :nickname, class: '', placeholder: ''%><br>
+    </div>
+    <div class="field">
+      <%= f.label :電話番号 %><br>
+      <%= f.text_field :mobile, class: '', placeholder: ''%><br>
+      <%= f.label :住所 %><br>
+      <%= f.text_field :address, class: '', placeholder: ''%><br>
+      <%= f.label :アドレス %><br>
+      <%= f.email_field :email, autofocus: true, autocomplete: "cycling@gmail.com" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+    <div class="field">
+      <%= f.label :パスワード %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br>
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
 
-<%= render "users/shared/links" %>
+    <div class="field">
+      <%= f.label 'パスワード(再確認)' %><br>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+    <div class="">
+      <%= f.label :身分証明書の確認をいたします。 %><br>
+      <%= f.label :身分証明書の写真を追加してください。 %><br>
+      <%= f.attachment_field :proof_picture %>
+    </div>
+
+    <div class="actions form_center">
+      <%= f.submit "登録", class: 'btn btn-success' %>
+    </div>
+  <% end %>
+
+  <%= render "users/shared/links" %>
+</div>

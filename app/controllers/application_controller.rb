@@ -4,10 +4,10 @@ class ApplicationController < ActionController::Base
  def after_sign_in_path_for(resource)
  	# userがsign_inした場合
  	if current_user
- 	    user_user_path
+ 	    user_user_path(current_user.id)
  	# ownerがsign_inした場合
  	elsif current_owner
- 		top_path
+ 		owner_owner_path(current_owner.id)
 	else
  		admin_menu_path
  		#管理者メニューへのパス

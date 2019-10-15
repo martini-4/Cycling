@@ -3,21 +3,21 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // show画面
-.owner_show{
+.user_show{
 	background-color: #d3fcff;
 	width: 80%;
     margin: 0 auto;
     border: 1px solid #ffffff;
-    padding: 30px 10%;
+    padding: 100px 10%;
 }
-.owner_show h1{
+.user_show h1{
 	font-size: 50px;
     line-height: 70px;
 }
-.owner_show h4{
+.user_show h4{
 	padding-left: 40%;
 }
-.owner_show p{
+.user_show p{
 	font-size: 20px;
 	padding-left: 25%;
 }
@@ -30,7 +30,7 @@
 	border-radius: 100%;
 	background-color: #ffffff;
 }
-.owner_edit_link{
+.user_edit_link{
 	float: right;
 	padding-right: 10%;
 }

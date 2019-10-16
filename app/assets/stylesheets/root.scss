@@ -117,5 +117,32 @@
     margin: 0 auto;
 }
 .bicycle_index_box{
-	height: 200px;
+	height: 250px;
+	widows: 100%;
+	border-top: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	background-color: #f2f2f2;
+	font-size: 25px;
+}
+.bicycle_index_box2{
+}
+.bicycle_index_content{
+	float: left;
+	width: 25%;
+	padding-left: 30px;
+}
+.bicycle_index_content h4{
+	text-align: center;
+}
+.bicycle_index_picture{
+	width: 250px;
+	height: 248px;
+	background-color: #ffffff;
+	float: left;
+}
+.bicycle_indew_text{
+	float: left;
+	width: 50%;
+	font-size: 20px;
+	padding-top: 5px;
 }

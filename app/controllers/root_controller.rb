@@ -1,11 +1,5 @@
 class RootController < ApplicationController
 
-before_action :set_search
-
-def set_search
-  @search = Bicycle.ransack(params[:q])
-  @search_products = @search.result.page(params[:page])
-end
 
 	def about
 	end
@@ -15,8 +9,8 @@ end
 	end
 
 	def bicycle_index
-		@bicycle = Bicycle.includes([:exhibition_spots]).page(params[:page]).reverse_order.per(20).includes(:bicycle_pictures)
-    	@check = params[:q][:exhibition_spot_city_id_eq]#検索ワードを持つ
+		@city = City.find(params[:id])
+		@exhibition = ExhibitionSpot.where(city_id: @city)
 	end
 
 	def bicycle_show

@@ -1,0 +1,2460 @@
+﻿@charset "UTF-8";
+/*---------------------------------------------------------------------------------------------
+  /sozai/*.cfm
+---------------------------------------------------------------------------------------------*/
+#sozaiBox {
+	width: 950px;
+	height: auto;
+	margin: 0 auto 10px;
+	clear: both;
+	overflow: hidden;
+}
+#sozaiMain {
+	width: 730px;
+	float: left;
+}
+
+/*---------------------------------------------------------------------------------------------
+  フリーHTML
+---------------------------------------------------------------------------------------------*/
+.sozaiTopFree-1 {
+	width: 728px;
+	margin: 0 auto 20px;
+}
+.sozaiTopFree-2 {
+	width: 336px;
+}
+.sozaiTopFree-3 {
+	width: 728px;
+	margin: 0 auto 20px;
+}
+.sozaiTopFree-4 {
+	float: left;
+	width: 336px;
+	margin: 0 14px 0 0;
+}
+.sozaiTopFree-5 {
+	float: left;
+	width: 336px;
+	margin: 0 14px 0 0;
+}
+.sozaiTopFree-6 {
+	width: 728px;
+	margin: 0 auto 20px;
+}
+.sozaiTopFree-7 {
+	float: left;
+	width: 336px;
+	margin: 0 14px 0 0;
+}
+.sozaiTopFree-8 {
+	width: 728px;
+	margin: 0 auto 20px;
+}
+
+.sozaiFree-1 {
+	width: 728px;
+	margin: 0 auto 10px;
+}
+.sozaiFree-2 {
+	width: 728px;
+	margin: 0 auto 20px;
+}
+.sozaiFreeSide {
+	width: 200px;
+	margin: 0 auto 20px;
+}
+
+.sozaiDtlFree-1 {
+	width: 728px;
+	margin: 0 auto 20px;
+}
+
+/*---------------------------------------------------------------------------------------------
+  トップページ
+---------------------------------------------------------------------------------------------*/
+#sozaiMain #topRnkingBox {
+	width: 730px;
+	height: auto;
+	margin: 0 auto 20px;
+	overflow: hidden;
+	line-height: 1.4;
+}
+#sozaiMain #topRnkingBox .innL {
+	width: 336px;
+	float: left;
+}
+#sozaiMain #topRnkingBox .innR {
+	width: 380px;
+	margin: 17px 0 0;
+	float: right;
+	line-height: 1.2;
+}
+#sozaiMain #topRnkingBox .innR table {
+	float:left;
+	width: 189px;
+	margin: 0;
+	border: none;
+	border-collapse: collapse;
+}
+#sozaiMain #topRnkingBox .innR table th {
+	height: 28px;
+	padding: 0 7px;
+	background: #F0E6E3;
+	color: #EE6C0D;
+	border-bottom: #E4BC96 1px solid;
+	text-align: center;
+	font-size: 93%;
+	font-weight: bold;
+}
+#sozaiMain #topRnkingBox .innR table th.th1 {
+	width: 189px;
+	border-right: #F9F0E8 1px solid;
+}
+#sozaiMain #topRnkingBox .innR table th.th2 {
+	width: 189px;
+	border-left: #E4BC96 1px solid;
+}
+#sozaiMain #topRnkingBox .innR table td {
+	height: 25px;
+	padding: 0 10px 0 0;
+	color: #FFFFFF;
+	text-align: right;
+	vertical-align: middle;
+	font-weight: bold;
+}
+#sozaiMain #topRnkingBox .innR table td img {
+	float: left;
+	margin: -3px 0 0 5px;
+}
+#sozaiMain #topRnkingBox .innR table td.rank1 {
+	background: #FFCC00 url(../img/recipe/bdrRankNum.gif) left bottom repeat-x;
+}
+#sozaiMain #topRnkingBox .innR table td.rank2 {
+	background: #9BBCDD url(../img/recipe/bdrRankNum.gif) left bottom repeat-x;
+}
+#sozaiMain #topRnkingBox .innR table td.rank3 {
+	background: #FAC5AB url(../img/recipe/bdrRankNum.gif) left bottom repeat-x;
+}
+#sozaiMain #topRnkingBox .innR table td.rankEtc {
+	background: #EED3BB url(../img/recipe/bdrRankNum.gif) left bottom repeat-x;
+}
+#sozaiMain #topRnkingBox .innR table td.rank10 {
+	background: #EED3BB;
+	border-bottom: #E4BC96 1px solid;
+}
+#sozaiMain #topRnkingBox .innR table td.recipeName {
+	background: url(../img/recipe/bdrRankTxt.gif) left bottom repeat-x;
+	color: #913F1F;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	font-weight: normal;
+}
+#sozaiMain #topRnkingBox .innR table td.recipeNameBtm {
+	width: 67%;
+	border-bottom: #E4BC96 1px solid;
+	color: #913F1F;
+	font-weight: normal;
+	text-align: left;
+}
+#sozaiMain #topRnkingBox .innR table td.recipeName img,
+#sozaiMain #topRnkingBox .innR table td.recipeNameBtm img {
+	float: left;
+	margin: 5px 3px -2px;
+}
+#sozaiMain #topRnkingBox .innR table td.recipeName a,
+#sozaiMain #topRnkingBox .innR table td.recipeNameBtm a {
+	display: block;
+	_width:90px;
+	padding: 5px;
+	color: #913F1F;
+	text-decoration: underline;
+}
+#sozaiMain #topRnkingBox .innR table td.recipeName a:hover,
+#sozaiMain #topRnkingBox .innR table td.recipeNameBtm a:hover {
+	text-decoration: none;
+}
+#sozaiMain #topRecomBox {
+	overflow: hidden;
+	width: 730px;
+	height: auto;
+	margin: 0 auto 20px;
+}
+#sozaiMain #topRecomBox .titBox {
+	width: 730px;
+	height: 35px;
+	margin: 0 0 10px;
+	background: url(../img/sozai/titRecom1.jpg) no-repeat;
+}
+#sozaiMain #topRecomBox .titBox img {
+	margin: 0 7px 3px 0;
+	vertical-align: middle;
+}
+#sozaiMain #topRecomBox .titBox h2 {
+	line-height: 35px;
+	margin: 0;
+	padding: 0 0 0 10px;
+	color: #FFFFFF;
+	font-size: 115%;
+}
+#sozaiMain #topRecomBox .listBox {
+	overflow: hidden;
+	width: 730px;
+	/*background: url(../img/sozai/brRecomC.gif) left top repeat-y;*/
+	background: url(../img/sozai/brRecomC2.gif) left top repeat-y;
+}
+#sozaiMain #topRecomBox .inn {
+	width: 730px;
+	margin: 0 0 10px;
+	padding: 15px 0 0;
+	/*background: url(../img/sozai/brRecomU.gif) left top no-repeat;*/
+	background: url(../img/sozai/brRecomU2.gif) left top no-repeat;
+} 
+#sozaiMain #topRecomBox .inn dl {
+	float: left;
+	width: 50px;
+	margin: 0 25px 0 0;
+	padding: 0;
+}
+#sozaiMain #topRecomBox .inn dl.last {
+	margin: 0;
+}
+#sozaiMain #topRecomBox .inn dl dt {
+	width: 50px;
+	height: 50px;
+	margin: 0 auto 4px;
+	text-align: center;
+}
+#sozaiMain #topRecomBox .inn dl dt span {
+	display: table-cell;
+	width: 50px;
+	height: 50px;
+	vertical-align: middle;
+	text-align: center;
+	layout-grid-line: 50px;
+	*display: inline;
+	*zoom: 1;
+}
+#sozaiMain #topRecomBox .inn dl dt img {
+	vertical-align: middle;
+}
+#sozaiMain #topRecomBox .inn dl dd a {
+	display: block;
+	width: 50px;
+	height: 18px;
+	margin: 6px 0 10px auto;
+	background: url(../img/sozai/btnProfileImgView.jpg) no-repeat;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+#sozaiMain #topRecomBox .inn dl dd a:hover {
+	background-position: 0 -18px;
+	text-decoration: none;
+}
+#sozaiMain #topRecomBox .innD {
+	width: 730px;
+	height: 6px;
+	margin: -4px 0 0;
+	/*background: url(../img/sozai/brRecomD.gif) left bottom no-repeat;*/
+	background: url(../img/sozai/brRecomD2.gif) left bottom no-repeat;
+	font-size: 1px;
+}
+#sozaiMain .contBox	{
+	clear: both;
+	overflow: hidden;
+	width: 730px;
+	margin: 0 0 20px;
+}
+#sozaiMain .recomCateBox {
+	float: left;
+	width: 380px;
+}
+#sozaiMain .recomCateBox .titBox {
+	width: 380px;
+	height: 30px;
+	margin: 0 0 12px;
+	background: url(../img/sozai/titRecomCate.jpg) no-repeat;
+}
+#sozaiMain .recomCateBox .titBox h2 {
+	line-height: 30px;
+	margin: 0;
+	padding: 0 0 0 36px;
+	background: url(../img/sozai/icoTitRecomCate.gif) 12px center no-repeat;
+	color: #FFFFFF;
+	font-size: 115%;
+}
+#sozaiMain .recomCateBox .inn {
+	clear: both;
+	overflow: hidden;
+	width: 360px;
+	margin: 0 auto 7px;
+	padding: 0 0 7px;
+	border-bottom: #E9DAD3 1px solid;
+}
+#sozaiMain .recomCateBox .last {
+	border-bottom: none;
+}
+#sozaiMain .recomCateBox .inn dl {
+	float: left;
+	width: 75px;
+	height: 75px;
+	margin: 0 20px 0 0;
+	padding: 0;
+}
+#sozaiMain .recomCateBox .inn dl.last {
+	margin: 0;
+}
+#sozaiMain .recomCateBox .inn dl dt {
+	margin: 0 auto;
+}
+#sozaiMain .recomCateBox .inn dl dt span {
+	display: table-cell;
+	width: 75px;
+	height: 75px;
+	vertical-align: middle;
+	text-align: center;
+	layout-grid-line: 75px;
+	*display: inline;
+	*zoom: 1;
+}
+#sozaiMain .recomCateBox .inn dl dt span img {
+	vertical-align: middle;
+}
+#sozaiMain .recomCateBox .inn dl dd a {
+	display: block;
+	width: 55px;
+	height: 18px;
+	margin: 6px 0 10px auto;
+	background: url(../img/sozai/btnProfileImgView.jpg) no-repeat;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+#sozaiMain .recomCateBox .inn dl dd a:hover {
+	background-position: 0 -18px;
+	text-decoration: none;
+}
+#sozaiMain #rankListBox {
+	overflow: hidden;
+	margin: 0 0 20px;
+}
+#sozaiMain #rankListBox .inner {
+	float: left;
+		width: 230px;
+	margin: 0 20px 0 0;
+}
+#sozaiMain #rankListBox .innerR {
+	float: left;
+	width: 230px;
+	margin: 0;
+}
+#sozaiMain #rankListBox .titBox {
+	line-height: 30px;
+	width: 230px;
+	height: 30px;
+	margin: 0 0 10px;
+	background: url(../img/sozai/titRanking.jpg) no-repeat;
+}
+#sozaiMain #rankListBox .titBox h3 {
+	width: 230px;
+	margin: 0;
+	padding: 0;
+	color: #FFFFFF;
+	background: no-repeat;
+	font-size: 115%;
+	text-align: center;
+}
+#sozaiMain #rankListBox .titBox h3 img {
+	margin: 0 10px 2px 0;
+	vertical-align: middle;
+}
+#sozaiMain #rankListBox .inn {
+	overflow: hidden;
+	width: 230px;
+	margin: 0 auto 10px;
+	padding: 0 0 7px;
+	background: url(../img/sozai/brRankBtm.gif) bottom no-repeat;
+}
+#sozaiMain #rankListBox .inn .innL {
+	float: left;
+	overflow: hidden;
+	width: 50px;
+	margin: 0 10px 0 0;
+}
+#sozaiMain #rankListBox .inn .innL .ph {
+	width: 50px;
+	height: 50px;
+	margin: 0 0 5px;
+}
+#sozaiMain #rankListBox .inn .innL .ph span {
+	display: table-cell;
+	width: 50px;
+	height: 50px;
+	vertical-align: middle;
+	text-align: center;
+	layout-grid-line: 50px;
+	*display: inline;
+	*zoom: 1;
+}
+#sozaiMain #rankListBox .inn .innL .ph img {
+	vertical-align: middle;
+}
+#sozaiMain #rankListBox .inn .innL .viewBtn a {
+	display: block;
+	width: 46px;
+	height: 16px;
+	margin: 0 auto;
+	background: url(../img/sozai/btnView.jpg) no-repeat;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+#sozaiMain #rankListBox .inn .innL .viewBtn a:hover {
+	background-position: 0 -16px;
+	text-decoration: none;
+}
+#sozaiMain #rankListBox .inn .innR {
+	float: left;
+	width: 170px;
+}
+#sozaiMain #rankListBox .inn .innR dl {
+	overflow: hidden;
+	margin: 0 0 6px;
+	padding: 0;
+}
+#sozaiMain #rankListBox .inn .innR dl dt h4 {
+	height: 17px;
+	margin: 0 0 5px;
+	font-size: 93%;
+}
+#sozaiMain #rankListBox .inn .innR dl dd {
+	height: 40px;
+	margin: 0;
+	padding: 5px;
+	border: #CCCCCC 1px dashed;
+	color: #666666;
+	font-size: 85%;
+}
+/*#sozaiMain #rankListBox .inn .innR dl dt {
+	float: left;
+	width: 58px;
+	height: 16px;
+	margin: 0 10px 0 0;
+	background: url(../img/sozai/icoCategory.gif) no-repeat;
+	text-indent: -9999px;
+}
+#sozaiMain #rankListBox .inn .innR dl dd {
+	float: left;
+	margin: 2px 0 0;
+	padding: 0;
+	font-size: 85%;
+	line-height: 1.1;
+}*/
+#sozaiMain #rankListBox .inn .innR dl dd a {
+	display: block;
+	width: 102px;
+}
+#sozaiMain #rankListBox .inn .innR .icoKey {
+	width: 58px;
+	height: 16px;
+	margin: 0 0 6px;
+	background: url(../img/sozai/icoKeyword.gif) no-repeat;
+	text-indent: -9999px;
+}
+#sozaiMain #rankListBox .inn .innR .wordBox {
+	overflow: hidden;
+	width: 158px;
+	height: 24px;
+	margin: 0 0 5px;
+	padding: 5px 5px 7px;
+	border: #CCCCCC 1px dotted;
+	font-size: 85%;
+	overflow: hidden;
+}
+#sozaiMain #rankListBox .inn .innR .wordBox ul {
+	list-style: none;
+	line-height: 1;
+	clear: both;
+}
+#sozaiMain #rankListBox .inn .innR .wordBox ul li {
+	margin: 0 5px 5px 0;
+	float: left;
+}
+#sozaiMain #rankListBox .inn .innR .wordBox a {}
+
+/* 人気のイラスト投稿者
+========================================================================*/
+#sozaiMain #topListBox {
+	overflow: hidden;
+	width: 730px;
+	height: auto;
+	margin: 0 auto 40px;
+}
+#sozaiMain #topListBox .titBox {
+	width: 730px;
+	height: 35px;
+	margin: 0 0 10px;
+	background: url(../img/sozai/titRecom1.jpg) no-repeat;
+}
+#sozaiMain #topListBox .titBox img {
+	margin: 0 10px 0 0;
+	vertical-align: middle;
+}
+#sozaiMain #topListBox .titBox h2 {
+	line-height: 35px;
+	margin: 0;
+	padding: 0 0 0 10px;
+	color: #FFFFFF;
+	font-size: 115%;
+}
+#sozaiMain #topListBox .toolBox {
+	width: 200px;
+}
+#sozaiMain #topListBox .toolBox strong {
+	margin: 0 5px;
+	color: #FF3366;
+	font-size: 139%;
+}
+#sozaiMain #topListBox .toolBox span {
+	margin: 0 5px;
+	color: #339933;
+}
+#sozaiMain #topListBox .listBox {
+	overflow: hidden;
+	width: 730px;
+	background: url(../img/sozai/brListC02.gif) left top repeat-y;
+}
+#sozaiMain #topListBox .inn {
+	width: 730px;
+	margin: 0 0 10px;
+	padding: 15px 0 0;
+	background: url(../img/sozai/brListU02.gif) left top no-repeat;
+} 
+#sozaiMain #topListBox .inn dl {
+	float: left;
+	width: 146px;
+	margin: 0 auto;
+	padding: 0;
+}
+#sozaiMain #topListBox .inn dl.last {
+	margin: 0;
+}
+#sozaiMain #topListBox .inn dl dt {
+	width: 100px;
+	height: 100px;
+	margin: 0 auto 5px;
+	text-align: center;
+}
+#sozaiMain #topListBox .inn dl dt span {
+	display: table-cell;
+	width: 100px;
+	height: 100px;
+	vertical-align: middle;
+	text-align: center;
+	layout-grid-line: 100px;
+	*display: inline;
+	*zoom: 1;
+}
+#sozaiMain #topListBox .inn dl dt img {
+	vertical-align: middle;
+}
+#sozaiMain #topListBox .inn dl dd a {
+	display: block;
+	width: 55px;
+	height: 18px;
+	margin: 6px 23px 5px 68px;
+	background: url(../img/sozai/btnProfileImgView.jpg) no-repeat;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+#sozaiMain #topListBox .inn dl dd a:hover {
+	background-position: 0 -18px;
+	text-decoration: none;
+}
+#sozaiMain #topListBox .innD {
+	width: 730px;
+	height: 6px;
+	margin: -4px 0 0;
+	background: url(../img/sozai/brListD02.gif) left bottom no-repeat;
+	font-size: 1px;
+}
+
+/* 新着イラスト一覧
+========================================================================*/
+#sozaiMain #newListBox {
+	overflow: hidden;
+	width: 730px;
+	height: auto;
+	margin: 0 auto 40px;
+}
+#sozaiMain #newListBox .titBox {
+	width: 730px;
+	height: 35px;
+	margin: 0 0 10px;
+	background: url(../img/sozai/titRecom1.jpg) no-repeat;
+}
+#sozaiMain #newListBox .titBox img {
+	margin: 0 10px 0 0;
+	vertical-align: middle;
+}
+#sozaiMain #newListBox .titBox h2 {
+	line-height: 35px;
+	margin: 0;
+	padding: 0 0 0 10px;
+	color: #FFFFFF;
+	font-size: 115%;
+}
+#sozaiMain #newListBox .toolBox {
+	width: 200px;
+}
+#sozaiMain #newListBox .toolBox strong {
+	margin: 0 5px;
+	color: #FF3366;
+	font-size: 139%;
+}
+#sozaiMain #newListBox .toolBox span {
+	margin: 0 5px;
+	color: #339933;
+}
+#sozaiMain #newListBox .listBox {
+	width: 730px;
+	overflow: hidden;
+	background: url(../img/sozai/brListC.gif) left top repeat-y;
+}
+#sozaiMain #newListBox .inn {
+	width: 730px;
+	margin: 0 0 10px;
+	padding: 15px 0 0;
+	background: url(../img/sozai/brListU.gif) left top no-repeat;
+} 
+#sozaiMain #newListBox .inn dl {
+	float: left;
+	width: 100px;
+	margin: 0 26px 0 0;
+	padding: 0;
+}
+#sozaiMain #newListBox .inn dl.last {
+	margin: 0;
+}
+#sozaiMain #newListBox .inn dl dt {
+	width: 100px;
+	height: 100px;
+	margin: 0 auto 5px;
+	text-align: center;
+}
+#sozaiMain #newListBox .inn dl dt span {
+	display: table-cell;
+	width: 100px;
+	height: 100px;
+	vertical-align: middle;
+	text-align: center;
+	layout-grid-line: 100px;
+	*display: inline;
+	*zoom: 1;
+}
+#sozaiMain #newListBox .inn dl dt img {
+	vertical-align: middle;
+}
+/*#sozaiMain #newListBox .inn dl dd.btnView a {
+	display: block;
+	width: 55px;
+	height: 18px;
+	margin: 6px 0 5px auto;
+	background: url(../img/sozai/btnProfileImgView.jpg) no-repeat;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+#sozaiMain #newListBox .inn dl dd.btnView a:hover {
+	background-position: 0 -18px;
+	text-decoration: none;
+}*/
+#sozaiMain #newListBox .inn dl dd h4 {
+	height: 30px;
+	margin: 0 0 3px;
+	padding: 0;
+	font-size: 93%;
+}
+#sozaiMain #newListBox .inn dl dd h4 a {
+	display: block;
+}
+#sozaiMain #newListBox .inn dl dd p.notes {
+	margin: 0;
+	padding: 0;
+	color: #666666;
+	font-size: 85%;
+}
+#sozaiMain #newListBox .innD {
+	width: 730px;
+	height: 6px;
+	margin: -4px 0 0;
+	background: url(../img/sozai/brListD.gif) left bottom no-repeat;
+	font-size: 1px;
+}
+#sozaiMain .topPageMoveStaticBox {
+	font-family: Verdana;
+	margin: 0 0 40px;
+	font-size: 123.1%;
+	text-align: left;
+}
+#sozaiMain .topPageMoveStaticBox .linkOn {
+	padding: 5px;
+	border: #DDDDDD 1px solid;
+	background-color: #EEEEEE;
+	font-weight: bold;
+}
+#sozaiMain .topPageMoveStaticBox a {
+	padding: 5px;
+	border: #DDDDDD 1px solid;
+	font-weight: normal;
+}
+
+/* カテゴリページ */
+#sozaiMain .txtAgreement {
+	width: 708px;
+	margin: 0 auto 10px;
+	padding: 10px 10px 7px;
+	font-size: 85%;
+	line-height: 1.5;
+	color: #666;
+	border: 1px #CCC solid;
+}
+#sozaiMain .txtAgreement a {
+	text-decoration: none;
+}
+#sozaiMain .linkBox {
+	width: 708px;
+	margin: 0 auto 20px;
+	padding: 10px;
+	border: #CCC 1px solid;
+	color: #666;
+}
+#sozaiMain .linkBox ul.snsBtnBox {
+	margin: -4px 0 4px;
+	float: right;
+}
+#sozaiMain .linkBox .linkBoxInn {
+	width: 100%;
+	height: 50px;
+	overflow: auto;
+	border: #DDD 1px solid;
+}
+#sozaiMain .linkBox .linkBoxInn .innInn {
+	width: 95%;
+	height: auto;
+	overflow: hidden;
+	margin: 10px;
+}
+#sozaiMain .linkBox input {
+	width: 100%;
+	padding: 5px 0;
+	border: #DDD 1px solid;
+	background-color: #EEE;
+}
+
+#sozaiMain .toolBox {
+	clear: both;
+	width: 730px;
+	overflow: hidden;
+	margin: 0 0 10px 0;
+}
+#sozaiMain .toolBox .countBox {
+	float: left;
+	width: 300px;
+}
+#sozaiMain .toolBox .countBox strong {
+	margin: 0 5px;
+	color: #FF3366;
+	font-size: 138.5%;
+}
+#sozaiMain .toolBox .countBox span {
+	margin: 0 5px;
+	color: #339933;
+}
+#sozaiMain .toolBox .changeBox {
+	float: right;
+}
+#sozaiMain .toolBox .changeBox form {
+	margin: 0 0 0 10px;
+	float: right;
+}
+#sozaiMain .freeTxtBox {
+	width: 708px;
+	padding: 10px;
+	border: 3px solid #EFEFEF;
+	margin: 30px 0;
+	line-height: 1.5;
+	color: #111;
+	font: 108% Arial,Helvetica,"游ゴシック",YuGothic,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+}
+
+/* 一覧表示
+================================================= */
+/* 詳細ページ共通  inc_detail_dsp.cfm */
+#sozaiMain #sozaiImgBox {
+	width: 730px;
+	margin: 0 0 40px;
+	background: url(../img/sozai/brListC.gif) left top repeat-y;
+}
+#sozaiMain #sozaiImgBox .inn {
+	clear: both;
+	overflow: hidden;
+	width: 730px;
+	margin: 0 0 10px;
+	padding: 5px 0 0;
+	background: url(../img/sozai/brListU.gif) no-repeat;
+}
+#sozaiMain #sozaiImgBox .inn .innBox {
+	float: left;
+	width: 100px;
+	margin: 0 26px 0 0;
+}
+#sozaiMain #sozaiImgBox .inn .last {
+	margin: 0;
+}
+#sozaiMain #sozaiImgBox .inn .innBox .ph {
+	display: table-cell;
+	width: 100px;
+	height: 100px;
+	vertical-align: middle;
+	padding: 0 0 5px;
+	text-align: center;
+	layout-grid-line: 100px;
+	*display: inline;
+	*zoom: 1;
+}
+#sozaiMain #sozaiImgBox .inn .innBox .ph img {
+	vertical-align: middle;
+}
+#sozaiMain #sozaiImgBox .inn .innBox .viewBtn {
+	width: 100px;
+	margin: 0 auto 5px;
+}
+#sozaiMain #sozaiImgBox .inn .innBox .viewBtn a {
+	display: block;
+	width: 55px;
+	height: 18px;
+	margin: 0 0 0 auto;
+	background: url(../img/sozai/btnProfileImgView.jpg) no-repeat;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+#sozaiMain #sozaiImgBox .inn .innBox .viewBtn a:hover {
+	background-position: 0 -18px;
+	text-decoration: none;
+}
+#sozaiMain #sozaiImgBox .inn .innBox .txtBox h4 {
+	height: 30px;
+	margin: 0 0 3px;
+	padding: 0;
+	font-size: 93%;
+}
+#sozaiMain #sozaiImgBox .inn .innBox .txtBox h4 a {
+	display: block;
+}
+#sozaiMain #sozaiImgBox .inn .innBox .txtBox p.notes {
+	margin: 0;
+	padding: 0;
+	color: #666666;
+	font-size: 85%;
+}
+#sozaiMain #sozaiImgBox .innD {
+	width: 730px;
+	height: 6px;
+	margin: -4px 0 0;
+	background: url(../img/sozai/brListD.gif) left bottom no-repeat;
+	font-size: 1px;
+}
+#sozaiMain #recomList #sozaiImgBox .inn .innBox .txtBox {
+	font: 108% Arial,Helvetica,"游ゴシック",YuGothic,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+}
+#sozaiMain #recomList #sozaiImgBox .inn .innBox .txtBox h4 {
+  height: 36px;
+}
+/* 一覧表示
+================================================= */
+/* 詳細ページ共通  inc_digest_dsp.cfm */
+#sozaiMain #digestSozaiImgBox {
+	width: 730px;
+	margin: 0 0 40px;
+	background: url(../img/sozai/brListC03.gif) left top repeat-y;
+}
+#sozaiMain #digestSozaiImgBox.noTopBorderMargin {
+	margin-top: -40px;
+}
+#sozaiMain #digestSozaiImgBox .inn {
+	clear: both;
+	overflow: hidden;
+	width: 730px;
+	margin: 0 0 10px;
+	padding: 5px 0 0;
+	background: url(../img/sozai/brListU.gif) no-repeat;
+}
+#sozaiMain #digestSozaiImgBox .inn .innBox {
+	float: left;
+	width: 226px;
+	margin: 0 26px 0 0;
+}
+#sozaiMain #digestSozaiImgBox .inn .last {
+	margin: 0;
+}
+#sozaiMain #digestSozaiImgBox .inn .innBox .txtBox {
+	font: 108% Arial,Helvetica,"游ゴシック",YuGothic,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+}
+#sozaiMain #digestSozaiImgBox .inn .innBox .ph {
+	display: table-cell;
+	width: 226px;
+	height: 226px;
+	vertical-align: middle;
+	padding: 0 0 5px;
+	text-align: center;
+	layout-grid-line: 100px;
+	*display: inline;
+	*zoom: 1;
+}
+#sozaiMain #digestSozaiImgBox .inn .innBox .ph img {
+	vertical-align: middle;
+	max-width: 226px;
+	max-height: 226px;
+}
+#sozaiMain #digestSozaiImgBox .inn .innBox .viewBtn {
+	width: 100px;
+	margin: 0 auto 5px;
+}
+#sozaiMain #digestSozaiImgBox .inn .innBox .viewBtn a {
+	display: block;
+	width: 55px;
+	height: 18px;
+	margin: 0 0 0 auto;
+	background: url(../img/sozai/btnProfileImgView.jpg) no-repeat;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+#sozaiMain #digestSozaiImgBox .inn .innBox .viewBtn a:hover {
+	background-position: 0 -18px;
+	text-decoration: none;
+}
+#sozaiMain #digestSozaiImgBox .inn .innBox .txtBox h4 {
+	height: 30px;
+	margin: 0 0 3px;
+	padding: 0;
+	font-size: 93%;
+}
+#sozaiMain #digestSozaiImgBox .inn .innBox .txtBox h4 a {
+	display: block;
+}
+#sozaiMain #digestSozaiImgBox .inn .innBox .txtBox p.notes {
+	margin: 0;
+	padding: 0;
+	color: #666666;
+	font-size: 85%;
+}
+#sozaiMain #digestSozaiImgBox .innD {
+	width: 730px;
+	height: 6px;
+	margin: -4px 0 0;
+	background: url(../img/sozai/brListD.gif) left bottom no-repeat;
+	font-size: 1px;
+}
+
+/*---------------------------------------------------------------------------------------------
+  右サイド
+---------------------------------------------------------------------------------------------*/
+#sozaiSide {
+	float: right;
+	width: 200px;
+	overflow: hidden;
+	margin: 0 0 20px;
+	padding: 0;
+}
+#sozaiSide #cateBox,
+#sozaiSide #keywordBox,
+#sozaiSide #newPhBox,
+#sozaiSide #dlRankBox,
+#sozaiSide #blogBox {
+	margin: 0 auto 20px;
+}
+#sozaiSide #cateBox h3,
+#sozaiSide #keywordBox h3,
+#sozaiSide #newPhBox h3,
+#sozaiSide #dlRankBox h3,
+#sozaiSide #blogBox h3 {
+	height: 26px;
+	line-height: 26px;
+	background: url(../img/sozai/bg_profSide.jpg) no-repeat;
+	color: #FFFFFF;
+	font-size: 108%;
+	text-align: center;
+}
+#sozaiSide #cateBox .inn,
+#sozaiSide #keywordBox .inn,
+#sozaiSide #newPhBox .inn {
+	overflow: hidden;
+	padding: 13px;
+	border-left: #BC496F 3px solid;
+	border-right: #BC496F 3px solid;
+	border-bottom: #BC496F 3px solid;
+}
+#sozaiSide .inn ul#category {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 108%;
+}
+#sozaiSide .inn ul#category li {
+	margin: 0 0 10px;
+	padding: 0 0 0 15px;
+	background: url(../img/sozai/csrBean.gif) 0 3px no-repeat;
+	font-weight: bold;
+}
+#sozaiSide .inn ul#category li a {
+	display: block;
+}
+#sozaiSide .inn #innBox {
+	overflow: hidden;
+	width: 168px;
+	background: url(../img/sozai/profileNewMid.gif) repeat-y;
+}
+#sozaiSide .inn #innBox .boxCnt {
+	clear: both;
+	overflow: hidden;
+	width: 168px;
+	padding: 10px 0;
+	background: url(../img/sozai/profileNewBtm.gif) left bottom no-repeat;
+}
+#sozaiSide .inn #innBox .last {
+	background: none;
+}
+#sozaiSide .inn #innBox .boxCnt .ph {
+	float: left;
+	width: 70px;
+	margin: 0 28px 0 0;
+}
+#sozaiSide .inn #innBox .boxCnt .ph span {
+	display: table-cell;
+	width: 70px;
+	height: 70px;
+	vertical-align: middle;
+	text-align: center;
+	layout-grid-line: 70px;
+	*display: inline;
+	*zoom: 1;
+}
+#sozaiSide .inn #innBox .boxCnt .ph img {
+	vertical-align: middle;
+}
+#sozaiSide .inn #innBox .boxCnt .last {
+	margin: 0;
+}
+
+/* ダウンロードランキング
+================================================= */
+#sozaiSide #dlRankBox h3 {
+	margin: 0 0 7px;
+}
+#sozaiSide #dlRankBox h3 img {
+	vertical-align: middle;
+	margin: 0 5px 4px 0;
+}
+#sozaiSide #dlRankBox .inn {
+	overflow: hidden;
+	margin: 0 auto 10px;
+	padding: 0 0 7px;
+	background: url(../img/sozai/brRankBtm.gif) no-repeat bottom;
+}
+#sozaiSide #dlRankBox .inn .innL {
+	float: left;
+	width: 50px;
+	overflow: hidden;
+}
+#sozaiSide #dlRankBox .inn .innL .ph {
+	display: table-cell;
+	width: 50px;
+	height: 50px;
+	vertical-align: middle;
+	padding: 0 0 5px;
+	text-align: center;
+	layout-grid-line: 50px;
+	*display: inline;
+	*zoom: 1;
+}
+#sozaiSide #dlRankBox .inn .innL .ph img {
+	vertical-align: middle;
+}
+#sozaiSide #dlRankBox .inn .innL .viewBtn a {
+	display: block;
+	width: 46px;
+	height: 16px;
+	overflow: hidden;
+	margin: 0 auto;
+	background: url(../img/sozai/btnView.jpg) no-repeat;
+	text-indent: -9999px;
+}
+#sozaiSide #dlRankBox .inn .innL .viewBtn a:hover {
+	background-position: 0 -16px;
+	text-decoration: none;
+}
+#sozaiSide #dlRankBox .inn .innR {
+	float: right;
+	width: 143px;
+}
+#sozaiSide #dlRankBox .inn .innR dl {
+	overflow: hidden;
+	margin: 0 0 6px;
+	padding: 0;
+}
+#sozaiSide #dlRankBox .inn .innR dl dt h4 {
+	height: 17px;
+	margin: 0 0 5px;
+	font-size: 93%;
+}
+#sozaiSide #dlRankBox .inn .innR dl dd {
+	height: 40px;
+	margin: 0;
+	padding: 5px;
+	border: #CCCCCC 1px dashed;
+	color: #666666;
+	font-size: 85%;
+}
+
+/* 最新日記
+================================================= */
+#sozaiSide #blogBox h3 {
+	background: url(/img/digest/bg_tit_newitem.jpg) no-repeat left top;
+}
+#sozaiSide #blogBox .inn {
+	overflow: hidden;
+	padding: 10px 0 0;
+	border-left: #1E7207 3px solid;
+	border-right: #1E7207 3px solid;
+	border-bottom: #1E7207 3px solid;
+}
+#sozaiSide #blogBox .inn dl {
+	line-height: 1.3;
+	margin: 0 0 6px;
+	padding: 0 10px 10px;
+	border-bottom: #FF0000 1px dotted;
+	font-size: 93%;
+}
+#sozaiSide #blogBox .inn dl dt {
+	line-height: 1.4;
+	padding: 0;
+	font-weight: bold;
+}
+#sozaiSide #blogBox .inn dl dt a {
+	display: block;
+	margin: 0 0 5px;
+}
+#sozaiSide #blogBox .inn dl.bdrNon {
+	margin: 0;
+	border-bottom: none;
+}
+
+
+
+
+/* 一覧を見るボタン
+================================================= */
+#sozaiMain a.btnList,
+#sozaiSide a.btnList {
+	display: block;
+	width: 54px;
+	height: 18px;
+	margin: 10px 0 0 auto;
+	background: url(/img/digest/btn_list_link.jpg) no-repeat 0 0;
+	text-indent: -9999px;
+}
+#sozaiMain a.btnList:hover.
+#sozaiSide a.btnList:hover {
+	background: url(/img/digest/btn_list_link.jpg) no-repeat 0 -18px
+}
+
+/*---------------------------------------------------------------------------------------------
+  画像拡大時
+---------------------------------------------------------------------------------------------*/
+#tbMain {
+	width: 100%;
+	height: 550px;
+	margin: 0 auto;
+}
+#tbMain table {
+	width: 100%;
+	border: none;
+	border-collapse: collapse;
+}
+#tbMain table td {
+	vertical-align: middle;
+}
+#tbMain table td.tdL {
+	margin: 0;
+	padding: 7px;
+	text-align: left;
+}
+#tbMain table td.tdL img {
+	margin: 0;
+}
+#tbMain table td.tdC {
+	width: 660px;
+}
+#tbMain table td.tdR {
+	margin: 0;
+	padding: 7px;
+	text-align: right;
+}
+#tbMain table td.tdR img {
+	margin: 0 0 0 auto;
+}
+#tbInn {
+	position: relative;
+	width: 600px;
+	height: 485px;
+	margin: 7px auto 25px;
+	padding: 0 20px 20px;
+	border: 10px solid #CCCCCC;
+}
+#tbInn #innCnt {
+	clear: both;
+	overflow: hidden;
+	margin: 0 0 10px;
+}
+#tbInn #innCnt #innL {
+	float:left;
+	width: 300px;
+	height: 300px;
+	margin: 20px 20px 0 0; 
+	background-color: #F6F6F6;
+}
+#tbInn #innCnt #innL img {
+	width: 300px;
+	height: 300px;
+	margin: 0;
+	padding: 0;
+}
+#tbInn #innCnt #innR {
+	float: right;
+	width: 280px;
+	/*height: 300px;*/
+	margin: 4px 0 0;
+}
+#tbInn #innCnt #innR span {
+	color: #FF0000;
+	font-weight: bold;
+}
+#tbInn #innCnt #innR #qr {
+	width: 165px;
+	height: 165px;
+	margin: 0 auto;
+	padding: 0;
+
+}
+#tbInn #innCnt #innR #appLnk {
+	margin: 0 0 5px;
+	text-align: center;
+}
+#tbInn #innCnt #innR #appLnk a {
+	margin: 0 0 5px;
+	text-align: center;
+	color: #0066FF;
+}
+#tbInn #innCnt #innR #qr img {
+/*
+	width: 165px;
+	height: 165px;
+*/
+	margin: 0 auto;
+	padding: 0;
+}
+#tbInn #innCnt #innR p#qrCnt {
+	margin: 0 0 8px;
+	padding: 0;
+	text-align: center;
+}
+#tbInn #innCnt #innR dl#imgSize {
+	clear: both;
+	overflow: hidden;
+	width: 200px;
+	margin: 0 auto 5px;
+	padding: 0;
+}
+#tbInn #innCnt #innR dl#imgSize dt {
+	float: left;
+	width: 63px;
+	height: 19px;
+	margin: 0 10px 0 0;
+	padding: 0;
+	text-indent: -9999px;
+}
+#tbInn #innCnt #innR dl#imgSize dt#btnSize {
+	float: left;
+	background: url(../img/sozai/btnImgSize.jpg) no-repeat;
+}
+#tbInn #innCnt #innR dl#imgSize dt#btnVol {
+	background: url(../img/sozai/btnImgVolume.jpg) no-repeat;
+}
+#tbInn #innCnt #innR dl#imgSize dd {
+	float: left;
+	margin: 2px 0 0;
+}
+#tbInn #innCnt #innR #dlBtn {
+	margin: 10px 0 0;
+}
+#tbInn #innCnt #innR #dlBtn a {
+	display: block;
+	width: 280px;
+	height: 52px;
+	margin: 0;
+	padding: 0;
+	background: url(../img/sozai/btnImgDL.jpg) no-repeat;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+#tbInn #innCnt #innR #dlBtn a:hover {
+	background-position: 0 -52px;
+}
+#tbInn #innCnt #innR #agreement {
+	margin: 5px 0 0;
+	text-align: center;
+}
+#tbInn #innCnt #innR #agreement label {
+	margin: 0 0 0 5px;
+	font-size: 116%;
+}
+#tbInn #innCnt #TB_closeWindow {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+}
+#tbInn #wordBox {}
+#tbInn #wordBox p#keyTit {
+	margin: 0 0 10px;
+	padding: 0 0 2px 25px;
+	background: url(../img/sozai/icoKeyTit.jpg) no-repeat;
+	border-bottom: #FFCC00 1px solid;
+	font-size: 108%;
+	font-weight: bold;
+	zoom :1;
+}
+#tbInn #wordBox ul#wordList {
+	width: 600px;
+	margin: 0 ;
+	padding: 0;
+	list-style: none;
+}
+#tbInn #wordBox ul#wordList li {
+	float:left;
+	width: 134px;
+	margin: 0 8px 0 0;
+	padding: 0 0 0 10px;
+	background: url(../img/sozai/icoKey.gif) 0 5px no-repeat;
+}
+#tbInn #wordBox ul#wordList li.last {
+	margin: 0;
+}
+
+/*---------------------------------------------------------------------------------------------
+  利用規約
+---------------------------------------------------------------------------------------------*/
+#sozaiAgreementBox {
+	width: 730px;
+	height: auto;
+	margin: 0 auto 10px;
+	clear: both;
+	overflow: hidden;
+	line-height: 1.3;
+}
+#sozaiAgreementBox h3 {
+	width: 730px;
+	height: 32px;
+	margin: 0 0 20px;
+	font-size: 100%;
+	font-weight: bold;
+	line-height: 32px;
+	text-indent: 10px;
+	border-top: 2px solid #1C7105;
+	border-bottom: 1px solid #1C7105;
+}
+#sozaiAgreementBox ul {
+	width: 730px;
+	margin: 0 0 20px;
+	padding: 0;
+	list-style: none;
+}
+#sozaiAgreementBox ul li {
+	margin: 0 0 3px;
+	padding: 0 0 0 0.5em;
+	text-indent: -0.5em;
+	list-style: none;
+	line-height: 1.8;
+}
+#sozaiAgreementBox dl {
+	width: 730px;
+	margin: 0 0 20px;
+	padding: 0;
+}
+#sozaiAgreementBox dl dt {
+	margin: 0 0 5px;
+	padding: 0;
+	font-weight: bold;
+}
+#sozaiAgreementBox dl dd {
+	margin: 0 0 3px;
+	padding: 0 0 0 0.5em;
+	text-indent: -0.5em;
+	list-style: none;
+	line-height: 1.8;
+}
+
+/*---------------------------------------------------------------------------------------------
+  素材詳細ページ
+---------------------------------------------------------------------------------------------*/
+#sozaiMain #sozaiDtlFree-1 {
+	width: 728px;
+	margin: 0 auto 16px;
+}
+#sozaiMain #outBox {
+	width: 730px;
+	height: auto;
+	overflow: hidden;
+	margin: 0 auto 20px;
+}
+#sozaiMain #outBox #innBox {
+	width: 688px;
+	height: auto;
+	overflow: hidden;
+	margin: 5px auto 20px;
+	padding: 16px 16px 0 16px;
+	border: #EAEAEA 5px solid;
+}
+
+/* ダウンロード数
+================================================= */
+#sozaiMain #outBox #innBox #dlCount {
+	float: right;
+	overflow: hidden;
+	height: auto;
+	margin: 0 0 10px;
+	padding: 0 0 0 24px;
+	background: url(../img/sozai/icoDl.jpg) 0 8px no-repeat;
+	font-size: 108%;
+	text-align: right;
+}
+#sozaiMain #outBox #innBox #dlCount span {
+	color: #FF0000;
+	font-size: 170%;
+	font-weight: bold;
+	font-family: Verdana;
+}
+/* VIEW数
+================================================= */
+#sozaiMain #outBox #innBox #viewCount {
+	float: right;
+	overflow: hidden;
+	height: auto;
+	margin: 0 0 10px;
+	padding: 0 0 0 24px;
+	font-size: 108%;
+	text-align: right;
+}
+#sozaiMain #outBox #innBox #viewCount span {
+	color: #FF0000;
+	font-size: 170%;
+	font-weight: bold;
+	font-family: Verdana;
+}
+/* QR数
+================================================= */
+#sozaiMain #outBox #innBox #qrCount {
+	float: right;
+	overflow: hidden;
+	height: auto;
+	margin: 0 0 10px;
+	padding: 0 0 0 24px;
+	font-size: 108%;
+	text-align: right;
+}
+#sozaiMain #outBox #innBox #qrCount span {
+	color: #FF0000;
+	font-size: 170%;
+	font-weight: bold;
+	font-family: Verdana;
+}
+
+/* 素材タイトル
+================================================= */
+#sozaiMain #outBox #innBox #titBox {
+	overflow: hidden;
+	width: 684px;
+	margin: 0 auto 10px;
+	padding: 1px;
+	border: #D2D2D2 1px solid;
+}
+#sozaiMain #outBox #innBox #titBox h2 {
+	margin: 0;
+	padding: 10px 10px 8px 10px;
+	border-bottom: #B6486C 4px solid;
+	background: url(../img/sozai/bgSozaiTit.jpg) repeat-x;
+	font-size: 139%;
+	font-weight: bold;
+}
+
+/* お気に入り登録ボタン
+================================================= */
+#sozaiMain #outBox #innBox #favorBox {
+	/*float: right;*/
+	/*width: 308px;*/
+	clear: both;
+	overflow: hidden;
+	width: 688px;
+	margin: 0 0 10px;
+}
+#sozaiMain #outBox #innBox #favorBox .snsBtnBox {
+	float: left;
+}
+#sozaiMain #outBox #innBox #favorBox #favorBtn a {
+	display: block;
+	float: right;
+	width: 122px;
+	height: 24px;
+	background: url(../img/sozai/btnFavor.jpg) no-repeat;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+#sozaiMain #outBox #innBox #favorBox #prnBtn a {
+	display: block;
+	float: right;
+	width: 166px;
+	height: 24px;
+	margin: 0 10px 0 0;
+	background: url(../img/sozai/btnPrint.jpg) no-repeat;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+#sozaiMain #outBox #innBox #favorBox #favorBtn a:hover,
+#sozaiMain #outBox #innBox #favorBox #prnBtn a:hover {
+	background-position: 0 -24px;
+}
+
+/* 素材詳細メイン
+================================================= */
+#sozaiMain #outBox #innBox #listBox {
+	clear: both;
+	overflow: hidden;
+	margin: 0 0 20px;
+}
+#sozaiMain #outBox #innBox #listBox #innL {
+	float:left;
+	width: 336px;
+	height: auto;
+	margin: 0 16px 0 0;
+}
+#sozaiMain #outBox #innBox #listBox #innL #mainImg {
+	width: 334px;
+	height: 334px;
+	margin: 0 0 16px;
+	border: #D2D2D2 1px solid;
+}
+/*#sozaiMain #outBox #innBox #listBox #innL #mainImg img {
+	display: none;
+}*/
+#sozaiMain #outBox #innBox #listBox #innL #mainImgNote {
+	margin: 0 0 16px;
+	color: #999999;
+	font-size: 100%;
+}
+#sozaiMain #outBox #innBox #listBox #innL #recomSozai {
+	width: 336px;
+	height: 30px;
+	margin: 0 0 12px;
+	background: url(../img/sozai/titBgDltRecom.jpg) no-repeat;
+}
+#sozaiMain #outBox #innBox #listBox #innL #recomSozai h3 {
+	line-height: 30px;
+	margin: 0;
+	padding: 0 0 0 36px;
+	background: url(../img/sozai/icoTitRecomCate.gif) 12px center no-repeat;
+	color: #FFFFFF;
+	font-size: 116%;
+}
+#sozaiMain #outBox #innBox #listBox #innL ul {
+	width: 316px;
+	margin: 0 auto;
+	padding: 0;
+	list-style: none;
+}
+/*#sozaiMain #outBox #innBox #listBox #innL ul li {
+	float: left;
+	width: 62px;
+	height: 62px;
+	margin: 0 20px 0 0;
+	padding: 0;
+	border: #EAEAEA 1px solid;
+}*/
+#sozaiMain #outBox #innBox #listBox #innL ul li {
+	float: left;
+	width: 62px;
+	height: 62px;
+	margin: 0 20px 0 0;
+}
+#sozaiMain #outBox #innBox #listBox #innL ul li span {
+	display: table-cell;
+	width: 62px;
+	height: 62px;
+	vertical-align: middle;
+	margin: 0;
+	padding: 0;
+	/*border: #EAEAEA 1px solid;*/
+	text-align: center;
+	layout-grid-line: 62px;
+	*display: inline;
+	*zoom: 1;
+}
+#sozaiMain #outBox #innBox #listBox #innL ul li.last {
+	margin: 0;
+	border-bottom: none;
+}
+#sozaiMain #outBox #innBox #listBox #innL ul li img {
+	vertical-align: middle;
+}
+
+#sozaiMain #outBox #innBox #listBox #innR {
+	overflow: hidden;
+	float: left;
+	width: 336px;
+}
+#sozaiMain #outBox #innBox #listBox #innR #qrBox {
+	clear: both;
+	overflow: hidden;
+	margin: 0 0 16px;
+}
+#sozaiMain #outBox #innBox #listBox #innR #qrBox #innL {
+	float: left;
+	width: 140px;
+	margin: 0;
+}
+#sozaiMain #outBox #innBox #listBox #innR #qrBox #innL img {
+	border: #D2D2D2 1px solid;
+}
+#sozaiMain #outBox #innBox #listBox #innR #qrBox #innR {
+	float: left;
+	overflow: hidden;
+	width: 194px;
+	margin: 0;
+}
+* html #sozaiMain #outBox #innBox #listBox #innR #qrBox #innR {
+ margin: 0 0 30px;
+}
+#sozaiMain #outBox #innBox #listBox #innR #qrBox #innR dl.imgSize {
+	overflow: hidden;
+	margin: 0 auto 5px;
+	padding: 0;
+}
+#sozaiMain #outBox #innBox #listBox #innR #qrBox #innR dl.imgSize span {
+	color: #FF0000;
+	font-weight: bold;
+}	
+#sozaiMain #outBox #innBox #listBox #innR #qrBox #innR dl.imgSize dt {
+	float: left;
+	width: 63px;
+	height: 19px;
+	margin: 0 10px 0 0;
+	text-indent: -9999px;
+}
+#sozaiMain #outBox #innBox #listBox #innR #qrBox #innR dl.imgSize dt#btnSize {
+	background: url(../img/sozai/btnImgSize.jpg) no-repeat;
+}
+#sozaiMain #outBox #innBox #listBox #innR #qrBox #innR dl.imgSize dt#btnVol {
+	background: url(../img/sozai/btnImgVolume.jpg) no-repeat;
+}
+#sozaiMain #outBox #innBox #listBox #innR #qrBox #innR dl.imgSize dd {
+	margin: 3px 0 0;
+	padding: 0;
+	font-size: 93%;
+}
+#sozaiMain #outBox #innBox #listBox #innR #qrBox #innR p#countTxt {
+	margin: 28px 0 23px;
+	padding: 0;
+}
+#sozaiMain #outBox #innBox #listBox #innR #qrBox #innR p#readTxt {
+	margin: 0;
+	padding: 0;
+}
+#sozaiMain #outBox #innBox #listBox #innR .snsBtnBox {
+	margin: 0 0 10px;
+}
+#sozaiMain #outBox #innBox #listBox #innR #sozaiDtlFree-2 {
+	overflow: hidden;
+	width: 336px;
+}
+
+/* 投稿者より
+================================================= */
+#sozaiMain #outBox #innBox #message {
+	clear: both;
+	overflow: hidden;
+	width: 664px;
+	margin: 0 0 20px;
+	padding: 10px 10px 0;
+	border: #B8496E 2px solid;
+	background: #FDF9FA;
+}
+/* 投稿者より */
+#sozaiMain #outBox #innBox #message #messeTit {
+	overflow: hidden;
+	clear: both;
+	height: 30px;
+	margin: 0 0 10px;
+	padding: 0 0 0 36px;
+	background: url(../img/sozai/titContribute.gif) no-repeat;
+	color: #8A3350;
+	font-size: 116%;
+	font-weight: bold;
+}
+#sozaiMain #outBox #innBox #message #messeTit .titL {
+	float: left;
+	padding: 3px 0 0;
+}
+#sozaiMain #outBox #innBox #message #messeTit .titL a {
+	margin: 0 0 0 20px;
+	color: #CC3399;
+	font-weight: normal;
+	font-size: 85%;
+}
+#sozaiMain #outBox #innBox #message #messeTit .titR {
+	float: right;
+}
+#sozaiMain #outBox #innBox #message #messeTit .titR a.addFav {
+	display: block;
+	width: 176px;
+	height: 22px;
+	background: url(../img/sozai/btnFavCre.jpg) no-repeat;
+	text-indent: -9999px;
+}
+#sozaiMain #outBox #innBox #message #messeTit .titR a:hover.addFav {
+	background-position: 0 -22px;
+}
+/* 紹介文 */
+#sozaiMain #outBox #innBox #message #mainTxt {
+	overflow: hidden;
+	margin: 0 0 10px;
+}
+#sozaiMain #outBox #innBox #message #mainTxt dl {
+	overflow: hidden;
+	float: left;
+	width: 102px;
+	margin: 0 10px 0 0;
+	padding: 0;
+	background: #00FF0;
+}
+#sozaiMain #outBox #innBox #message #mainTxt dl dt {
+	width: 100px;
+	height: 100px;
+	margin: 0;
+	border: #EAEAEA 1px solid;
+}
+#sozaiMain #outBox #innBox #message #mainTxt dl dd {
+	margin:	0;
+	padding:0;
+	text-align: center;
+}
+#sozaiMain #outBox #innBox #message #mainTxt #innR {
+	line-height: 1.6;
+	float: left;
+	width: 552px;
+}
+#sozaiMain #outBox #innBox #message .memName {
+	margin: 0 0 10px;
+}
+#sozaiMain #outBox #innBox #message .memName a {
+	font-weight: normal;
+	color: #CC3399;
+}
+#sozaiMain #outBox #innBox #message ul.memSozai {
+	width: 662px;
+	margin: 0 auto 10px;
+	padding: 0;
+	list-style: none;
+}
+#sozaiMain #outBox #innBox #message ul.memSozai li {
+	float: left;
+	width: 50px;
+	height: 50px;
+	margin: 0 18px 0 0;
+}
+#sozaiMain #outBox #innBox #message ul.memSozai li span {
+	display: table-cell;
+	width: 50px;
+	height: 50px;
+	vertical-align: middle;
+	margin: 0;
+	padding: 0;
+	border: #EAEAEA 1px solid;
+	text-align: center;
+	layout-grid-line: 50px;
+	*display: inline;
+	*zoom: 1;
+}
+#sozaiMain #outBox #innBox #message ul.memSozai li img {
+	vertical-align: middle;
+}
+#sozaiMain #outBox #innBox #message ul.memSozai li.last {
+	margin: 0;
+	border-bottom: none;
+}
+#sozaiMain #outBox #innBox #message #profTit {
+	width: 664px;
+	height: 20px;
+	margin: 0 0 10px;
+	background: url(../img/sozai/titProf.jpg) no-repeat;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+#sozaiMain #outBox #innBox #message p#profTxt {
+	margin: 0;
+	padding: 0;
+	line-height: 1.4;
+}
+
+/* コメント？？？
+================================================= */
+#sozaiMain #outBox #innBox .comBox {
+	overflow: hidden;
+	clear: both;
+	width: 664px;
+	margin: 0 0 0 20px;
+	padding: 10px;
+	background: #FAFAFA;
+	border-right: #CCCCCC 1px solid;
+	border-left: #CCCCCC 1px solid;
+	border-top: #CCCCCC 1px solid;
+}
+#sozaiMain #outBox #innBox .last {
+	margin: 0 0 20px;
+	border-bottom: #CCCCCC 1px solid;
+}
+#sozaiMain #outBox #innBox .comBox dl {
+	float: left;
+	width: 62px;
+	margin: 0 10px 0 0;
+	padding: 0;
+}
+#sozaiMain #outBox #innBox .comBox dl dt {
+	width: 62px;
+	height: 62px;
+	margin: 0 0 2px;
+}
+#sozaiMain #outBox #innBox .comBox dl dd {
+	width: 62px;
+	text-align: center;
+	font-size: 85%;
+}
+#sozaiMain #outBox #innBox .comBox .innR {
+	float: left;
+	width: 574px;
+	line-height: 1.4;
+}
+#sozaiMain #outBox #innBox .comBox .innR p {
+	text-align: right;
+}
+
+/* コメントボタン
+================================================= */
+#sozaiMain #outBox #innBox ul#btnList {
+	float: right;
+	height: 28px;
+	margin: 0 0 20px;
+	padding: 0;
+	list-style: none;
+}
+#sozaiMain #outBox #innBox ul#btnList li {
+	float: left;
+	margin: 0 0 0 10px;
+}
+#sozaiMain #outBox #innBox ul#btnList li#sendBtn a {
+	display: block;
+	width: 166px;
+	height: 28px;
+	background: url(../img/sozai/btnComment.gif) no-repeat;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+#sozaiMain #outBox #innBox ul#btnList li#listBtn a {
+	display: block;
+	width: 164px;
+	height: 28px;
+	background: url(../img/sozai/btnComList.gif) no-repeat;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+#sozaiMain #outBox #innBox ul#btnList li#sendBtn a:hover,
+#sozaiMain #outBox #innBox ul#btnList li#listBtn a:hover {
+	background-position: 0 -28px;
+}
+
+/* この画像のキーワード
+================================================= */
+#sozaiMain #outBox #innBox #keyBox {
+	overflow: hidden;
+	width: 688px;
+	margin: 0 auto 30px;	
+}
+#sozaiMain #outBox #innBox #keyBox h4 {
+	line-height: 35px;
+	width: 654px;
+	height: 35px;
+	margin: 0 0 16px;
+	padding: 0 0 0 34px;
+	background: url(../img/sozai/titKeyword.gif) no-repeat;
+	font-size: 116%;
+}
+#sozaiMain #outBox #innBox #keyBox h4 .contest {
+	float: right;
+	font-size: 100%;
+}
+#sozaiMain #outBox #innBox #keyBox ul {
+	overflow: hidden;
+	width: 668px;
+	margin: 0 auto 20px;
+	padding: 0;
+	list-style: none;
+}
+#sozaiMain #outBox #innBox #keyBox ul li {
+	float: left;
+	line-height: 1.4;
+	width: 147px;
+	margin: 0 16px 10px 0;
+	padding: 0 0 0 8px;
+	background: url(../img/sozai/icoKeyList.gif) 0 7px no-repeat;
+}
+#sozaiMain #outBox #innBox #keyBox ul li a {
+	display: block;
+}
+#sozaiMain #outBox #innBox #keyBox ul li.last {
+	margin: 0 0 10px;
+	border-bottom: none;
+}
+#sozaiMain #outBox #innBox #keyBox #agreement {
+	margin: 5px 0 0;
+	text-align: center;
+	font-size: 116%;
+}
+#sozaiMain #outBox #innBox #keyBox #agreement a {
+	margin: 0 4px 0 0;
+}
+#sozaiMain #outBox #innBox #keyBox #agreement label {
+	margin: 0 0 0 5px;
+}
+
+/* 一言コメントフォーム
+================================================= */
+#sozaiMain #outBox #innBox #keyBox #tblCmnt {
+	width: 100%;
+	margin: 0 0 20px;
+	border: #F3C9C7 1px solid;
+}
+#sozaiMain #outBox #innBox #keyBox #tblCmnt th {
+	width: 130px;
+	padding: 0 20px;
+	background: #FCF2F1;
+}
+#sozaiMain #outBox #innBox #keyBox #tblCmnt td {
+	padding: 10px;
+}
+#sozaiMain #outBox #innBox #keyBox #tblCmnt td #inputlength {
+	margin: 0 0 5px;
+}
+#sozaiMain #outBox #innBox #keyBox #tblCmnt td textarea {
+	width: 450px;
+	margin: 0 0 5px;
+	padding: 5px;
+	border: #CCCCCC 1px solid;
+}
+
+/* ダウンロードボタン
+================================================= */
+#sozaiMain #outBox #innBox #keyBox #dlBtn {
+	clear: both;
+	overflow: hidden;
+	margin: 10px auto 0;
+}
+#sozaiMain #outBox #innBox #keyBox #dlBtn a,
+#sozaiMain #outBox #innBox #keyBox #dlBtn #printImageNone,
+#sozaiMain #outBox #innBox #keyBox #dlBtn #downloadImageNone,
+#sozaiMain #outBox #innBox #keyBox #dlBtn #downloadEpsNone,
+#sozaiMain #outBox #innBox #keyBox #dlBtn #downloadZipNone {
+	display: block;
+	width: 155px;
+	height: 52px;
+	padding: 0;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+#sozaiMain #outBox #innBox #keyBox #dlBtn a#printImage {
+	float: right;
+	background: url(../img/sozai/btnPrint.jpg) no-repeat;
+}
+#sozaiMain #outBox #innBox #keyBox #dlBtn a#downloadImage {
+	float: left;
+	margin: 0 22px 0 0;
+	background: url(../img/sozai/btnImgDL.jpg) no-repeat;
+}
+#sozaiMain #outBox #innBox #keyBox #dlBtn a#downloadEps {
+	float: left;
+	margin: 0 22px 0 0;
+	background: url(../img/sozai/btnImgDLeps.jpg) no-repeat;
+}
+#sozaiMain #outBox #innBox #keyBox #dlBtn a#downloadZip {
+	float: left;
+	margin: 0 22px 0 0;
+	background: url(../img/sozai/btnImgDLzip.jpg) no-repeat;
+}
+#sozaiMain #outBox #innBox #keyBox #dlBtn a#printImage:hover,
+#sozaiMain #outBox #innBox #keyBox #dlBtn a#downloadImage:hover,
+#sozaiMain #outBox #innBox #keyBox #dlBtn a#downloadZip:hover,
+#sozaiMain #outBox #innBox #keyBox #dlBtn a#downloadEps:hover {
+	background-position: 0 -52px;
+}
+#sozaiMain #outBox #innBox #keyBox #dlBtn #printImageNone {
+	float: right;
+	background: url(../img/sozai/btnPrint.jpg) no-repeat 0 -104px;
+}
+#sozaiMain #outBox #innBox #keyBox #dlBtn #downloadImageNone {
+	float: left;
+	margin: 0 22px 0 0;
+	background: url(../img/sozai/btnImgDL.jpg) no-repeat 0 -104px;
+}
+#sozaiMain #outBox #innBox #keyBox #dlBtn #downloadEpsNone {
+	float: left;
+	margin: 0 22px 0 0;
+	background: url(../img/sozai/btnImgDLeps.jpg) no-repeat 0 -104px;
+}
+#sozaiMain #outBox #innBox #keyBox #dlBtn #downloadZipNone {
+	float: left;
+	margin: 0 22px 0 0;
+	background: url(../img/sozai/btnImgDLzip.jpg) no-repeat 0 -104px;
+}
+#sozaiMain #outBox #innBox #keyBox #msgArea {
+	/*width: 560px;*/
+	margin: 10px auto;
+	clear: both;
+}
+#sozaiMain #outBox #innBox #keyBox #msgArea .gray {
+	line-height: 2.0;
+	margin: 20px 0 0;
+	color: #999999;
+	font-weight: bold;
+	font-size: 93%;
+}
+#sozaiMain #outBox #innBox #keyBox #msgArea input {
+	border: 0;
+	padding: 6px;
+	font-size: 13px;
+	font-family: Arial, sans-serif;
+	border: solid 1px #ccc;
+	width:160px;
+}
+#sozaiMain #outBox #innBox #keyBox #msgArea .sendKey {
+	display: inline-block;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	padding: 2px 6px;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	color: #fef4e9;
+	border: solid 1px #da7c0c;
+	background: #f78d1d;
+	background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
+	background: -moz-linear-gradient(top,  #faa51a,  #f47a20);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');	
+}
+#sozaiMain #outBox #innBox #keyBox #msgArea .sendKey:hover {
+	text-decoration: none;
+	background: #f47c20;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
+	background: -moz-linear-gradient(top,  #f88e11,  #f06015);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+}
+#sozaiMain #outBox #innBox #keyBox #msgArea .sendKey:active {
+	position: relative;
+	top: 1px;
+	color: #fcd3a5;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
+	background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
+}
+/* キーワードを追加するボタン */
+#sozaiMain #outBox #innBox #addBox a {
+	display: block;
+	width: 164px;
+	height: 28px;
+	margin: 0 0 10px auto;
+	background: url(../img/sozai/btnAddWord.gif) no-repeat;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+#sozaiMain #outBox #innBox #addBox a:hover {
+	background-position: 0 -28px;
+}
+
+/* おすすめ素材・最新のイラスト
+================================================= */
+#sozaiMain #outBox #recomList {
+	clear: both;
+	overflow: hidden;
+	margin: 0 0 10px;
+}
+#sozaiMain #outBox #recomList #recomTit { 
+	width: 730px;
+	height: 30px;
+	margin: 0 0 12px;
+	background: url(../img/sozai/tit_sozai_1.jpg) no-repeat;
+}
+#sozaiMain #outBox #recomList #recomTit h5 {
+	line-height: 30px;
+	margin: 0 0 20px;
+	padding: 0 0 0 36px;
+	background: url(../img/sozai/icoTitRecomCate.gif) 12px center no-repeat;
+	color: #FFFFFF;
+	font-size: 116%;
+}
+#sozaiMain #outBox #recomList #sozaiImgBox {/* 共通スタイルの為打ち消し */
+	margin: 0;
+}
+#sozaiMain #outBox #recomList ul {
+	width: 652px;
+	margin: 0 auto;
+	padding: 0;
+	list-style: none;
+}
+/*#sozaiMain #outBox #recomList ul li {
+	float: left;
+	width: 62px;
+	height: 62px;
+	margin: 0 20px 10px 0;
+	padding: 0;
+	border: #EAEAEA 1px solid;
+}
+#sozaiMain #outBox #recomList ul li img{
+	width: 62px;
+	height: 62px;
+}*/
+#sozaiMain #outBox #recomList ul li {
+	float: left;
+	width: 62px;
+	height: 62px;
+	margin: 0 20px 10px 0;
+}
+#sozaiMain #outBox #recomList ul li span {
+	display: table-cell;
+	width: 62px;
+	height: 62px;
+	vertical-align: middle;
+	margin: 0;
+	padding: 0;
+	border: #EAEAEA 1px solid;
+	text-align: center;
+	layout-grid-line: 62px;
+	*display: inline;
+	*zoom: 1;
+}
+#sozaiMain #outBox #recomList ul li img {
+	vertical-align: middle;
+}
+#sozaiMain #outBox #recomList ul li.last {
+	margin: 0;
+}
+
+/* ダウンロードコメント
+================================================= */
+#sozaiMain #outBox #dlCmntBox {
+	clear: both;
+	overflow: hidden;
+	margin: 0 0 10px;
+}
+#sozaiMain #outBox #dlCmntBox #dlCmntTit { 
+	width: 730px;
+	height: 30px;
+	margin: 0 0 12px;
+	background: url(../img/sozai/tit_sozai_2.jpg) no-repeat;
+}
+#sozaiMain #outBox #dlCmntBox #dlCmntTit h5 {
+	line-height: 30px;
+	margin: 0 0 20px;
+	padding: 0 0 0 36px;
+	background: url(../img/sozai/icoTitRecomCate2.gif) 12px center no-repeat;
+	color: #FFFFFF;
+	font-size: 116%;
+}
+#sozaiMain #outBox #dlCmntBox .inn {
+	margin: 0 0 10px;
+	padding: 10px;
+	border: #DDDDDD 1px solid;
+}
+#sozaiMain #outBox #dlCmntBox .inn .ph {
+	float: left;
+	width: 48px;
+	overflow: hidden;
+	border: #EAEAEA 1px solid;
+}
+#sozaiMain #outBox #dlCmntBox .inn .ph img {
+	width: 48px;
+	height: 48px;
+}
+#sozaiMain #outBox #dlCmntBox .inn dl {
+	float: right;
+	width: 648px;
+}
+#sozaiMain #outBox #dlCmntBox .inn dl dt {
+	line-height: 1.3;
+	margin: 0 0 10px;
+	padding: 0 0 7px;
+	border-bottom: #E17B73 1px dotted;
+}
+#sozaiMain #outBox #dlCmntBox .inn dl dd {
+	display: inline;
+	float: right;
+	padding: 0 0 0 15px;
+	font-size: 93%;
+}
+/* 一覧ボタン */
+#sozaiMain #outBox #dlCmntBox .btnBox {
+	clear: both;
+	width: 730px;
+	margin: 10px 0;
+	overflow: hidden;
+}
+#sozaiMain #outBox #dlCmntBox .btnBox .djtLink {
+	float: right;
+	height: 23px;
+	background: url(/img/detail/btn_dtlLink_l.gif) no-repeat left top;
+	white-space: nowrap;/*ie6で文字列が縦並びになってしまうものを解消*/
+}
+#sozaiMain #outBox #dlCmntBox .btnBox .djtLink a {
+	display: block;
+	height: 23px;
+	line-height: 23px;
+	padding: 0 5px 0 29px;
+	background: url(/img/detail/btn_dtlLink_r.gif) no-repeat right top;
+	color: #000000;
+	text-decoration: none;
+}
+#sozaiMain #outBox #dlCmntBox .btnBox .djtLink a:hover {
+	color: #FF0000;
+}
+#sozaiMain #outBox #dlCmntBox .btnBox .djtLink a span {/*ボタン中画像*/
+	display: block;
+	padding: 0 5px;
+	background: url(/img/detail/btn_dtlLink_c.gif) repeat-x left top;
+}
+
+/* フリースペース3
+================================================= */
+#sozaiMain .sozaiDtlFree-3 {
+	width: 728px;
+	margin: 0 auto 20px;
+}
+
+
+/*---------------------------------------------------------------------------------------------
+  コメント一覧ページ
+---------------------------------------------------------------------------------------------*/
+#sozaiMain #commentListBox {
+	width: 730px;
+	margin: 0 auto;
+	float: left;
+}
+#sozaiMain #commentListBox .comBox {
+	overflow: hidden;
+	clear: both;
+	width: 708px;
+	padding: 10px;
+	background: #FAFAFA;
+	border-right: #CCC 1px solid;
+	border-left: #CCC 1px solid;
+	border-top: #CCC 1px solid;
+}
+#sozaiMain #commentListBox .last {
+	margin: 0 0 20px;
+	border-bottom: #CCC 1px solid;
+}
+#sozaiMain #commentListBox .comBox dl {
+	float: left;
+	width: 62px;
+	margin: 0 10px 0 0;
+	padding: 0;
+}
+#sozaiMain #commentListBox .comBox dl dt {
+	width: 62px;
+	height: 62px;
+	margin: 0 0 2px;
+}
+#sozaiMain #commentListBox .comBox dl dd {
+	width: 62px;
+	margin: 2px 0 0;
+	text-align: center;
+	font-size: 85%;
+}
+#sozaiMain #commentListBox .comBox .innR {
+	float: left;
+	width: 636px;
+	line-height: 1.4;
+}
+#sozaiMain #commentListBox .comBox .innR p {
+	margin: 0;
+	text-align: right;
+}
+
+
+/*---------------------------------------------------------------------------------------------
+  キーワード一覧ページ
+---------------------------------------------------------------------------------------------*/
+#sozaiBox #keywordListBox {
+	width: 730px;
+	margin: 0 auto;
+	float: left;
+}
+#sozaiBox #keywordListBox #breadBox2 {
+	margin: 0 0 20px;
+}
+#sozaiBox #keywordListBox .titBox {
+	width: 730px;
+	height: 35px;
+	margin: 0 0 20px;
+	background: url(../img/sozai/tit_sozai_1.jpg) no-repeat;
+}
+#sozaiBox #keywordListBox .titBox h2 {
+	line-height: 36px;
+	margin: 0;
+	padding: 0 0 0 47px;
+	background:url(../img/sozai/ico_sozai_keyword.jpg) no-repeat 12px center;
+	color: #FFF;
+	font-size: 115%;
+}
+#sozaiBox #keywordListBox .inn {
+	width: 720px;
+	margin: 0 0 0 10px;
+}
+#sozaiBox #keywordListBox .inn p {
+	width: 170px;
+	margin: 0 10px 10px 0;
+	font-size: 108%;
+	line-height: 1.3;
+	float: left;
+}
+#sozaiBox #keywordListBox .inn p a {
+	padding: 7px 0 7px 12px;
+	display: block;
+	border-top: 1px dotted #DDDDDD;
+	background: url(../img/common/csr_03.gif) no-repeat 0 13px;
+}
+
+
+/*---------------------------------------------------------------------------------------------
+  素材投稿フォーム
+---------------------------------------------------------------------------------------------*/
+#sozaiMain #sozaiFormBox {
+	width: 730px;
+	height: auto;
+	overflow: hidden;
+	margin: 0 0 20px 0;
+}
+#sozaiMain #sozaiFormBox p {
+	width: 700px;
+	margin: 0 auto 20px auto;
+	line-height: 1.3;
+}
+#sozaiMain #sozaiFormBox p#notes {
+	color: #FF3300;
+	font-weight: bold;
+	text-align: center;
+}
+#sozaiMain #sozaiFormBox p.alert {
+	width: auto;
+	margin: 0;
+}
+#sozaiMain #sozaiFormBox .flowBox {
+	width: 700px;
+	margin: 0 auto 30px;
+}
+#sozaiMain #sozaiFormBox .tblSozai {
+	width: 696px;
+	margin: 0 auto 20px auto;
+	border: #C72727 2px solid;
+	border-collapse: collapse;
+}
+#sozaiMain #sozaiFormBox .tblSozai th {
+	width: 25%;
+	line-height: 1.3;
+	vertical-align: text-top;
+	padding: 9px;
+	border-bottom: #C72727 1px solid;
+	background: #FBF0F0;
+	color: #974B00;
+	font-size: 93%;
+	text-align: left;
+}
+#sozaiMain #sozaiFormBox .tblSozai td {
+	width: 75%;
+	line-height: 1.3;
+	vertical-align: top;
+	padding: 9px;
+	border-bottom: #C72727 1px solid;
+	font-size: 93%;
+	text-align: left;
+}
+#sozaiMain #sozaiFormBox .tblSozai td p.txt {
+	line-height: 1.2;
+	margin: 0;
+	padding: 0 0 0 1em;
+	color: #FF3300;
+	font-weight: bold;
+	text-indent: -1em;
+}
+#sozaiMain #sozaiFormBox .tblSozai td ul#category {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#sozaiMain #sozaiFormBox .tblSozai td ul#keyword {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/* 投稿規約 */
+#sozaiMain #ruleBox {
+	width: 100%;
+	height: 200px;
+	overflow: auto;
+	border: 1px solid #CCCCCC;
+}
+#sozaiContributionRuleBox {
+	width: 95%;
+	height: auto;
+	overflow: hidden;
+	margin: 10px;
+}
+#sozaiContributionRuleBox dl {
+	margin: 0 0 10px;
+	padding: 0;
+	line-height: 1.4;
+}	
+#sozaiContributionRuleBox dl dt {
+	margin: 0 0 13px;
+	padding: 0;
+}
+#sozaiContributionRuleBox dl dd {
+	margin: 0 0 0 1em;
+	text-indent: -1em;
+	padding: 0;
+}
+#sozaiContributionRuleBox dl dd#ddLast {
+	margin: 0 0 15px 1em;
+	text-indent: -1em;
+	padding: 0;
+}
+

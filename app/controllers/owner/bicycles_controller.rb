@@ -21,12 +21,15 @@ class Owner::BicyclesController < ApplicationController
 
   def edit
     @bicycle = Bicycle.find(params[:id])
-    @exhibition_spots = @bicycle.exhibition_spots.build
-    @lend_spots =@bicycle.lend_spots.build
-    @return_spots = @bicycle.return_spots.build
-    @bicycle_accessories = @bicycle.bicycle_accessories.build
-    @bicycle_picture = @bicycle.bicycle_pictures.build
     @picture = @bicycle.bicycle_pictures
+    @accessory = @bicycle.bicycle_accessories
+
+    bicycle_new = Bicycle.new
+    exhibition_spots = bicycle_new.exhibition_spots.build
+    lend_spots =bicycle_new.lend_spots.build
+    return_spots = bicycle_new.return_spots.build
+    bicycle_accessories = bicycle_new.bicycle_accessories.build
+    bicycle_picture = bicycle_new.bicycle_pictures.build
   end
 
   def create

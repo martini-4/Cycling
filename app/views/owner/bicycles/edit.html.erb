@@ -3,20 +3,35 @@
 
 
 	<h2><%= @bicycle.name %></h2>
+	<% @picture.each do |picture| %>
+    	<div class="bicycle_edit_picture_box">
+    		<!-- 写真の表示 -->
+    		<%= attachment_image_tag picture, :bicycle_picture, class: 'bicycle_edit_picture'%>
+	    	<div class="bicycle_edit_picture_link">
+				<!-- 写真のデフォルトを変更する -->
+				<%= form_for picture, :url => { :controller =>'bicycle_pictures', :action => 'update',picture: picture.id } do |f| %>
+					<%= f.submit 'この写真を一覧ページに表示する', class: "btn btn-success"%>
+				<% end %>
+			</div>
+			<div class="bicycle_edit_picture_link">
+				<!-- 写真の削除 -->
+	    		<%= link_to '削除', owner_bicycle_picture_path(@bicycle.id, picture: picture.id), method: :delete, class: 'btn btn-danger' %>
+	    	</div>
+    	</div>
+    <% end %>
 	<%= form_for(@bicycle,url: owner_bicycle_path) do |bicycle| %>
+		<div class="">
+    	</div>
 		<div class="bicycle_new_form">
 			<h2>自転車装備</h2>
 			<%= bicycle.fields_for :bicycle_accessories do |f| %>
 				<p>該当するものにチェックを入れて下さい</p>
-				<div class="bicycle_new_form accessory_form">
-					<% Accessory.all.each do |accessory| %>
-				        <%= check_box_tag "bicycle[accessory_ids][]",f, accessory.id %>
-				        <%= accessory.accessorie_name %>
+				<% Accessory.all.each do |accessory| %>
+					<div class="bicycle_edit_form accessory_form">
+				        	<%= check_box_tag "bicycle[accessory_ids][]", accessory.id , checked = BicycleAccessory.checked?(@bicycle, accessory), :id => accessory.id, class: 'check_box', id: accessory %>
+				        	<%=  f.label accessory.accessorie_name, for: accessory, class: 'check_label' %>
+				    </div>
 				    <% end %>
-					<%= f.collection_check_boxes(:accessory_ids, Accessory.all, :id, :accessorie_name) do |b| %>
- 						<%= b.label { b.check_box + b.text } %>
- 					<% end %>
-				</div>
 			<% end %>
 		</div>
 		<div class="bicycle_new_form">
@@ -24,11 +39,7 @@
 			<%= bicycle.collection_select(:handle_id, Handle.all, :id, :handle_type, prompt: "") %>
 		</div>
 		<%= bicycle.label :自転車の写真を添付して下さい。 %>
-		<%= bicycle.fields_for :bicycle_pictures do |bicycle_picture| %>
-            <div class="">
-           		 <%= render 'edit_bicycle_picture_fields', f: @picture   %>
-    		</div>
-	    <% end %>
+
 		<div class="bicycle_new_form　links">
 			<%= link_to_add_association "写真の追加", bicycle, :bicycle_pictures, class: "btn btn-primary" %>
 		</div>
@@ -41,9 +52,9 @@
 		<p>(相場1000円)</p>
 		<%= bicycle.label :出品地域の選択 %>
 	    <div class="bicycle_new_form">
-	    	<%= bicycle.fields_for :exhibition_spots do |exhibition| %>
+	    	<%= bicycle.fields_for :exhibition_spots do |e| %>
 	                <div class="">
-	               		 <%= render 'edit_exhibition_spot_fields', f: exhibition  %>
+	               		 <%= render 'edit_exhibition_spot_fields', f: e  %>
 	        		</div>
 	        <% end %>
 		    <%= link_to_add_association "出品場所の追加", bicycle, :exhibition_spots, class: "btn btn-primary" %>
@@ -53,15 +64,20 @@
 		</div>
 		<%= bicycle.label :貸し出し場所の指定 %>
 		<div class="bicycle_new_form">
-			<%= bicycle.fields_for :lend_spots do |lend_spot| %>
+			<%= bicycle.fields_for :lend_spots do |l| %>
 	                <div class="">
-	               		 <%= render 'edit_lend_spot_fields', f: lend_spot  %>
+	               		 <%= render 'edit_lend_spot_fields', f: l  %>
 	        		</div>
 	        <% end %>
 			<%= link_to_add_association "貸し出し場所の追加", bicycle, :lend_spots, class: "btn btn-primary" %>
 		</div>
 		<%= bicycle.label :返却場所の指定 %>
 		<div class="bicycle_new_form">
+			<%= bicycle.fields_for :return_spots do |r| %>
+	                <div class="">
+	               		 <%= render 'edit_return_spot_fields', f: r  %>
+	        		</div>
+	        <% end %>
 			<%= link_to_add_association "返却場所の追加", bicycle, :return_spots, class: "btn btn-primary" %>
 			<p>
 			貸し出し場所・返却場所はご自身の都合の良い場所を指定ください。<br>
@@ -73,7 +89,7 @@
 			<%= bicycle.text_area :description,placeholder: "200文字まで", class: 'bicycle_description' %>
 		</div>
 		<div class="bicycle_new_submit">
-			<%= bicycle.submit value: "更新", class: 'btn btn-success bicycle_new_form' %>
+			<%= bicycle.submit value: "　更新　", class: 'bicycle_submit btn btn-success bicycle_new_form' %>
 		</div>
 	<% end %>
 	 <p>管理者が確認し、問題が無ければ出品されます。<br>

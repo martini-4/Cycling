@@ -2,6 +2,6 @@
 <div class="nested-fields">
 	<%= f.collection_select(:city_id, City.all, :id, :city_name, prompt: "") %>
 	<%= f.check_box :_destroy %>
-    <%= f.label :_destroy, "削除" %>
+    <%= f.label :_destroy, "削除", class: 'red' %>
 </div>
 

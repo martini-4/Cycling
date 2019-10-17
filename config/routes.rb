@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   	resources :contracts, only: [:index, :show]
   	resources :lend_days, only: [:edit, :create, :destroy]
   	resources :owners, only: [:show, :edit, :update, :destroy]
-  	resources :bicycle_pictures, only: [:destroy]
+  	resources :bicycle_pictures, only: [:update, :destroy]
   	resources :lend_spots, only: [:destroy]
   	resources :return_spots, only: [:destroy]
   	resources :exhibition_spots, only: [:destroy]

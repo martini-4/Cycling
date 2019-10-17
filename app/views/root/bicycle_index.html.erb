@@ -6,7 +6,7 @@
 				<div class="">
 					<%= link_to(owner_bicycle_path(e.bicycle)) do %>
 						<% @picture = e.bicycle.bicycle_pictures.find_by(default: :true) %>
-			  			<%= attachment_image_tag @picture, :bicycle_picture,:fill, 100, 100, fallback: "img1.png", class: 'bicycle_index_picture'%>
+			  			<%= attachment_image_tag @picture, :bicycle_picture, fallback: "img1.png", class: 'bicycle_index_picture'%>
 			  		<% end %>
 				</div>
 				<div class="bicycle_index_box2">

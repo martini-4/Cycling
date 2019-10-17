@@ -7,9 +7,10 @@
 	margin: 50px auto;
 	background-color: #fef4e3;
 	padding: 30px 100px;
+	font-size: 20px
 }
 .bicycle_new p{
-	padding-left: 20%;
+	padding-left: 10%;
 }
 .bicycle_new_form{
 	margin: 10px 0;
@@ -38,4 +39,42 @@
 	margin: 50px auto;
 	background-color: #fef4e3;
 	padding: 30px 100px;
+}
+.bicycle_edit_picture_box{
+	widows: 100%;
+	height: 200px;
+	margin: 20px 0;
+}
+.bicycle_edit_picture{
+	height: 200px;
+    width: 200px;
+    margin-left: 20px;
+    float: left;
+}
+// 自転車編集画面
+.red{
+	color: red;
+}
+.bicycle_edit_picture_link{
+	float: left;
+	line-height: 200px;
+	padding-left: 3%;
+}
+.bicycle_edit_form{
+	margin: 10px 0;
+	width: 33%;
+	float: left;
+	padding-left: 5%;
+}
+.check_box{
+	transform: scale(2);
+}
+.check_label{
+	border: 1px solid #000000;
+	border-radius: 10px;
+	padding: 0 10px;
+	background-color: #f2fbff;
+}
+.bicycle_submit{
+	padding: 20px 50px;
 }

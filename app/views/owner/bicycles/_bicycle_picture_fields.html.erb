@@ -1,5 +1,4 @@
 <div class="nested-fields">
 	<%= f.attachment_field :bicycle_picture %>
-    <%= f.check_box :_destroy %>
-    <%= f.label :_destroy, "削除" %>
+    <%= link_to_remove_association "削除", f, class: "btn btn-default" %>
 </div>

@@ -14,18 +14,45 @@
 //= require activestorage
 //= require jquery
 //= require jquery_ujs
+//= require jquery.turbolinks
 //= require cocoon
-//= require turbolinks
 //= require popper
 //= require bootstrap-sprockets
+//= require moment
+//= require fullcalendar
+//= require fullcalendar/lang/ja
 //= require_tree .
 
 
 
 
+// カレンダー
+$(function () {
+    function eventCalendar() {
+        return $('#calendar').fullCalendar({});
+    };
+    // lengthを呼び出すことで、#calendarが存在していた場合はtrueの処理がされ、無い場合はnillを返す
+    if ($('#calendar').length) {
+    	// 設定の読み込み
+        function eventCalendar() {
+            return $('#calendar').fullCalendar({
+            });
+        };
+        // 削除
+        function clearCalendar() {
+            $('#calendar').html('');
+        };
 
-$(document).ready(function(){
-  $('#calendar').fullCalendar({
-  });
+        // 呼び出し
+        $(document).on('turbolinks:load', function () {
+            eventCalendar();
+        });
+        $(document).on('turbolinks:before-cache', clearCalendar);
+            // イベント
+        $('#calendar').fullCalendar({
+            events: location.pathname,
+            eventColor: '#63ceef',
+            lang: 'ja'
+        });
+        };
 });
-

@@ -19,7 +19,7 @@ class Owner::OwnersController < ApplicationController
     end
   end
 
-  def destory
+  def destroy
   end
 
   def withdrawal

@@ -8,6 +8,6 @@ class Admin::NewOwnersController < ApplicationController
   def update
   end
 
-  def destory
+  def destroy
   end
 end

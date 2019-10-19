@@ -56,7 +56,7 @@ class Owner::BicyclesController < ApplicationController
 
   end
 
-  def destory
+  def destroy
   end
   private
     def bicycle_params

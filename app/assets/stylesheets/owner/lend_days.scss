@@ -1,9 +1,42 @@
 // Place all the styles related to the owner/lend_days controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.lend_day_new{
+.lend_day_edit{
 	width: 60%;
 	margin: 50px auto;
 	background-color: #fef4e3;
 	padding: 30px 100px;
+	font-size: 20px;
+}
+.lend_day_name{
+	padding-left: 10%;
+}
+.lend_day_content{
+	width: 50%;
+	float: left;
+	text-align: center;
+    margin: 20px auto;
+}
+#calendar{
+	background-color: #ffffff;
+}
+.edit_calendar{
+	margin: 30px 0;
+}
+.fc-widget-header{
+	background-color: #d2ffdb;
+}
+.edit_lend_day{
+	width: 50%;
+	float: left;
+	padding-left: 10%;
+}
+.lend_days_index{
+	width: 50%;
+	float: left;
+	margin: 10px 0;
+}
+.lend_days_form{
+	width: 100%;
+	text-align: center;
 }

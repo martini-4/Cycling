@@ -3,22 +3,22 @@
 
 
 	<h2>自転車情報</h2>
-	<%= form_for(@bicycle,url: owner_bicycles_path) do |bicycle| %>
+	<%= form_for(@bicycle,url: owner_bicycles_path) do |b| %>
 		<div class="bicycle_new_form">
-			<%= bicycle.label :自転車の商品名 %>
-			<%= bicycle.text_field :name %>
+			<%= b.label :自転車の商品名 %>
+			<%= b.text_field :name %>
 		</div>
 		<div class="bicycle_new_form">
-			<%= bicycle.label :自転車の確認の為販売証明書の写真の添付をお願い致します。 %><br>
-			<%= bicycle.attachment_field :proof_picture %><br>
+			<%= b.label :自転車の確認の為販売証明書の写真の添付をお願い致します。 %><br>
+			<%= b.attachment_field :proof_picture %><br>
 		</div>
 		<div class="bicycle_new_form">
-			<%= bicycle.label :自転車購入者指名 %>
-			<%= bicycle.text_field :buyer_name %>
+			<%= b.label :自転車購入者指名 %>
+			<%= b.text_field :buyer_name %>
 		</div>
 		<div class="bicycle_new_form">
 			<h2>自転車装備</h2>
-			<%= bicycle.fields_for :bicycle_accessories do |f| %>
+			<%= b.fields_for :bicycle_accessories do |f| %>
 				<p>該当するものにチェックを入れて下さい</p>
 				<div class="bicycle_new_form accessory_form">
 					<% Accessory.all.each do |accessory| %>
@@ -29,38 +29,38 @@
 			<% end %>
 		</div>
 		<div class="bicycle_new_form">
-			<%= bicycle.label :自転車の種類 %>
-			<%= bicycle.collection_select(:bicycle_type_id, BicycleType.all, :id, :bicycle_type, prompt: "") %>
+			<%= b.label :自転車の種類 %>
+			<%= b.collection_select(:bicycle_type_id, BicycleType.all, :id, :bicycle_type, prompt: "") %>
 		</div>
 		<div class="bicycle_new_form">
-			<%= bicycle.label :ハンドルタイプ %>
-			<%= bicycle.collection_select(:handle_id, Handle.all, :id, :handle_type, prompt: "") %>
+			<%= b.label :ハンドルタイプ %>
+			<%= b.collection_select(:handle_id, Handle.all, :id, :handle_type, prompt: "") %>
 		</div>
-		<%= bicycle.label :自転車の写真を添付して下さい。 %>
+		<%= b.label :自転車の写真を添付して下さい。 %>
 		<div class="bicycle_new_form　links">
-			<%= link_to_add_association "写真の追加", bicycle, :bicycle_pictures, class: "btn btn-primary" %>
+			<%= link_to_add_association "写真の追加", b, :bicycle_pictures, class: "btn btn-primary" %>
 		</div>
 		<p>自転車の写真は出来るだけ多い方が好ましいです。</p>
 		<h4>出品詳細情報</h4>
 		<div class="bicycle_new_form">
-			<%= bicycle.label '１日の料金' %>
-			<%= bicycle.text_field :price %>円
+			<%= b.label '１日の料金' %>
+			<%= b.text_field :price %>円
 		</div>
 		<p>(相場1000円)</p>
-		<%= bicycle.label :出品地域の選択 %>
+		<%= b.label :出品地域の選択 %>
 	    <div class="bicycle_new_form">
-		    <%= link_to_add_association "出品場所の追加", bicycle, :exhibition_spots, class: "btn btn-primary" %>
+		    <%= link_to_add_association "出品場所の追加", b, :exhibition_spots, class: "btn btn-primary" %>
 		    <p>自身が貸し出しができる場所の地域を選択して下さい。<br>
     		地域がまたがるなどの場合は２箇所選択して下さい。</p>
 		    <br><br>
 		</div>
-		<%= bicycle.label :貸し出し場所の指定 %>
+		<%= b.label :貸し出し場所の指定 %>
 		<div class="bicycle_new_form">
-			<%= link_to_add_association "貸し出し場所の追加", bicycle, :lend_spots, class: "btn btn-primary" %>
+			<%= link_to_add_association "貸し出し場所の追加", b, :lend_spots, class: "btn btn-primary" %>
 		</div>
-		<%= bicycle.label :返却場所の指定 %>
+		<%= b.label :返却場所の指定 %>
 		<div class="bicycle_new_form">
-			<%= link_to_add_association "返却場所の追加", bicycle, :return_spots, class: "btn btn-primary" %>
+			<%= link_to_add_association "返却場所の追加", b, :return_spots, class: "btn btn-primary" %>
 			<p>
 			貸し出し場所・返却場所はご自身の都合の良い場所を指定ください。<br>
 			また、その他、相談可など入れておくと問い合わせ数が上がる可能性がございます。
@@ -68,10 +68,10 @@
 		</div>
 		<p>その他特筆事項（利用者に伝えたい事や注意点など御座いましたらご記入下さい。）</p>
 		<div class="bicycle_new_form bicycle_description_box">
-			<%= bicycle.text_area :description,placeholder: "200文字まで", class: 'bicycle_description' %>
+			<%= b.text_area :description,placeholder: "200文字まで", class: 'bicycle_description' %>
 		</div>
 		<div class="bicycle_new_submit">
-			<%= bicycle.submit value: "出品を申し込む", class: 'btn btn-success bicycle_new_form' %>
+			<%= b.submit value: "出品を申し込む", class: 'btn btn-success bicycle_new_form' %>
 		</div>
 	<% end %>
 	 <p>管理者が確認し、問題が無ければ出品されます。<br>

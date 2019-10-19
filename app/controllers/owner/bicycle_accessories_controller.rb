@@ -3,7 +3,7 @@ class Owner::BicycleAccessoriesController < ApplicationController
 		bicycle_accessory = bicycle_accessory.new(bicycle_accessories_params)
 		bicycle_accessort.save
 	end
-	def destory
+	def destroy
 	end
 	private
 	  def bicycle_accessories_params

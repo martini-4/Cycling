@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :events
   devise_for :owners
   devise_for :admins
   devise_for :users
@@ -19,7 +20,7 @@ Rails.application.routes.draw do
   	resources :rooms, only: [:index]
   	resources :payees, only: [:edit, :update, :create]
   	resources :contracts, only: [:index, :show]
-  	resources :lend_days, only: [:edit, :create, :destroy]
+  	resources :lend_days, only: [:edit, :update, :destroy]
   	resources :owners, only: [:show, :edit, :update, :destroy]
   	resources :bicycle_pictures, only: [:update, :destroy]
   	resources :lend_spots, only: [:destroy]

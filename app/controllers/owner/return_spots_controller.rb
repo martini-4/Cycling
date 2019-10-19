@@ -1,4 +1,4 @@
 class Owner::ReturnSpotsController < ApplicationController
-	def destory
+	def destroy
 	end
 end

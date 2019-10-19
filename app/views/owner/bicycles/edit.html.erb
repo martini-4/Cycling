@@ -15,16 +15,16 @@
 			</div>
 			<div class="bicycle_edit_picture_link">
 				<!-- 写真の削除 -->
-	    		<%= link_to '削除', owner_bicycle_picture_path(@bicycle.id, picture: picture.id), method: :delete, class: 'btn btn-danger' %>
+	    		<%= link_to '削除', owner_bicycle_picture_path(@bicycle.id, picture: picture.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: 'btn btn-danger' %>
 	    	</div>
     	</div>
     <% end %>
-	<%= form_for(@bicycle,url: owner_bicycle_path) do |bicycle| %>
+	<%= form_for(@bicycle,url: owner_bicycle_path) do |b| %>
 		<div class="">
     	</div>
 		<div class="bicycle_new_form">
 			<h2>自転車装備</h2>
-			<%= bicycle.fields_for :bicycle_accessories do |f| %>
+			<%= b.fields_for :bicycle_accessories do |f| %>
 				<p>該当するものにチェックを入れて下さい</p>
 				<% Accessory.all.each do |accessory| %>
 					<div class="bicycle_edit_form accessory_form">
@@ -35,50 +35,50 @@
 			<% end %>
 		</div>
 		<div class="bicycle_new_form">
-			<%= bicycle.label :ハンドルタイプ %>
-			<%= bicycle.collection_select(:handle_id, Handle.all, :id, :handle_type, prompt: "") %>
+			<%= b.label :ハンドルタイプ %>
+			<%= b.collection_select(:handle_id, Handle.all, :id, :handle_type, prompt: "") %>
 		</div>
-		<%= bicycle.label :自転車の写真を添付して下さい。 %>
+		<%= b.label :自転車の写真を添付して下さい。 %>
 
 		<div class="bicycle_new_form　links">
-			<%= link_to_add_association "写真の追加", bicycle, :bicycle_pictures, class: "btn btn-primary" %>
+			<%= link_to_add_association "写真の追加", b, :bicycle_pictures, class: "btn btn-primary" %>
 		</div>
 		<p>自転車の写真は出来るだけ多い方が好ましいです。</p>
 		<h4>出品詳細情報</h4>
 		<div class="bicycle_new_form">
-			<%= bicycle.label '１日の料金' %>
-			<%= bicycle.text_field :price %>円
+			<%= b.label '１日の料金' %>
+			<%= b.text_field :price %>円
 		</div>
 		<p>(相場1000円)</p>
-		<%= bicycle.label :出品地域の選択 %>
+		<%= b.label :出品地域の選択 %>
 	    <div class="bicycle_new_form">
-	    	<%= bicycle.fields_for :exhibition_spots do |e| %>
+	    	<%= b.fields_for :exhibition_spots do |e| %>
 	                <div class="">
 	               		 <%= render 'edit_exhibition_spot_fields', f: e  %>
 	        		</div>
 	        <% end %>
-		    <%= link_to_add_association "出品場所の追加", bicycle, :exhibition_spots, class: "btn btn-primary" %>
+		    <%= link_to_add_association "出品場所の追加", b, :exhibition_spots, class: "btn btn-primary" %>
 		    <p>自身が貸し出しができる場所の地域を選択して下さい。<br>
     		地域がまたがるなどの場合は２箇所選択して下さい。</p>
 		    <br><br>
 		</div>
-		<%= bicycle.label :貸し出し場所の指定 %>
+		<%= b.label :貸し出し場所の指定 %>
 		<div class="bicycle_new_form">
-			<%= bicycle.fields_for :lend_spots do |l| %>
+			<%= b.fields_for :lend_spots do |l| %>
 	                <div class="">
 	               		 <%= render 'edit_lend_spot_fields', f: l  %>
 	        		</div>
 	        <% end %>
-			<%= link_to_add_association "貸し出し場所の追加", bicycle, :lend_spots, class: "btn btn-primary" %>
+			<%= link_to_add_association "貸し出し場所の追加", b, :lend_spots, class: "btn btn-primary" %>
 		</div>
-		<%= bicycle.label :返却場所の指定 %>
+		<%= b.label :返却場所の指定 %>
 		<div class="bicycle_new_form">
-			<%= bicycle.fields_for :return_spots do |r| %>
+			<%= b.fields_for :return_spots do |r| %>
 	                <div class="">
 	               		 <%= render 'edit_return_spot_fields', f: r  %>
 	        		</div>
 	        <% end %>
-			<%= link_to_add_association "返却場所の追加", bicycle, :return_spots, class: "btn btn-primary" %>
+			<%= link_to_add_association "返却場所の追加", b, :return_spots, class: "btn btn-primary" %>
 			<p>
 			貸し出し場所・返却場所はご自身の都合の良い場所を指定ください。<br>
 			また、その他、相談可など入れておくと問い合わせ数が上がる可能性がございます。
@@ -86,10 +86,10 @@
 		</div>
 		<p>その他特筆事項（利用者に伝えたい事や注意点など御座いましたらご記入下さい。）</p>
 		<div class="bicycle_new_form bicycle_description_box">
-			<%= bicycle.text_area :description,placeholder: "200文字まで", class: 'bicycle_description' %>
+			<%= b.text_area :description,placeholder: "200文字まで", class: 'bicycle_description' %>
 		</div>
 		<div class="bicycle_new_submit">
-			<%= bicycle.submit value: "　更新　", class: 'bicycle_submit btn btn-success bicycle_new_form' %>
+			<%= b.submit value: "　更新　", class: 'bicycle_submit btn btn-success bicycle_new_form' %>
 		</div>
 	<% end %>
 	 <p>管理者が確認し、問題が無ければ出品されます。<br>

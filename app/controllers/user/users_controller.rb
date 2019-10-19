@@ -12,6 +12,6 @@ class User::UsersController < ApplicationController
   def update
   end
 
-  def destory
+  def destroy
   end
 end

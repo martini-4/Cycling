@@ -1,0 +1,9 @@
+<div class="nested-fields">
+	<div class="">
+		<%= raw sprintf(
+			f.date_select(:lend_day,
+				 use_month_numbers: true,
+				 date_separator: '%s'),
+				 '年 ', '月 ') + '日'  %>
+	    <%= link_to_remove_association "削除", f, class: "btn btn-default" %>
+</div>

@@ -1,4 +1,4 @@
 class Owner::ExhibitionSpotsController < ApplicationController
-	def destory
+	def destroy
 	end
 end

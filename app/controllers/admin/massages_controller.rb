@@ -2,6 +2,6 @@ class Admin::MassagesController < ApplicationController
   def show
   end
 
-  def destory
+  def destroy
   end
 end

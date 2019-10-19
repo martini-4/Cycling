@@ -71,6 +71,7 @@ gem "refile-mini_magick"
 gem 'bootstrap', '~> 4.1.1'
 
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
 
 gem 'pry-byebug'
 
@@ -88,3 +89,5 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 
 # カレンダー
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'

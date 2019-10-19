@@ -8,6 +8,6 @@ class Admin::BicyclesController < ApplicationController
   def update
   end
 
-  def destory
+  def destroy
   end
 end

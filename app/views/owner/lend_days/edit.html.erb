@@ -1,18 +1,48 @@
-<div class="lend_day_new">
-	<h1>貸し出し日の編集</h1>
-	<div class="profile_picture_box">
-	</div>
-	<div class="lend_day_bicycle">
-		<p>商品名</p>
-		<%= @bicycle.name %>
-		<p>貸し出し場所</p>
-		<% @lend_spot.each do |l| %>
-			<%= l.lend_spot %>
-		<% end %>
-		<p>返却場所</p>
-		<% @return_spot.each do |r| %>
-			<%= r.return_spot %>
-		<% end %>
-		<div id="calendar"></div>
-	</div>
+<div class="lend_day_edit">
+    <h1>貸し出し日の編集</h1>
+    <div class="profile_picture_box">
+    </div>
+    <div class="lend_day_bicycle">
+        <h3>商品名</h3>
+            <div class="lend_day_name">
+                <%= @bicycle.name %>
+            </div>
+        <h3>貸し出し場所</h3>
+        <% @lend_spot.each do |l| %>
+            <div class="lend_day_content">
+                <%= l.lend_spot %>
+            </div>
+        <% end %>
+        <h3>返却場所</h3>
+        <% @return_spot.each do |r| %>
+            <div class="lend_day_content">
+                <%= r.return_spot %>
+            </div>
+        <% end %><br>
+        <div id="calendar"></div>
+
+        <div class="lend_days">
+        	<h3>貸し出し可能日</h3>
+
+        	<% @lend_day.each do |l| %>
+        		<div class="lend_days_index">
+	        		<!-- 既存の貸し出し日 -->
+	        		<%= l.lend_day.strftime('%Y年%m月%d日') %>
+	        		<!-- 貸し出し日の削除 -->
+		    		<%= link_to '削除', owner_lend_day_path(@bicycle.id, lend_day: l.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: 'btn btn-danger' %>
+		    	</div>
+	    	<% end %>
+
+	    	<%= form_for(@bicycle,url: owner_lend_day_path(@bicycle)) do |b| %>
+	            <div class="lend_days_form">
+	              <%= link_to_add_association "貸し出し可能日の追加", b, :lend_days, class: "btn btn-primary lend_day_add" %>
+	        	</div>
+
+	            <div class="bicycle_new_submit">
+	                <%= b.submit value: "　更新　", class: 'bicycle_submit btn btn-success bicycle_new_form' %>
+	            </div>
+        	<% end %>
+
+        </div>
+    </div>
 </div>

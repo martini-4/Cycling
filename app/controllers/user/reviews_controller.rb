@@ -1,6 +1,6 @@
 class User::ReviewsController < ApplicationController
 	def create
 	end
-	def destory
+	def destroy
 	end
 end

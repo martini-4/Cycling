@@ -1,0 +1,9 @@
+<div class="nested-fields">
+	<%= raw sprintf(
+		f.date_select(:lend_day,
+			 use_month_numbers: true,
+			 date_separator: '%s'),
+			 '年 ', '月 ') + '日'  %>
+	<%= f.check_box :_destroy %>
+    <%= f.label :_destroy, "削除", class: 'red' %>
+</div>

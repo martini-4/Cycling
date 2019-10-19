@@ -5,6 +5,6 @@ class Owner::MessagesController < ApplicationController
   def create
   end
 
-  def destory
+  def destroy
   end
 end

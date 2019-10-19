@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_15_052635) do
+ActiveRecord::Schema.define(version: 2019_10_17_055237) do
 
   create_table "accessories", force: :cascade do |t|
     t.string "accessorie_name", limit: 30, null: false
@@ -99,6 +99,15 @@ ActiveRecord::Schema.define(version: 2019_10_15_052635) do
 
   create_table "deposit_types", force: :cascade do |t|
     t.string "deposit_type", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.date "start_date"
+    t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

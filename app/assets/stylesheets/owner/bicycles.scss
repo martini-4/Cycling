@@ -37,12 +37,18 @@
 	width: 50%;
 	float: left;
 }
+
+
 // 自転車詳細画面
 .bicycle_show{
 	width: 80%;
 	margin: 50px auto;
 	background-color: #fef4e3;
 	padding: 30px 100px;
+}
+.bicycle_show p{
+	font-size: 20px;
+	padding-left: 10%;
 }
 .bicycle_edit_picture_box{
 	widows: 100%;
@@ -55,6 +61,100 @@
     margin-left: 20px;
     float: left;
 }
+.bicycle_show_owner{
+	line-height: 50px;
+	font-size: 40px;
+	padding-top: 3%;
+	padding-left: 25%;
+}
+.contract_new_link{
+	width: 60%;
+	margin: 0 auto;
+	text-align: center;
+}
+.contract_new_link a{
+	font-size: 40px;
+	padding: 5px 10%;
+}
+.bicycle_show_city_link{
+	padding: 20px 30px;
+	margin: 20px 20px 0;
+	color: #ffffff;
+	background-color: #5fd0c7;
+	border: 1px solid #000000;
+	border-radius: 10px;
+	width: 20%;
+    float: left;
+    text-align: center;
+}
+.bicycle_show_city_link:hover{
+	background-color: #42928b;
+}
+
+// レビュー
+.review{
+	width: 100%;
+}
+// レビュー投稿
+.review_post{
+	border: 1px solid #000000;
+	margin-bottom: 20px;
+	background-color: #cffff9;
+	padding: 20px 0;
+}
+.review_post_title{
+	border-bottom: 1px solid #000000;
+    margin: 0 20px;
+    margin-bottom: 10px;
+}
+.review_post_content_box{
+	text-align: center;
+}
+.review_post_content{
+	width: 95%;
+	margin: 0 auto;
+	border-radius: 10px;
+	padding: 5px;
+}
+.review_submit input{
+	font-size: 30px;
+    margin: 20px 0;
+}
+// レビュー表示
+.review_content_box{
+	border: 1px solid #000000;
+	background-color: #cffff9;
+	padding: 10px 0;
+}
+.review_index_box{
+	border:  1px solid #000000;
+	width: 95%;
+	margin: 10px auto;
+	padding: 10px 0;
+}
+.review_user_name{
+	font-size: 20px;
+	margin-left: 15px;
+	float: left;
+}
+.review_delete{
+}
+.review_created_at{
+	float: right;
+	padding-right: 20px;
+}
+.review_content{
+	border: 1px solid #000000;
+	padding: 20px 5px;
+	border-radius: 10px;
+	width: 95%;
+	margin: 0px auto;
+	background-color: #ffffff;
+	margin-top: 50px;
+}
+
+
+
 // 自転車編集画面
 .red{
 	color: red;

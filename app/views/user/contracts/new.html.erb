@@ -1,2 +1,14 @@
-<h1>User::Contracts#new</h1>
-<p>Find me in app/views/user/contracts/new.html.erb</p>
+<div class="contract_new">
+
+	<h1><%= @bicycle.name %>の契約</h1>
+	<div class="contract_new_form">
+
+		<% form_for @contract, url: user_contracts_path do |f| %>
+
+			<%= f.hidden_field :user_id, :value => current_user %>
+			<%= f.hidden_field :owner_id, :value => @bicycle.owner_id %>
+			<%= f.hidden_field :bicycle_id, :value => @bicycle.id %>
+
+		<% end %>
+	</div>
+</div>

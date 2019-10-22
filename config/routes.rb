@@ -9,11 +9,11 @@ Rails.application.routes.draw do
   	resources :massages, only: [:show, :destroy]
   	resources :rooms, only: [:index]
   	resources :contracts, only: [:index, :show]
-  	resources :bicycles, only: [:index, :edit, :update, :destroy]
   	resources :owners, only: [:index, :show]
   	resources :new_owners, only: [:index, :edit, :update, :destroy]
   	resources :users, only: [:index, :show]
   	resources :new_users, only: [:index, :edit, :update, :destroy]
+    resources :bicycles, only: [:index, :show, :edit, :update, :destroy]
   end
   namespace :owner do
   	resources :messages, only: [:index, :create, :destroy]

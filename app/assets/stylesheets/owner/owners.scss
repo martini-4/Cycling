@@ -17,7 +17,7 @@
 .user_show h4{
 	padding-left: 40%;
 }
-.user_show p{
+.user_information p{
 	font-size: 20px;
 	padding-left: 25%;
 }
@@ -49,14 +49,71 @@
     border-radius: 10px;
     background-color: #ffe0da;
 }
+.owner_show_bicycle_index{
+	width: 80%;
+    margin: 0 auto;
+	padding: 2% 20px;
+	background-color: #d0ffd1;
+}
+.owner_show_bicycle_box{
+	width: 100%;
+	border: 1px solid #000000;
+	border-radius: 10px;
+	background-color: #fffcdd;
+	margin: 20px 0;
+}
+.owner_show_bicycle{
+	width: 80%;
+	margin: 0 auto;
+	font-size: 20px;
+	padding: 20px 0;
+}
+.owner_show_bicycle_content{
+	height: 150px;
+}
+.owner_show_bicycle_content_text{
+	font-size: 35px;
+	float: left;
+}
+.owner_bicycle_picture_box{
+	float: left;
+	height: 150px;
+}
+.owner_bicycle_picture{
+	height: 150px;
+	width: 150px;
+}
+.owner_show_bicycle_link{
+	float: right;
+}
+.owner_show_bicycle_link_btn{
+	padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 30px;
+    line-height: 60px;
+}
+#owner_show_calendar{
+	width: 100%;
+	margin: 0 auto;
+	background-color: #ffffff;
+}
+.owner_show_lend_day_link{
+	width: 100%;
+	margin: 10px 0;
+	text-align: center;
+}
+.owner_show_paginate{
+	font-size: 30px;
+    width: 50%;
+    margin: 0 auto;
+}
 // edit画面
 .owner_edit{
 	background-color: #d3fcff;
-	width: 50%;
+	width: 60%;
     margin: 100px auto;
     border: 1px solid #ffffff;
     padding: 30px 10%;
-    height: 350px;
 }
 .owner_edit_form{
 	margin-left: 10%;

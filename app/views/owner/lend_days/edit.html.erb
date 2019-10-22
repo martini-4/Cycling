@@ -7,18 +7,20 @@
             <div class="lend_day_name">
                 <%= @bicycle.name %>
             </div>
-        <h3>貸し出し場所</h3>
-        <% @lend_spot.each do |l| %>
+        <div class="lend_day_content_box clearfix">
             <div class="lend_day_content">
-                <%= l.lend_spot %>
+                <h3>貸し出し場所</h3>
+                <% @lend_spot.each do |l| %>
+                        <%= l.lend_spot %>
+                <% end %>
             </div>
-        <% end %>
-        <h3>返却場所</h3>
-        <% @return_spot.each do |r| %>
             <div class="lend_day_content">
-                <%= r.return_spot %>
+                <h3>返却場所</h3>
+                <% @return_spot.each do |r| %>
+                        <%= r.return_spot %>
+                <% end %><br>
             </div>
-        <% end %><br>
+        </div>
         <div id="calendar"></div>
 
         <div class="lend_days">

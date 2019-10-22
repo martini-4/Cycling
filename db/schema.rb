@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_17_055237) do
+ActiveRecord::Schema.define(version: 2019_10_22_063100) do
 
   create_table "accessories", force: :cascade do |t|
     t.string "accessorie_name", limit: 30, null: false
@@ -76,6 +76,8 @@ ActiveRecord::Schema.define(version: 2019_10_17_055237) do
     t.date "borrow_day", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "lend_spot", null: false
+    t.string "return_spot", null: false
   end
 
   create_table "cities", force: :cascade do |t|
@@ -88,8 +90,6 @@ ActiveRecord::Schema.define(version: 2019_10_17_055237) do
     t.integer "user_id", null: false
     t.integer "owner_id", null: false
     t.integer "bicycle_id", null: false
-    t.string "lend_spot", null: false
-    t.string "return_spot", null: false
     t.integer "price", null: false
     t.integer "total_price", null: false
     t.string "payment_method", null: false

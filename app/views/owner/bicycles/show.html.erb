@@ -1,46 +1,47 @@
 <div class="bicycle_show_picture">
 </div>
 <div class="bicycle_show">
-	<div class="profile_picture_box">
-			<%= attachment_image_tag @bicycle.owner, :picture, fallback: "img2.png", class: 'profile_picture'  %>
+	<h1>商品名　　<%= @bicycle.name %></h1>
+	<div class="clearfix">
+		<div class="profile_picture_box">
+				<%= attachment_image_tag @bicycle.owner, :picture, fallback: "img2.png", class: 'profile_picture'  %>
+		</div>
+		<div class="bicycle_show_owner">
+				出品者　　<%= link_to @bicycle.owner.nickname, owner_owner_path(@bicycle.owner) %><br>
+				貸し出し料金　１日<%= @bicycle.price %>円
+		</div>
 	</div>
 	<div class="">
-		<h2><%= @bicycle.name %></h2>
-		<p>
-			出品者　　<%= @bicycle.owner.nickname %><br>
-			貸し出し料金　１日<%= @bicycle.price %>円
-		</p>
-	</div>
-	<div class="">
-		 <h4>■貸し出し可能日</h4>
+		 <h3>■貸し出し可能日</h3>
+		 <!-- カレンダー -->
 		 <div id="calendar"></div>
 	</div>
 	<div class="">
-		<h4>■オーナーコメント</h4>
+		<h3>■オーナーコメント</h3>
 		<p><%= @bicycle.description %></p>
 	</div>
 	<div class="">
-		<h4>■機能一覧</h4>
+		<h3>■機能一覧</h3>
 		<div class=""></div>
 		<p>
 			ハンドルタイプ　<%= @bicycle.handle.handle_type %><br>
 			自転車種類　<%= @bicycle.bicycle_type.bicycle_type %>
 	</div>
 	<div class="">
-		<h4>■貸し出し場所</h4>
+		<h3>■貸し出し場所</h3>
 		<% @bicycle.lend_spots.each do |l| %>
-			<%= l.lend_spot %>
+			<p><%= l.lend_spot %></p>
 		<% end %>
 	</div>
 	<div class="">
-		<h4>■返却場所</h4>
+		<h3>■返却場所</h3>
 		<% @bicycle.return_spots.each do |r| %>
-			<%= r.return_spot %>
+			<p><%= r.return_spot %></p>
 		<% end %>
 	</div>
-	<div class="">
-		<%= link_to new_user_contract_path do |c| %>
-			<p>この商品を借りる</p>
+	<div class="contract_new_link">
+		<% if user_signed_in? %>
+			<%= link_to 'この商品を借りる',new_user_contract_path(bicycle: @bicycle), class: 'btn btn-danger' %>
 		<% end %>
 	</div>
 	<div class="">
@@ -53,39 +54,53 @@
 		    	<h2 class="">レビューを書く</h2>
 		    </div>
 		    <div class="review_post_content_box">
-		    	<%= form_for @review, url: user_reviews_path do |review| %>
-		        	<%= review.hidden_field :user_id, :value => current_user.id %>
-		        	<%= review.hidden_field :product_id, :value => @bicycle.id %>
-		        	<%= review.text_area :review_message , class: "review_post_content" %>
-		        	<%= review.submit '投稿する', class: "review_submit" %>
+
+		    	<%= form_for @review, url: user_reviews_path do |r| %>
+
+
+		        	<%= r.hidden_field :user_id, :value => current_user.id %>
+		        	<%= r.hidden_field :bicycle_id, :value => @bicycle.id %>
+		        	<%= r.text_area :review_message , class: "review_post_content" %>
+		        	<div class="review_submit">
+			        	<%= r.submit '投稿する', class: "btn-success btn" %>
+			        </div>
+
 		      	<% end %>
+
 	    	</div>
 	  	</div>
+
 	<% else %>
 	<% end %>
+
 	<!-- レビュー表示 -->
 	<div class="review_content_box">
 	    <div class="review_post_title">
 	    	<h2 class="">商品レビュー</h2>
 	    </div>
-	    <% @reviews.each do |review| %>
+
+	    <% if @bicycle.reviews.empty? %>
+	    	<h1>現在商品のレビューはありません</h1>
+	    <% end %>
+
+	    <% @reviews.each do |r| %>
 	    	<div class="review_index_box">
 	    		<div class="review_created_at">
-	        		<%= review.created_at.strftime('%Y年%m月%d日 %H時%M分') %>
+	        		<%= r.created_at.strftime('%Y年%m月%d日 %H時%M分') %>
 	      		</div>
 		    	<div class="review_user_name">
-		        	<div class="review_destroy">
-		        		<%= review.user.lastname_kanji %>
-		        		<%= review.user.firstname_kanji %>さん
-		        		<% if review.user_id == current_user.id %>
-		        			<%= link_to '削除', review_path, method: :delete, "data-confirm" => "本当に削除しますか？", class: 'review_delete' %>
-		          		<% else %>
-		          		<% end %>
-		        	</div>
+	        		<%= r.user.nickname %>さん
+
+	        		<% if r.user_id == current_user %>
+	        			<%= link_to '削除', user_review_path(review: r), method: :delete, "data-confirm" => "本当に削除しますか？", class: 'btn btn-danger' %>
+	        		<% else @bicycle.owner_id == current_owner %>
+	        			<%= link_to '削除', user_review_path(review: r), method: :delete, "data-confirm" => "本当に削除しますか？", class: 'btn btn-danger' %>
+	          		<% end %>
+
 		    	</div>
 
 		      	<div class="review_content clearfix">
-		        	<%= review.review_content %>
+		        	<%= r.review_message %>
 		      	</div>
 	    	</div>
 		<% end %>
@@ -93,9 +108,19 @@
 	      <%= paginate @reviews, class: "paginate" %>
 	    </div>
 	</div>
-	<% @bicycle.exhibition_spots.each do |bicycle_index| %>
-		<%= link_to(:controller=>"/root",:action=>"bicycle_index",:q=>{:ExhibitionSpot_city_id_eq=> bicycle_index.city.id }, class: '') do %>
-			<p><%= bicycle_index.city.city_name %>一覧</p>
+
+	<div class="clearfix">
+
+		<% @bicycle.exhibition_spots.each do |b| %>
+
+			<%= link_to(:controller=>"/root",:action=>"bicycle_index",:q=>{:ExhibitionSpot_city_id_eq=> b.city.id }, class: '') do %>
+				<div class="bicycle_show_city_link btn-info">
+					<%= b.city.city_name %>の自転車一覧
+				</div>
+			<% end %>
+
 		<% end %>
-	<% end %>
+
+	</div>
+
 </div>

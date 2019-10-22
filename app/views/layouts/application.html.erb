@@ -5,9 +5,11 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <!-- コード追加　Bootstrap CSS読み込みコード-->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+    <!-- コード追加　Bootstrap JavaScript読み込みコード-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   </head>
 
@@ -25,6 +27,7 @@
       </div>
 
       <div class="">
+        <!-- 利用者 -->
         <% if user_signed_in? %>
           <div class="">
             <div class="header_name"><%= current_user.nickname %>様</div>
@@ -35,10 +38,11 @@
             <%= link_to '契約一覧', user_contracts_path, class: 'header_link' %>
             <%= link_to '出品地域一覧', city_path, class: 'header_link' %>
             <%= link_to 'メッセージ', user_rooms_path, class: 'header_link' %>
-
+          </div>
+        <!-- オーナー -->
         <% elsif owner_signed_in? %>
 
-            <div class="header_name"><%= current_owner.nickname %>様</div>
+          <div class="header_name"><%= current_owner.nickname %>様</div>
 
             <%= link_to 'ログアウト', destroy_owner_session_path, method: :delete,:class => 'header_link' %>
             <%= link_to 'マイページ', owner_owner_path(current_owner), class: 'header_link' %>
@@ -46,12 +50,17 @@
             <%= link_to '出品地域一覧', city_path, class: 'header_link' %>
             <%= link_to 'メッセージ', owner_rooms_path, class: 'header_link' %>
           </div>
+        <!-- 管理者 -->
         <% elsif admin_signed_in? %>
+          <div class="">
+            <div class="header_name">管理者様</div>
+          </div>
           <div class="">
             <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete,:class => 'header_link' %>
             <%= link_to 'メニュー', admin_menu_path, class: 'header_link' %>
             <%= link_to '出品地域一覧', city_path, class: 'header_link' %>
           </div>
+        <!-- 非ログイン者 -->
         <% else %>
           <div class="">
             <%= link_to 'オーナー様', new_owner_session_path, class: 'header_link' %>

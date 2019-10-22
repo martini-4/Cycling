@@ -6,6 +6,8 @@ class User::ContractsController < ApplicationController
   end
 
   def new
+    @contract = Contract.new
+    @bicycle = Bicycle.find(params[:bicycle])
   end
 
   def confirm

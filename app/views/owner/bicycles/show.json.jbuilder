@@ -5,3 +5,4 @@ json.array!(@lend_day) do |lend|
   	json.start lend.lend_day
   	json.end lend.lend_day
 end
+

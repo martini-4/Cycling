@@ -15,8 +15,15 @@ class Owner::BicyclesController < ApplicationController
 
   def show
     @bicycle = Bicycle.find(params[:id])
+    @lend_day =@bicycle.lend_days
     @review = Review.new
     @reviews = @bicycle.reviews.page(params[:page]).reverse_order.per(5)
+
+    # カレンダーイベント表示
+    respond_to do |format|
+      format.html {render :show}
+      format.json {render :show, status: :ok, location: @lend_day.to_json }
+    end
   end
 
   def edit

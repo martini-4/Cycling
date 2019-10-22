@@ -1,10 +1,10 @@
 class Owner::LendDaysController < ApplicationController
   def edit
     # 自転車情報の表示
-      @bicycle = Bicycle.find(params[:id])
-      @lend_spot = @bicycle.lend_spots
-      @return_spot = @bicycle.return_spots
-      @lend_day = @bicycle.lend_days
+    @bicycle = Bicycle.find(params[:id])
+    @lend_spot = @bicycle.lend_spots
+    @return_spot = @bicycle.return_spots
+    @lend_day = @bicycle.lend_days
     # カレンダーイベント表示
     respond_to do |format|
       format.html {render :edit}

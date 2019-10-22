@@ -8,9 +8,9 @@ class Owner::BicyclePicturesController < ApplicationController
 	    end
 	    # 選択した住所をトゥルーにする
 	    choice_picture = BicyclePicture.find(params[:picture])
-	    if @choice_picture.update(default: true)
+	    if choice_picture.update(default: true)
 	      flash[:success] = '一覧画面の画像に設定しました。'
-	      redirect_to edit_owner_bicycle_path(@bicycle)
+	      redirect_to edit_owner_bicycle_path(bicycle)
 	    end
 	end
 	def destroy

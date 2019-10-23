@@ -1,14 +1,41 @@
 <div class="contract_new">
 
 	<h1><%= @bicycle.name %>の契約</h1>
-	<div class="contract_new_form">
 
-		<% form_for @contract, url: user_contracts_path do |f| %>
+	<%= form_for @contract, url: {action: 'confirm'} do |f| %>
 
-			<%= f.hidden_field :user_id, :value => current_user %>
-			<%= f.hidden_field :owner_id, :value => @bicycle.owner_id %>
-			<%= f.hidden_field :bicycle_id, :value => @bicycle.id %>
+		<%= f.hidden_field :user_id, :value => current_user %>
+		<%= f.hidden_field :owner_id, :value => @bicycle.owner_id %>
+		<%= f.hidden_field :bicycle_id, :value => @bicycle.id %>
+		<%= f.hidden_field :price, :value => @bicycle.price %>
 
-		<% end %>
-	</div>
+
+		<%= f.hidden_field :total_price, :value => 1000 %>
+		
+		<h2>１日の料金　　<%= @bicycle.price%></h2>
+		<div class="contract_new_form">
+			 <%= f.fields_for :borrow_days do |b| %>
+			 	<%= b.label :借り入れ日 %>
+			 	<%= b.collection_select(:borrow_day, @bicycle.lend_days, :lend_day, :lend_day, prompt: "") %>
+				<%= b.collection_select(:lend_spot, @bicycle.lend_spots, :lend_spot, :lend_spot, prompt: "") %>
+				<%= b.collection_select(:return_spot, @bicycle.return_spots, :return_spot, :return_spot, prompt: "") %>
+			 <% end %><br>
+		</div>
+		<div class="contract_new_form">
+		 	<%= link_to_add_association "借りる日を追加する", f, :borrow_days, class: "btn btn-primary" %>
+		</div>
+
+		<div class="">
+		 	<h2>合計金額　　　　　<%=  %></h2>
+		</div>
+		<h2>支払い方法</h2>
+		<div class="contract_new_form">
+			<%= f.radio_button(:payment_method, 'コンビニ支払い') %><%= f.label :コンビニ支払い %><br>
+		 	<%= f.radio_button(:payment_method, '銀行振り込み') %><%= f.label :銀行振り込み %><br>
+		 	<%= f.radio_button(:payment_method, 'カード払い') %><%= f.label :カード払い %><br>
+		</div>
+		<div class="contract_new_submit">
+			<%= f.submit value: "　確認画面へ進む　", class: 'btn btn-success' %>
+		</div>
+	<% end %>
 </div>

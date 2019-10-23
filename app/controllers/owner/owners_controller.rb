@@ -7,8 +7,6 @@ class Owner::OwnersController < ApplicationController
     # カレンダー用のインスタンスを作成
     @lends = Hash.new
     @bicycles.each do |b|
-      @lend_days = b.lend_days
-
       @lends.store(b.id, b.lend_days)
     end
 

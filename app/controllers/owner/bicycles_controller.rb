@@ -16,6 +16,7 @@ class Owner::BicyclesController < ApplicationController
   def show
     @bicycle = Bicycle.find(params[:id])
     @lend_day =@bicycle.lend_days
+    # レビュー
     @review = Review.new
     @reviews = @bicycle.reviews.page(params[:page]).reverse_order.per(5)
 

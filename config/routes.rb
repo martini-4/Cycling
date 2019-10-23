@@ -36,7 +36,11 @@ Rails.application.routes.draw do
   	resources :messages, only: [:show, :create, :destroy]
   	resources :rooms, only: [:index, :create]
   	resources :contracts, only: [:index, :show, :new, :create]
-    get 'contracts/confirm'
+    resources :contracts do
+    collection do
+      post 'confirm'
+    end
+  end
     get 'users/withdrawal'
   end
 	resources :inquiries, only: [:new]

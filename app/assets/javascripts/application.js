@@ -54,6 +54,8 @@ $(function () {
                 lang: 'ja'
             });
         };
+
+
         // カレンダーオーナー詳細
         if ($('.owner_calendar').length) {
             // jsonの取得
@@ -66,6 +68,7 @@ $(function () {
                     data = json;
                 }
             });
+
             // カレンダー繰り返し処理
             $(".owner_calendar").each(function(index) {
                 // idの取得

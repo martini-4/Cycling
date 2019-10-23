@@ -1,0 +1,7 @@
+<div class="nested-fields contract_new_form">
+	<%= f.label :借り入れ日 %>
+	<%= f.collection_select(:borrow_day, @bicycle.lend_days, :lend_day, :lend_day, prompt: "") %>
+	<%= f.collection_select(:lend_spot, @bicycle.lend_spots, :lend_spot, :lend_spot, prompt: "") %>
+	<%= f.collection_select(:return_spot, @bicycle.return_spots, :return_spot, :return_spot, prompt: "") %>
+    <%= link_to_remove_association "削除", f, class: "btn btn-default" %>
+</div>

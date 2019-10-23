@@ -5,10 +5,10 @@
 		</div>
 		<div class="">
 			<h3 class="">利用したい地域を選択してください。</h3>
-			<% @city.each do |city| %>
-				<%= link_to(:controller=>"root",:action=>"bicycle_index", id: city.id) do %>
+			<% @city.each do |c| %>
+				<%= link_to(:controller=>"root",:action=>"bicycle_index", id: c.id) do %>
 					<div class="city_name city_name_box">
-						<%= city.city_name %>
+						<%= c.city_name %>
 					</div>
 				<% end %>
 				<br>

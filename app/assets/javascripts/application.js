@@ -111,5 +111,7 @@ $(function () {
             });
         };
     });
-
 });
+
+$("#contract_new_submit").prop("disabled", true);
+

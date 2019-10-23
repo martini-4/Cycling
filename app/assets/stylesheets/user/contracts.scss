@@ -16,6 +16,11 @@
 	text-align: center;
 	margin: 30px 0;
 }
+.total_price{
+	float: left;
+	width: 50%;
+	color: red;
+}
 .contract_new_submit{
 	margin-top: 30px;
 	text-align: center;
@@ -60,11 +65,21 @@
 	border: 1px solid #000000;
 	background-color: #f2fbff;
 	border-radius: 10px;
+	font-size: 25px;
 }
 .contract_confirm_day{
 	width: 50%;
 	text-align: center;
 	float: left;
+}
+.contract_confirm_back{
+	text-align: center;
+	margin: 100px 0;
+}
+.contract_confirm_back input{
+	padding: 30px;
+	font-size: 20px;
+	text-align: center;
 }
 .contract_confirm_submit input{
 	font-size: 200px;

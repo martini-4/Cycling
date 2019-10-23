@@ -4,38 +4,91 @@
 
 	<%= form_for @contract, url: {action: 'confirm'} do |f| %>
 
-		<%= f.hidden_field :user_id, :value => current_user %>
+		<%= f.hidden_field :user_id, :value => current_user.id %>
 		<%= f.hidden_field :owner_id, :value => @bicycle.owner_id %>
 		<%= f.hidden_field :bicycle_id, :value => @bicycle.id %>
 		<%= f.hidden_field :price, :value => @bicycle.price %>
+		<%= f.hidden_field :total_price, id: 'total', :value => "" %>
 
 
-		<%= f.hidden_field :total_price, :value => 1000 %>
+
 		
-		<h2>１日の料金　　<%= @bicycle.price%></h2>
+		<h2>１日の料金　　<%= @bicycle.price %></h2>
 		<div class="contract_new_form">
 			 <%= f.fields_for :borrow_days do |b| %>
 			 	<%= b.label :借り入れ日 %>
-			 	<%= b.collection_select(:borrow_day, @bicycle.lend_days, :lend_day, :lend_day, prompt: "") %>
-				<%= b.collection_select(:lend_spot, @bicycle.lend_spots, :lend_spot, :lend_spot, prompt: "") %>
-				<%= b.collection_select(:return_spot, @bicycle.return_spots, :return_spot, :return_spot, prompt: "") %>
+			 	<%= b.collection_select(:borrow_day, @bicycle.lend_days, :lend_day, :lend_day, {prompt: ''},class: 'count') %>
+				<%= b.collection_select(:lend_spot, @bicycle.lend_spots, :lend_spot, :lend_spot, {prompt: ''}) %>
+				<%= b.collection_select(:return_spot, @bicycle.return_spots, :return_spot, :return_spot, {prompt: ''}) %><br>
 			 <% end %><br>
 		</div>
 		<div class="contract_new_form">
-		 	<%= link_to_add_association "借りる日を追加する", f, :borrow_days, class: "btn btn-primary" %>
+		 	<%= link_to_add_association "借りる日を追加する", f, :borrow_days, class: "btn btn-primary contract_new_btn" %>
 		</div>
 
 		<div class="">
-		 	<h2>合計金額　　　　　<%=  %></h2>
+			<input name="price" id="price" type="hidden" value="<%= @bicycle.price %>" />
+		 	<h2><div class="total_price">合計金額</div><div class="total_price" id="output"></div></h2>
 		</div>
 		<h2>支払い方法</h2>
 		<div class="contract_new_form">
-			<%= f.radio_button(:payment_method, 'コンビニ支払い') %><%= f.label :コンビニ支払い %><br>
+			<%= f.radio_button(:payment_method, 'コンビニ支払い', checked: true) %><%= f.label :コンビニ支払い %><br>
 		 	<%= f.radio_button(:payment_method, '銀行振り込み') %><%= f.label :銀行振り込み %><br>
 		 	<%= f.radio_button(:payment_method, 'カード払い') %><%= f.label :カード払い %><br>
 		</div>
 		<div class="contract_new_submit">
-			<%= f.submit value: "　確認画面へ進む　", class: 'btn btn-success' %>
+			<%= f.submit value: "　確認画面へ進む　", class: 'btn btn-success submit_btn' %>
 		</div>
 	<% end %>
 </div>
+
+<script>
+	$(function() {
+
+		var counter = 0;
+		// フォームの数を計算
+	    $('.count').each(function(){
+	        counter++;
+	    });
+	    // 変数の取得
+		var price = $('#price').val()
+		// 文字列を変更
+		price = Number(price)
+		// 合計金額の計算
+	    var total_price = counter*price
+	    // console.log(price)
+	    // console.log(counter)
+	    // console.log(total_price)
+
+	    // hidden_fieldに代入
+	    $('#total').val(total_price)
+	    // viewに表示
+	    $("#output").html(total_price);
+
+	    // coccon動作時
+	    $('.contract_new_btn').click(function(){
+
+	    	total_price+=price
+	    	$('#total').val(total_price)
+		    $("#output").html(total_price);
+	    })
+
+	});
+
+	$(document).on('click', '.submit_btn',function(){
+		ggg = true;
+		$('select').each(function(index, element){
+			if ($(this).val() == "") {
+				ggg = false;
+				alert('内容を選択して下さい。')
+				return false;
+			}
+		});
+		return ggg;
+	});
+
+
+	// $(document).on("click", '.contract_new_form', function(){
+	// $(".contract_new").css("display","none");
+	// });
+</script>

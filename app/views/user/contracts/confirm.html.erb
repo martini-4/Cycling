@@ -43,6 +43,17 @@
 		</div>
 	</div>
 	<%= form_for @contract, url: {action: 'create'} do |f| %>
+		<%= f.hidden_field :bicycle_id %>
+		<%= f.hidden_field :owner_id %>
+		<%= f.hidden_field :user_id %>
+		<%= f.hidden_field :price %>
+		<%= f.hidden_field :total_price %>
+		<%= f.hidden_field :payment_method %>
+		<%= f.fields_for :borrow_days do |b| %>
+		 	<%= b.hidden_field :borrow_day %>
+			<%= b.hidden_field :lend_spot %>
+			<%= b.hidden_field :return_spot %>
+		<% end %>
 		<div class="contract_confirm_back">
 			<%= f.submit  value: "　契約内容を変更する　", name: 'back', class: 'btn btn-success' %>
 		</div>

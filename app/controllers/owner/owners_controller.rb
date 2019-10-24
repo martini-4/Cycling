@@ -33,8 +33,12 @@ class Owner::OwnersController < ApplicationController
     end
   end
 
-  def destroy
-  end
+def destroy
+    owner = current_owner
+    owner.destroy
+    flash[:success] = 'ご利用ありがとうございました。'
+    redirect_to top_path
+end
 
   def withdrawal
   end

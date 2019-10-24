@@ -25,8 +25,12 @@ class User::UsersController < ApplicationController
     end
   end
 
-  def destroy
-  end
+def destroy
+    user = current_user
+    user.destroy
+    flash[:success] = 'ご利用ありがとうございました。'
+    redirect_to top_path
+end
 
   def withdrawal
   end

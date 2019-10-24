@@ -1,3 +1,3 @@
 class DepositType < ApplicationRecord
-	has_many :payees
+	has_many :owners
 end

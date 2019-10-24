@@ -1,0 +1,21 @@
+<div class="unsubscribe_box">
+	<h1>警告</h1>
+	<div class="unsubscribe_text">
+		<p>
+			<br>
+			当サイトでは退会された場合、利用者様の全てのデータが削除されます。
+			<br><br>
+			退会後のデータの復元はできませんので十分にご注意ください。
+		</p>
+	</div>
+	<div class="unsubscribe_delete_link">
+
+		<% if user_signed_in? %>
+			<%= link_to '　削除　', user_user_path(current_user.id), method: :delete, "data-confirm" => "本当に退会しますか？", class: 'btn btn-danger' %>
+		<% end %>
+
+		<% if owner_signed_in? %>
+			<%= link_to '　削除　', owner_owner_path(current_owner.id), method: :delete, "data-confirm" => "本当に退会しますか？", class: 'btn btn-danger' %>
+		<% end %>
+	</div>
+</div>

@@ -146,3 +146,25 @@
 	font-size: 20px;
 	padding-top: 5px;
 }
+
+// unsubscribe画面
+.unsubscribe_box{
+	width: 60%;
+	height: 400px;
+	margin: 100px auto;
+	background-color: #424242;
+	color: red;
+	font-size: 20px;
+	padding-top: 10px;
+}
+.unsubscribe_text{
+	padding-left: 10%;
+}
+.unsubscribe_delete_link{
+	text-align: center;
+	margin-top: 20px;
+}
+.unsubscribe_delete_link a{
+	font-size: 30px;
+	padding: 30px;
+}

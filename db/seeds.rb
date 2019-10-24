@@ -4,6 +4,8 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+# 管理者
+Admin.create(email: 'admin@gmail.com',password: 'admin1')
 #   Character.create(name: 'Luke', movie: movies.first)
 # 付属品
 Accessory.create!(accessorie_name: 'アームミラー')

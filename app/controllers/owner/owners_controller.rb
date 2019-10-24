@@ -1,6 +1,6 @@
 class Owner::OwnersController < ApplicationController
   def show
-    @owner = Owner.find(params[:id])
+    @owner = current_owner
     @bicycle = @owner.bicycles.page(params[:page]).reverse_order.per(3)
     @bicycles = @owner.bicycles
 
@@ -19,11 +19,11 @@ class Owner::OwnersController < ApplicationController
   end
 
   def edit
-    @owner = Owner.find(params[:id])
+    @owner = current_owner
   end
 
   def update
-    owner = Owner.find(params[:id])
+    owner = current_owner
     if owner.update(owner_params)
       flash[:success] = 'オーナー情報を編集しました。'
        redirect_to owner_owner_path(owner.id)

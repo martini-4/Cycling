@@ -41,9 +41,9 @@ class Owner::BicyclesController < ApplicationController
   end
 
   def create
-    @bicycle = Bicycle.new(bicycle_params)
-    @bicycle.owner_id = current_owner.id
-    if @bicycle.save
+    bicycle = Bicycle.new(bicycle_params)
+    bicycle.owner_id = current_owner.id
+    if bicycle.save
       flash[:success] = "出品の更新が完了いたしました。"
       redirect_to owner_bicycle_path(@bicycle.id)
     else
@@ -53,8 +53,8 @@ class Owner::BicyclesController < ApplicationController
   end
 
   def update
-    @bicycle = Bicycle.find(params[:id])
-    if @bicycle.update(bicycle_params)
+    bicycle = Bicycle.find(params[:id])
+    if bicycle.update(bicycle_params)
       flash[:success] = '更新が完了しました。'
       redirect_to owner_bicycle_path(@bicycle.id)
     else

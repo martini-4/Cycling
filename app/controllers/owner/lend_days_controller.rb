@@ -13,8 +13,8 @@ class Owner::LendDaysController < ApplicationController
   end
 
   def update
-    @bicycle = Bicycle.find(params[:id])
-    if @bicycle.update(lend_day_params)
+    bicycle = Bicycle.find(params[:id])
+    if bicycle.update(lend_day_params)
       flash[:success] = "貸し出し可能日を追加しました。"
       redirect_to owner_bicycle_path(@bicycle.id)
     else

@@ -1,12 +1,12 @@
 <div class="user_show">
 	<h1>マイページ</h1>
-	<div class="user_information">
+	<div class="user_show_information clearfix">
 		<div class="profile_picture_box">
 			<%= attachment_image_tag @user, :picture, fallback: "img2.png", format: 'jpeg', class: 'profile_picture'  %>
 		</div>
 
 		<div class="">
-			<%= link_to 'プロフィールの変更', edit_user_user_path, class: 'user_edit_link' %>
+			<%= link_to 'プロフィールの変更', edit_user_user_path, class: 'user_edit_link btn btn-secondary' %>
 		</div>
 
 		<div class="">
@@ -15,6 +15,17 @@
 			住所<br>
 			　　<%= @user.address %></p>
 		</div>
+	</div>
+	<h2 class="user_show_h2">契約予定</h2>
+	<div id="owner_show_calendar">
+		<div id="calendar"></div>
+	</div>
 
+	<div class="user_show_contracts_link">
+		<%= link_to '契約履歴一覧', user_contracts_path, class: 'btn btn-success' %>
+	</div>
+
+	<div class="user_show_unsubscribe_link">
+		<%= link_to '　退　会　' , unsubscribe_path, class: 'btn btn-secondary' %>
 	</div>
 </div>

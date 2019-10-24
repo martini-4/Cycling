@@ -1,2 +1,24 @@
-<h1>Owner::Payees#edit</h1>
-<p>Find me in app/views/owner/payees/edit.html.erb</p>
+<div class="owner_edit">
+	<h1>振り込み先情報の編集</h1>
+	<h4>振込先はゆうちょ銀行のみとさせていただきます。</h4>
+	<div class="">
+		<%= form_for(@owner, url: owner_payee_path(@owner)) do |f| %>
+			<%= f.label :支店名 %><br>
+			<%= f.text_field :bank_stor_name, class: 'owner_payee_form', placeholder: '例：一二〇'%><br>
+			<%= f.label :預金種別 %><br>
+			<%= f.collection_select(:deposit_type_id, DepositType.all, :id, :deposit_type, {prompt: ""}, class: 'owner_payee_form') %><br>
+
+			 <div class="owner_edit_form">
+	          <%= f.label '口座番号(7桁)' %><br>
+	          <%= f.text_field :bank_account_number, class: 'owner_payee_form', placeholder: ''%><br>
+	        </div>
+	        <div class="owner_edit_form">
+	          <%= f.label '口座名義(カナ)' %><br>
+	          <%= f.text_field :bank_account_name, class: 'owner_payee_form', placeholder: 'ｶﾅ'%><br>
+	        </div>
+	      	<div class="owner_edit_submit">
+	      		<%= f.submit value="確定", class: "btn btn-primary" %>
+	      	</div>
+      	<% end %>
+	</div>
+</div>

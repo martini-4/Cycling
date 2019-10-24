@@ -1,19 +1,21 @@
 class Owner::PayeesController < ApplicationController
   def edit
+    @owner = current_owner
   end
 
   def update
+    owner = current_owner
+    if owner.update(owner_params)
+      flash[:success] = '振込先を変更しました。'
+      redirect_to owner_owner_path(owner.id)
+    else
+      flash[:danger] = "変更にに失敗しました。"
+      redirect_to edit_owner_owner_path
+    end
   end
 
-  def create
-    @payee = Payee.new(payee_params)
-    @payee.owner_id = current_owner.id
-      if @payee.save
-        flash[:success] = '振込先の登録が完了しました'
-        redirect_to wait_path
-      else
-        flash[:danger] = "振込先の登録に失敗しました。"
-        redirect_to new_owner_registration_path
-      end
+  protected
+  def owner_params
+    params.require(:owner).permit(:bank_stor_name, :bank_account_number, :bank_account_name, :deposit_type_id)
   end
 end

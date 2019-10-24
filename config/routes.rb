@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   namespace :owner do
   	resources :messages, only: [:index, :create, :destroy]
   	resources :rooms, only: [:index]
-  	resources :payees, only: [:edit, :update, :create]
+  	resources :payees, only: [:edit, :update]
   	resources :contracts, only: [:index, :show]
   	resources :lend_days, only: [:edit, :update, :destroy]
   	resources :owners, only: [:show, :edit, :update, :destroy]

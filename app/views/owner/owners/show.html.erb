@@ -1,12 +1,12 @@
-<div class="user_show">
+<div class="owner_show">
 	<h1>マイページ</h1>
-	<div class="user_information">
+	<div class="owner_information clearfix">
 		<div class="profile_picture_box">
 			<%= attachment_image_tag @owner, :picture, fallback: "img2.png", format: 'jpeg', class: 'profile_picture'  %>
 		</div>
 
 		<div class="">
-			<%= link_to 'プロフィールの変更', edit_owner_owner_path, class: 'user_edit_link btn btn-secondary' %>
+			<%= link_to 'プロフィールの変更', edit_owner_owner_path, class: 'owner_edit_link btn btn-secondary' %>
 		</div>
 
 			<p>ニックネーム<br><br>
@@ -20,7 +20,7 @@
 			　　<%= @owner.bank_account_number %><br><br>
 			口座名義<br><br>
 			　　<%= @owner.bank_account_name %></p>
-		<div class="">
+		<div class="clearfix">
 			<%= link_to '振り込め先の変更', edit_owner_payee_path(@owner.id), class: 'payee_edit_link btn btn-secondary' %>
 		</div>
 		<%= link_to(new_owner_bicycle_path, class: '') do %>
@@ -60,4 +60,8 @@
 	<div class="owner_show_paginate">
 		<%= paginate @bicycle, class: "paginate" %>
 	</div>
+	<div class="owner_show_unsubscribe_link">
+		<%= link_to '　退　会　' , unsubscribe_path, class: 'btn btn-secondary' %>
+	</div>
 </div>
+

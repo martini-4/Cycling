@@ -2,22 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// show画面
-.user_show{
+// マイページ画面
+.owner_show{
 	background-color: #d3fcff;
 	width: 80%;
     margin: 0 auto;
     border: 1px solid #ffffff;
     padding: 100px 10%;
 }
-.user_show h1{
+.owner_show h1{
 	font-size: 50px;
     line-height: 70px;
 }
-.user_show h4{
+.owner_show h4{
 	padding-left: 40%;
 }
-.user_information p{
+.owner_information p{
 	font-size: 20px;
 	padding-left: 25%;
 }
@@ -30,7 +30,7 @@
 	border-radius: 100%;
 	background-color: #ffffff;
 }
-.user_edit_link{
+.owner_edit_link{
 	float: right;
 	padding-right: 10%;
 }
@@ -106,6 +106,14 @@
 	font-size: 30px;
     width: 50%;
     margin: 0 auto;
+}
+
+.owner_show_unsubscribe_link{
+	text-align: right;
+}
+.owner_show_unsubscribe_link a{
+	font-size: 20px;
+	padding: 30px
 }
 // edit画面
 .owner_edit{

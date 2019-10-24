@@ -1,2 +1,47 @@
-<h1>User::Contracts#show</h1>
-<p>Find me in app/views/user/contracts/show.html.erb</p>
+<div class="contract_show">
+	<h1>契約確認</h1>
+	<div class="contract_show_content">
+		<h2>自転車情報</h2>
+		<div class="contract_show_bicycle clearfix">
+			<% @picture = @bicycle.bicycle_pictures.find_by(default: :true) %>
+			<%= attachment_image_tag @picture, :bicycle_picture, fallback: "img1.png", class: 'contract_picture'%>
+
+			商品名　　<%= @bicycle.name %>
+			<br><br>
+			オーナー　　<%= @contract.owner.nickname %>
+			<br><br>
+			１日の貸し出し料金　　<%= @contract.price %>
+			<br><br>
+			ハンドル　　<%= @bicycle.handle.handle_type %>
+			
+		</div>
+		<h3>■付属品一覧</h3>
+		<div class="clearfix">
+			<% @bicycle.bicycle_accessories.each do |a| %>
+				<div class="contract_show_accessory">
+					<%= a.accessory.accessorie_name %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+	<div class="contract_show_content">
+		<h2>契約内容</h2>
+		<h3>■契約日</h3>
+		<div class="clearfix">
+			<% @contract.borrow_days.each do |b| %>
+				<div class="contract_show_day">
+					借り出し日<%= b.borrow_day.strftime('%Y年%m月%d日') %><br>
+					貸し出し場所　<%= b.lend_spot %><br>
+					返却場所　<%= b.return_spot %>
+				</div>
+			<% end %>
+		</div>
+		<div class="">
+			<p>
+				合計金額　　<%= @contract.total_price %>
+				<br><br>
+				支払い方法　　<%= @contract.payment_method %>
+			</p>
+		</div>
+	</div>
+</div>

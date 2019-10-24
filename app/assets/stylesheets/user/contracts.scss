@@ -58,7 +58,7 @@
 	margin-left: 10%;
 }
 .contract_confirm_accessory{
-	margin-left: 5%;
+	margin: 10px 0 10px 5%;
 	width: 20%;
 	float: left;
 	padding-left: 2%;
@@ -68,9 +68,13 @@
 	font-size: 25px;
 }
 .contract_confirm_day{
-	width: 50%;
-	text-align: center;
+	width: 45%;
+	margin: 10px 0 10px 5%;
+	padding-left: 2%;
 	float: left;
+	background-color: #ecf0e7;
+	border: 1px solid #000000;
+	border-radius: 10px
 }
 .contract_confirm_back{
 	text-align: center;

@@ -37,10 +37,10 @@ Rails.application.routes.draw do
   	resources :rooms, only: [:index, :create]
   	resources :contracts, only: [:index, :show, :new, :create]
     resources :contracts do
-    collection do
-      post 'confirm'
+      collection do
+        post 'confirm'
+      end
     end
-  end
     get 'users/withdrawal'
   end
 	resources :inquiries, only: [:new]

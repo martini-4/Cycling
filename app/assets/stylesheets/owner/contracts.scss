@@ -1,3 +1,85 @@
 // Place all the styles related to the owner/contracts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// 全体の契約一覧画面
+.owner_contract{
+	width: 80%;
+	margin: 0 auto;
+	background-color: #fef4e3;
+	font-size: 20px
+}
+.owner_contract_index{
+	background-color: #bebcff;
+	border-top: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+}
+.contract_index_picture{
+	width: 300px;
+	height: 300px;
+	background-color: #ffffff;
+	float: left;
+}
+.owner_contract_contents{
+	float: left;
+}
+.contract_show_link_box{
+	height: 300px;
+	text-align: center;
+    line-height: 300px;
+}
+.contract_show_link_box a{
+	padding: 40px;
+    font-size: 30px;
+}
+// 契約詳細画面
+.contract_show{
+	width: 80%;
+	margin: 0 auto;
+	background-color: #fef4e3;
+	padding: 30px 100px;
+	font-size: 30px;
+}
+.contract_show h2{
+	text-align: center;
+	margin: 20px 0;
+	line-height: 30px;
+}
+.contract_show h3{
+	padding-left: 10%;
+	margin-top: 20px;
+}
+.contract_show p{
+	text-align: center;
+}
+.contract_picture{
+	width: 350px;
+	height: 350px;
+	background-color: #ffffff;
+	float: left;
+	margin-left: 10%;
+}
+.contract_show_accessory{
+	margin: 10px 0 10px 5%;
+	width: 20%;
+	float: left;
+	padding-left: 2%;
+	border: 1px solid #000000;
+	background-color: #f2fbff;
+	border-radius: 10px;
+	font-size: 25px;
+}
+.contract_user_name{
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.contract_show_day{
+	width: 45%;
+	margin: 10px 0 10px 5%;
+	padding-left: 2%;
+	float: left;
+	background-color: #ecf0e7;
+	border: 1px solid #000000;
+	border-radius: 10px
+}

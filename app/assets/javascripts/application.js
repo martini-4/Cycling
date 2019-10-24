@@ -58,8 +58,23 @@ $(function () {
 
         // カレンダーオーナー詳細
         if ($('.owner_calendar').length) {
-            // jsonの取得
+
+            // カレンダー繰り返し処理
+            $(".owner_calendar").each(function(index) {
+                // jsonの取得
             var data = {};
+            $.ajaxSetup({ cache: false });
+            // $.getJSON(
+            //  location.pathname, //リクエストURL
+            //  null,       //送信データ
+            //  function(jsonData, status) {
+            //     console.log('aaaaa');
+            //     console.log(jsonData);
+            //     data = jsonData;
+            //    // 通信成功時の処理
+            //  },
+            //  'json'
+            // );
             $.ajax({
                 url: location.pathname,
                 dataType: 'json',
@@ -68,9 +83,6 @@ $(function () {
                     data = json;
                 }
             });
-
-            // カレンダー繰り返し処理
-            $(".owner_calendar").each(function(index) {
                 // idの取得
                 var id = $(this).attr('id');
                 // イベント用の変数

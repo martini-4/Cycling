@@ -10,7 +10,7 @@
 			<br><br>
 			オーナー　　<%= @owner.nickname %>
 			<br><br>
-			１日の貸し出し料金　　<%= @contract.price %>
+			１日の貸し出し料金　　<%= @contract.price %>円
 			<br><br>
 			ハンドル　　<%= @bicycle.handle.handle_type %>
 			
@@ -30,13 +30,15 @@
 		<div class="clearfix">
 			<% @contract.borrow_days.each do |b| %>
 				<div class="contract_confirm_day">
-					借り出し日<%= b.borrow_day %>
+					借り出し日　<%= b.borrow_day.strftime('%Y年%m月%d日') %><br>
+					貸し出し場所　<%= b.lend_spot %><br>
+					返却場所　<%= b.return_spot %>
 				</div>
 			<% end %>
 		</div>
 		<div class="">
 			<p>
-				合計金額　　<%= @contract.total_price %>
+				合計金額　　<%= @contract.total_price %>円
 				<br><br>
 				支払い方法　　<%= @contract.payment_method %>
 			</p>

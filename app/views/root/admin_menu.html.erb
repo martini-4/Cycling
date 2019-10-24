@@ -1,0 +1,34 @@
+<div class="admin_menu">
+	<h1>メニュー</h1>
+	<div class="">
+		<ul class="admin_menu_links">
+ 			<li>
+ 			 	<%= link_to '新規ユーザー承認(オーナー)',admin_new_owners_path, class: 'btn btn-secondary'  %>
+ 			</li>
+ 			<li>
+ 				<%= link_to '新規ユーザー承認(利用者)',admin_new_users_path, class: 'btn btn-secondary'  %>
+ 			</li>
+ 			<li>
+ 			 	<%= link_to '新規出品　自転車一覧',admin_bicycles_path, class: 'btn btn-secondary'  %>
+ 			</li>
+ 			<li>
+ 				<%= link_to 'オーナー　一覧',admin_owners_path, class: 'btn btn-secondary' %>
+ 			</li>
+			<li>
+				<%= link_to 'ユーザー　一覧',admin_users_path,class: 'btn btn-secondary' %>
+			</li>
+			<li>
+				<%= link_to '出品自転車　一覧',city_path,class: 'btn btn-secondary' %>
+			</li>
+			<li>
+				<%= link_to '全体　契約一覧',admin_contracts_path,class: 'btn btn-secondary' %>
+			</li>
+			<li>
+				<%= link_to 'オーナーへの問い合わせ一覧(全体)',admin_rooms_path,class: 'btn btn-secondary' %>
+			</li>
+			<li>
+				<%= link_to '管理者への問い合わせ一覧(全体)',admin_inquiries_path,class: 'btn btn-secondary' %>
+			</li>
+		</ul>
+	</div>
+</div>

@@ -4,38 +4,38 @@ Rails.application.routes.draw do
   devise_for :admins
   devise_for :users
   namespace :admin do
-  	resources :replies, only: [:new, :create]
-  	resources :inquiries, only: [:index]
-  	resources :massages, only: [:show, :destroy]
-  	resources :rooms, only: [:index]
-  	resources :contracts, only: [:index, :show]
-  	resources :owners, only: [:index, :show]
-  	resources :new_owners, only: [:index, :edit, :update, :destroy]
-  	resources :users, only: [:index, :show]
-  	resources :new_users, only: [:index, :edit, :update, :destroy]
+    resources :new_owners, only: [:index, :edit, :update, :destroy]
+    resources :new_users, only: [:index, :edit, :update, :destroy]
+    resources :owners, only: [:index, :show]
+    resources :users, only: [:index, :show]
     resources :bicycles, only: [:index, :show, :edit, :update, :destroy]
+    resources :contracts, only: [:index, :show]
+    resources :massages, only: [:show, :destroy]
+    resources :rooms, only: [:index]
+    resources :inquiries, only: [:index]
+  	resources :replies, only: [:new, :create]
   end
   namespace :owner do
+    resources :owners, only: [:show, :edit, :update, :destroy]
   	resources :messages, only: [:index, :create, :destroy]
+    resources :payees, only: [:edit, :update]
+    resources :bicycles
+    resources :bicycle_pictures, only: [:update, :destroy]
+    resources :bicycle_accessories, only: [:destroy, :create]
+    resources :exhibition_spots, only: [:destroy]
+    resources :lend_spots, only: [:destroy]
+    resources :return_spots, only: [:destroy]
+    resources :lend_days, only: [:edit, :update, :destroy]
+    resources :contracts, only: [:index, :show]
   	resources :rooms, only: [:index]
-  	resources :payees, only: [:edit, :update]
-  	resources :contracts, only: [:index, :show]
-  	resources :lend_days, only: [:edit, :update, :destroy]
-  	resources :owners, only: [:show, :edit, :update, :destroy]
-  	resources :bicycle_pictures, only: [:update, :destroy]
-  	resources :lend_spots, only: [:destroy]
-  	resources :return_spots, only: [:destroy]
-  	resources :exhibition_spots, only: [:destroy]
-  	resources :bicycle_accessories, only: [:destroy, :create]
-  	resources :bicycles
   	get 'owners/withdrawal'
   end
   namespace :user do
+    resources :users, only: [:show, :edit, :update, :destroy]
   	resources :reviews, only: [:create, :destroy]
-  	resources :users, only: [:show, :edit, :update, :destroy]
+    resources :contracts, only: [:index, :show, :new, :create]
+    resources :rooms, only: [:index, :create]
   	resources :messages, only: [:show, :create, :destroy]
-  	resources :rooms, only: [:index, :create]
-  	resources :contracts, only: [:index, :show, :new, :create]
     resources :contracts do
       collection do
         post 'confirm'

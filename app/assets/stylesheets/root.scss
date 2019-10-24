@@ -168,3 +168,26 @@
 	font-size: 30px;
 	padding: 30px;
 }
+
+
+//admin_menu画面
+.admin_menu{
+	width: 50%;
+	margin: 100px auto;
+	background-color: #bff1ff;
+	border: 1px solid #000000;
+	border-radius: 10px
+}
+.admin_menu_links{
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+}
+.admin_menu_links li{
+	margin: 20px 0;
+	list-style-type: none
+}
+.admin_menu_links a{
+	padding: 30px;
+	width: 100%;
+}

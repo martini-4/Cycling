@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :contracts
 
-  validates :email, :encrypted_password, :password_confirmation, :lastname_kanji, :firstname_kanji, :lastname_kana, :firstname_kana,
+  validates :email, :encrypted_password, :lastname_kanji, :firstname_kanji, :lastname_kana, :firstname_kana,
    		    :mobile, :address, :sex_id ,:proof_picture, :nickname,
 		    presence: true
 end

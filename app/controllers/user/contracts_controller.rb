@@ -1,8 +1,12 @@
 class User::ContractsController < ApplicationController
   def index
+    @user = current_user
+    @contract = @user.contracts
   end
 
   def show
+    @contract = Contract.find(params[:id])
+    @bicycle = @contract.bicycle
   end
 
   def new

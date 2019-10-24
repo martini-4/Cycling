@@ -18,23 +18,24 @@ class User::UsersController < ApplicationController
     user = current_user
     if user.update!(user_params)
       flash[:success] = 'ユーザー情報を編集しました。'
-       redirect_to user_user_path(user.id)
+      redirect_to user_user_path(user.id)
      else
-       flash[:danger] = "編集に失敗しました。"
-       redirect_to edit_user_user_path
+      flash[:danger] = "編集に失敗しました。"
+      redirect_to edit_user_user_path
     end
   end
 
-def destroy
-    user = current_user
-    user.destroy
-    flash[:success] = 'ご利用ありがとうございました。'
-    redirect_to top_path
-end
+  def destroy
+      user = current_user
+      user.destroy
+      flash[:success] = 'ご利用ありがとうございました。'
+      redirect_to top_path
+  end
 
   def withdrawal
   end
-    protected
+
+  protected
     def user_params
       params.require(:user).permit(:nickname, :sex_id, :picture)
     end

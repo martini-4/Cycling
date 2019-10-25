@@ -1,3 +1,43 @@
 // Place all the styles related to the admin/inquiries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// index画面のCSS----------------------
+.inquiry_index_box2{
+	height: 90px;
+}
+
+.inquiry_index{
+	width: 80%;
+	margin: 0 auto;
+	background-color: #eeeeee;
+}
+.inquiry_index_box{
+	border-top: 2px solid #000000;
+	margin-bottom: 20px;
+	height: 250px;
+	background-color: #fff5cc
+}
+.inquirer_index_name h3{
+	color: #2a5bc0;
+    font-size: 35px;
+    text-align: left;
+}
+.inquiry_link_box{
+	float: right;
+	margin-right: 10%;
+}
+.inquiry_link{
+	padding: 20px 60px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    background-color: #82fff2;
+    color: #000000;
+}
+.inquiry_index_content{
+	height: 100px;
+	border: 1px solid #000000;
+	border-radius: 10px;
+	padding: 5px;
+	background-color: #ffffff;
+}

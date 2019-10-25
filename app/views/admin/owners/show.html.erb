@@ -5,23 +5,34 @@
 			<%= attachment_image_tag @owner, :picture, fallback: "img2.png", format: 'jpeg', class: 'profile_picture'  %>
 		</div>
 
-
-			<p>ニックネーム<br><br>
-			　　<%= @owner.nickname %><br>
-			住所<br><br>
-			　　<%= @owner.address %></p>
+			<p>氏名<br><br>
+				　　<%= @owner.lastname_kana %>　<%= @owner.firstname_kana %><br>
+				　　<%= @owner.lastname_kanji %>　<%= @owner.firstname_kanji %><br>
+				性別<br><br>
+				　　<%= @owner.sex_id %><br>
+				ニックネーム<br><br>
+				　　<%= @owner.nickname %><br>
+				電話番号<br><br>
+				　　<%= @owner.mobile %><br>
+				アドレス<br><br>
+				　　<%= @owner.email %><br>
+				住所<br><br>
+				　　<%= @owner.address %><br>
+				登録日時<br><br>
+				　　<%= @owner.created_at.strftime('%Y年%m月%d日 %H時%M分') %></p>
 			<h4>振り込め先</h4>
 			<p>支店名<br><br>
-			　　<%= @owner.bank_stor_name %><br><br>
+			　　　　 <%= @owner.bank_stor_name %><br><br>
 			口座番号<br><br>
-			　　<%= @owner.bank_account_number %><br><br>
+			　　	　　 <%= @owner.bank_account_number %><br><br>
 			口座名義<br><br>
-			　　<%= @owner.bank_account_name %></p>
+			　　	 　　<%= @owner.bank_account_name %></p>
 
 
 	</div>
 </div>
 <div class="owner_show_bicycle_index">
+
 	<% @bicycle.each do |b| %>
 
 		<div class="owner_show_bicycle_box">
@@ -31,11 +42,11 @@
 						<% @picture = b.bicycle_pictures.find_by(default: :true) %>
 			  			<%= attachment_image_tag @picture, :bicycle_picture, fallback: "img1.png", class: 'owner_bicycle_picture'%>
 					</div>
-					<div class="owner_show_bicycle_content_text">商品名　　<%= link_to b.name, owner_bicycle_path(b) %><br>
+					<div class="owner_show_bicycle_content_text">商品名　　<%= link_to b.name, admin_bicycle_path(b) %><br>
 					１日の料金　　<%= b.price %></div>
 					<div class="owner_show_bicycle_link">
 						<%= link_to '詳細', owner_bicycle_path(b), class: 'btn-secondary owner_show_bicycle_link_btn' %>
-						<%= link_to '編集', edit_owner_bicycle_path(b), class: 'btn-secondary owner_show_bicycle_link_btn' %>
+						<%= link_to '削除', admin_bicycle_path(b),method: :delete, "data-confirm" => "本当に削除しますか？", class: 'btn-danger owner_show_bicycle_link_btn' %>
 					</div>
 				</div>
 				<!-- カレンダー -->
@@ -43,13 +54,11 @@
 					<div class="owner_calendar" id='<%= b.id %>'></div>
 				</div>
 
-				<div class="owner_show_lend_day_link">
-					<%= link_to '貸し出し日の編集', edit_owner_lend_day_path(b), class: 'btn-primary owner_show_bicycle_link_btn' %>
-				</div>
 			</div>
 		</div>
 
 	<% end %>
+
 	<div class="owner_show_paginate">
 		<%= paginate @bicycle, class: "paginate" %>
 	</div>

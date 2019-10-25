@@ -16,5 +16,6 @@ module Cycling
     # -- all .rb files in that directory are automatically loaded after loading
     config.i18n.default_locale = :ja
     # the framework and any gems in your application.
+    config.time_zone = 'Tokyo'
   end
 end

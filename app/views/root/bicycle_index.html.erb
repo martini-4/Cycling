@@ -4,10 +4,17 @@
 		<% @exhibition.each do |e| %>
 			<div class="bicycle_index_box">
 				<div class="">
-					<%= link_to(owner_bicycle_path(e.bicycle)) do %>
-						<% @picture = e.bicycle.bicycle_pictures.find_by(default: :true) %>
-			  			<%= attachment_image_tag @picture, :bicycle_picture, fallback: "img1.png", class: 'bicycle_index_picture'%>
-			  		<% end %>
+					<% if admin_signed_in? %>
+						<%= link_to(admin_bicycle_path(e.bicycle)) do %>
+							<% @picture = e.bicycle.bicycle_pictures.find_by(default: :true) %>
+				  			<%= attachment_image_tag @picture, :bicycle_picture, fallback: "img1.png", class: 'bicycle_index_picture'%>
+				  		<% end %>
+					<% else %>
+						<%= link_to(owner_bicycle_path(e.bicycle)) do %>
+							<% @picture = e.bicycle.bicycle_pictures.find_by(default: :true) %>
+				  			<%= attachment_image_tag @picture, :bicycle_picture, fallback: "img1.png", class: 'bicycle_index_picture'%>
+				  		<% end %>
+				  	<% end %>
 				</div>
 				<div class="bicycle_index_box2">
 					<div class="bicycle_index_content">

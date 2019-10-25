@@ -6,7 +6,7 @@
 			<% @picture = @bicycle.bicycle_pictures.find_by(default: :true) %>
 			<%= attachment_image_tag @picture, :bicycle_picture, fallback: "img1.png", class: 'contract_picture'%>
 
-			商品名　　<%= @bicycle.name %>
+			商品名　　<%= link_to @bicycle.name, owner_bicycle_path(@bicycle) %>
 			<br><br>
 			１日の貸し出し料金　　<%= @contract.price %>円
 			<br><br>

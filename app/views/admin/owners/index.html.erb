@@ -1,2 +1,48 @@
-<h1>Admin::Owners#index</h1>
-<p>Find me in app/views/admin/owners/index.html.erb</p>
+<div class="admin_owner_index">
+	<h1>オーナー　一覧</h1>
+	<table class="table ">
+		<thead>
+			<tr>
+				<th>ユーザー名(本名)</th>
+				<th>ニックネーム</th>
+				<th>アドレス</th>
+				<th>住所</th>
+				<th>最終契約履歴</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @owner.each do |owner| %>
+			 		<tr>
+						<td>
+							<!-- ユーザー指名 -->
+							<%= link_to owner.lastname_kanji+owner.firstname_kanji,admin_owner_path(owner)  %>
+						</td>
+						<td>
+							<!-- ニックネーム -->
+							<%= link_to owner.nickname, admin_owner_path(owner) %>
+						</td>
+
+						<td>
+							<!-- アドレス -->
+							<%= owner.email %>
+						</td>
+						<td>
+							<!-- 住所 -->
+							<%= owner.address %>
+						</td>
+						<td>
+							<!-- 最終購入日の表示 -->
+							<% if owner.contracts.last != nil %>
+							  <%= owner.contracts.last.created_at.strftime('%Y年%m月%d日 %H時%M分') %>
+							<% else %>
+							  未購入
+							<% end %>
+						</td>
+					</tr>
+			<% end %>
+		</tbody>
+		<div class="">
+			<%= paginate @owner, class: "paginate" %>
+		</div>
+	</table>
+</div>

@@ -1,2 +1,60 @@
-<h1>Admin::Owners#show</h1>
-<p>Find me in app/views/admin/owners/show.html.erb</p>
+<div class="owner_show">
+	<h1>マイページ</h1>
+	<div class="owner_information clearfix">
+		<div class="profile_picture_box">
+			<%= attachment_image_tag @owner, :picture, fallback: "img2.png", format: 'jpeg', class: 'profile_picture'  %>
+		</div>
+
+
+			<p>ニックネーム<br><br>
+			　　<%= @owner.nickname %><br>
+			住所<br><br>
+			　　<%= @owner.address %></p>
+			<h4>振り込め先</h4>
+			<p>支店名<br><br>
+			　　<%= @owner.bank_stor_name %><br><br>
+			口座番号<br><br>
+			　　<%= @owner.bank_account_number %><br><br>
+			口座名義<br><br>
+			　　<%= @owner.bank_account_name %></p>
+
+
+	</div>
+</div>
+<div class="owner_show_bicycle_index">
+	<% @bicycle.each do |b| %>
+
+		<div class="owner_show_bicycle_box">
+			<div class="owner_show_bicycle">
+				<div class="owner_show_bicycle_content">
+					<div class="owner_bicycle_picture_box">
+						<% @picture = b.bicycle_pictures.find_by(default: :true) %>
+			  			<%= attachment_image_tag @picture, :bicycle_picture, fallback: "img1.png", class: 'owner_bicycle_picture'%>
+					</div>
+					<div class="owner_show_bicycle_content_text">商品名　　<%= link_to b.name, owner_bicycle_path(b) %><br>
+					１日の料金　　<%= b.price %></div>
+					<div class="owner_show_bicycle_link">
+						<%= link_to '詳細', owner_bicycle_path(b), class: 'btn-secondary owner_show_bicycle_link_btn' %>
+						<%= link_to '編集', edit_owner_bicycle_path(b), class: 'btn-secondary owner_show_bicycle_link_btn' %>
+					</div>
+				</div>
+				<!-- カレンダー -->
+				<div id="owner_show_calendar">
+					<div class="owner_calendar" id='<%= b.id %>'></div>
+				</div>
+
+				<div class="owner_show_lend_day_link">
+					<%= link_to '貸し出し日の編集', edit_owner_lend_day_path(b), class: 'btn-primary owner_show_bicycle_link_btn' %>
+				</div>
+			</div>
+		</div>
+
+	<% end %>
+	<div class="owner_show_paginate">
+		<%= paginate @bicycle, class: "paginate" %>
+	</div>
+	<%= link_to(admin_owner_path(@owner.id), method: :delete, "data-confirm" => "本当に退会しますか？") do %>
+		<div class="admin_owner_show_delete">このオーナーを退会させる</div>
+	<% end %>
+</div>
+

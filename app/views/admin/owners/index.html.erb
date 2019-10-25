@@ -7,7 +7,7 @@
 				<th>ニックネーム</th>
 				<th>アドレス</th>
 				<th>住所</th>
-				<th>最終契約履歴</th>
+				<th>登録自転車数</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -32,10 +32,10 @@
 						</td>
 						<td>
 							<!-- 最終購入日の表示 -->
-							<% if owner.contracts.last != nil %>
-							  <%= owner.contracts.last.created_at.strftime('%Y年%m月%d日 %H時%M分') %>
+							<% if owner.bicycles.exists? %>
+							  <%= owner.bicycles.count %>
 							<% else %>
-							  未購入
+							  未登録
 							<% end %>
 						</td>
 					</tr>

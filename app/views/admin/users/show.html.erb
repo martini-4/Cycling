@@ -1,2 +1,27 @@
-<h1>Admin::Users#show</h1>
-<p>Find me in app/views/admin/users/show.html.erb</p>
+<div class="user_show">
+	<h1>マイページ</h1>
+	<div class="user_show_information clearfix">
+		<div class="profile_picture_box">
+			<%= attachment_image_tag @user, :picture, fallback: "img2.png", format: 'jpeg', class: 'profile_picture'  %>
+		</div>
+
+		<div class="">
+			<p>ニックネーム<br>
+			　　<%= @user.nickname %><br>
+			住所<br>
+			　　<%= @user.address %></p>
+		</div>
+	</div>
+	<h2 class="user_show_h2">契約予定</h2>
+	<div id="owner_show_calendar">
+		<div id="calendar"></div>
+	</div>
+
+	<div class="user_show_contracts_link">
+		<%= link_to '契約履歴一覧', user_contracts_path, class: 'btn btn-success' %>
+	</div>
+
+	<%= link_to(admin_user_path(@user.id), method: :delete, "data-confirm" => "本当に退会しますか？") do %>
+		<div class="admin_owner_show_delete">このオーナーを退会させる</div>
+	<% end %>
+</div>

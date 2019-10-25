@@ -1,2 +1,27 @@
-<h1>Admin::Replies#new</h1>
-<p>Find me in app/views/admin/replies/new.html.erb</p>
+<div class="reply">
+	<!-- 問い合わせ内容 -->
+	<h1>問い合わせ返信</h1>
+	<div class="reply_box">
+		<h2>お問い合わせ内容</h2>
+		<h4>　　問い合わせ者　　<%= @inquiry.inquirer_name %></h4>
+		<h4>　　メールアドレス　　<%= @inquiry.inquirer_mail %></h4>
+		<div class="reply_inquiry_content">
+			<%= @inquiry.inquiry_content %>
+		</div>
+		<h4>返信内容を入力してください</h4>
+		<%= form_for @reply, url: admin_replies_path(id: @inquiry.id) do |reply| %>
+			<!-- replyのinquiry_idに@inquiryのidを代入 -->
+			<%= reply.hidden_field :inquiry_id, :value => @inquiry.id %>
+			<!-- 返信内容入力フォーム -->
+			<%= reply.text_area :reply_content, id: 'textarea', class: 'reply_content' %>
+			<!-- 送信ボタン -->
+			<div class="reply_submit_box">
+				<%= reply.submit '送信', class: 'btn btn-primary' %>
+			</div>
+		<% end %>
+	</div>
+<!-- --------------------------------------------- -->
+	<div class="reply_inquiry_link">
+		<%= link_to '戻る', admin_inquiries_path, class: 'btn btn-info' %>
+	</div>
+</div>

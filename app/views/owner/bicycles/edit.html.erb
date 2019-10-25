@@ -86,7 +86,7 @@
 		</div>
 		<p>その他特筆事項（利用者に伝えたい事や注意点など御座いましたらご記入下さい。）</p>
 		<div class="bicycle_new_form bicycle_description_box">
-			<%= b.text_area :description,placeholder: "200文字まで", class: 'bicycle_description' %>
+			<%= b.text_area :description,placeholder: "200文字まで", id: 'textarea', class: 'bicycle_description' %>
 		</div>
 		<div class="bicycle_new_submit">
 			<%= b.submit value: "　更新　", class: 'bicycle_submit btn btn-success bicycle_new_form' %>

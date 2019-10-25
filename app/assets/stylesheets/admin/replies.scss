@@ -1,3 +1,40 @@
 // Place all the styles related to the admin/replies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// 問い合わせ返信
+.reply{
+	width: 70%;
+	margin: 100px auto;
+	background-color: #e8e8e8;
+	border: 1px solid #000000;
+	border-radius: 10px;
+	padding: 30px;
+}
+.reply_inquiry_content{
+	width: 100%;
+	border: 1px solid #000000;
+	border-radius: 10px;
+	padding: 5px;
+	background-color: #ffffff;
+}
+.reply_content{
+	width: 100%;
+	border-radius: 10px;
+	padding: 5px;
+	line-height: 20px;
+}
+.reply_submit_box{
+	width: 30%;
+	margin: 20px auto;
+}
+.reply_submit_box input{
+	width: 100%;
+	font-size: 30px;
+}
+.reply_inquiry_link{
+	margin-left: 5%;
+}
+.reply_inquiry_link a{
+	font-size: 25px;
+}

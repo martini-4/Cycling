@@ -5,22 +5,31 @@
 // index画面のCSS----------------------
 .inquiry_index_box2{
 	height: 90px;
+	padding-bottom: 100px;
 }
 
 .inquiry_index{
 	width: 80%;
 	margin: 0 auto;
 	background-color: #eeeeee;
+	padding-bottom: 50px;
 }
 .inquiry_index_box{
-	border-top: 2px solid #000000;
-	margin-bottom: 20px;
-	height: 250px;
-	background-color: #fff5cc
+	width: 80%;
+	margin: 10px auto;
+	border: 1px solid #000000;
+	border-radius: 10px;
+	background-color: #fff5cc;
+	padding: 20px;
 }
 .inquirer_index_name h3{
 	color: #2a5bc0;
     font-size: 35px;
+    text-align: left;
+}
+.inquiry_unconfirmed h3{
+	color: red;
+	font-size: 35px;
     text-align: left;
 }
 .inquiry_link_box{

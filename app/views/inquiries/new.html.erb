@@ -1,2 +1,43 @@
-<h1>Inquiries#new</h1>
-<p>Find me in app/views/inquiries/new.html.erb</p>
+<div class="inquiry_end_user">
+
+	<div class="inquiry_title">
+		<h1 class=''>お問い合わせ内容入力</h1>
+	</div>
+	<div class="inquiry_form">
+		<h4 class="inquiry">お名前とメールアドレスを入力してください</h4>
+
+		<%= form_for(@inquiry) do |f| %>
+				<!-- 名前記入欄（ログイン時ユーザー情報取得 -->
+				<div class="form_name">
+					<% if user_signed_in? %>
+						<%= f.text_field :inquirer_name, :placeholder => 'お名前', :class => 'inquiry_form_name', value: @user.lastname_kanji+@user.firstname_kanji %>
+					<% elsif owner_signed_in? %>
+						<%= f.text_field :inquirer_name, :placeholder => 'お名前', :class => 'inquiry_form_name', value: @owner.lastname_kanji+'　'+@owner.firstname_kanji %>
+					<% else %>
+					<%= f.text_field :inquirer_name, :placeholder => 'お名前', :class => 'inquiry_form_name' %>
+					<% end %>
+				</div>
+
+				<!-- アドレス記入欄（ログイン時ユーザー情報取得 -->
+				<div class="form_mail_box">
+					<% if user_signed_in? %>
+						<%= f.email_field :inquirer_mail, :placeholder => 'メールアドレス', :class => 'inquiry_form_mail inquiry_form_name', value: @user.email %>
+					<% elsif owner_signed_in? %>
+						<%= f.email_field :inquirer_mail, :placeholder => 'メールアドレス', :class => 'inquiry_form_mail inquiry_form_name', value: @owner.email %>
+					<% else %>
+						<%= f.email_field :inquirer_mail, :placeholder => 'メールアドレス', :class => 'inquiry_form_mail inquiry_form_name' %>
+					<% end %>
+				</div>
+
+			<h4 class="inquire">お問い合わせ内容を入力をしてください</h4>
+			<!-- 問い合わせ内容記入欄 -->
+			<div class="form_content_box">
+				<%= f.text_area :inquiry_content, id: 'textarea', class: 'inquiry_form_content' %>
+			</div>
+			<div class="submit_box">
+				<%= f.submit '問い合わせる',class: 'btn btn-info' %>
+			</div>
+		<% end %>
+	</div>
+
+</div>

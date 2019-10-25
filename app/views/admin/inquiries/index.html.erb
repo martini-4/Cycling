@@ -1,25 +1,27 @@
 <div class="inquiry_index">
 	<h1 class="">お問い合わせ一覧</h1>
 
-	<% @inquiry.each do |inquiry| %>
+	<% @inquiry.each do |i| %>
 		<div class="inquiry_index_box">
-			<div class="inquiry_index_box2">
+			<div class="inquiry_index_box2 creafix">
 				<!-- 問い合わせ者名 -->
-				<div class="inquirer_index_name">
-					<% if inquiry.replies.present? == true %>
-						<h3><%= inquiry.inquirer_name %>  返信済み</h3>
-					<% else %>
-						<h3><%= inquiry.inquirer_name %>  未返信</h3>
-					<% end %>
-				</div>
+				<% if i.replies.present? == true %>
+					<div class="inquirer_index_name">
+						<h3><%= i.inquirer_name %>  返信済み</h3>
+					</div>
+				<% else %>
+					<div class="inquiry_unconfirmed">
+						<h3><%= i.inquirer_name %>  未返信</h3>
+					</div>
+				<% end %>
 				<!-- 問い合わせ詳細へのボタン -->
 				<div class="inquiry_link_box ">
-					<%= link_to '返信フォームへ', admin_inquiry_path(inquiry), :class => 'inquiry_link' %>
+					<%= link_to '返信フォームへ', new_admin_reply_path(id: i.id), class: 'inquiry_link' %>
 				</div>
 			</div>
 			<!-- 問い合わせ内容 -->
 			<div class="inquiry_index_content">
-				<%= inquiry.inquiry_content %>
+				<%= i.inquiry_content %>
 			</div>
 
 		</div>

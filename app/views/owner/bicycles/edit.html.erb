@@ -92,4 +92,14 @@
 			<%= b.submit value: "　更新　", class: 'bicycle_submit btn btn-success bicycle_new_form' %>
 		</div>
 	<% end %>
+
+	<h3>自転車を削除する</h3>
+	<div class="">
+		<p>
+			貸し出し予定がある場合自転車の削除は出来ません。
+		</p>
+		<% if BorrowDay.where('borrow_day >= ?', Date.today) %>
+			<%= link_to '　削除　', owner_bicycle_path(@bicycle), method: :delete, "data-confirm" => "本当に削除しますか？", class: 'btn-danger btn' %>
+		<% end %>
+	</div>
 </div>

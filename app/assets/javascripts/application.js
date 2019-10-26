@@ -64,17 +64,6 @@ $(function () {
                 // jsonの取得
             var data = {};
             $.ajaxSetup({ cache: false });
-            // $.getJSON(
-            //  location.pathname, //リクエストURL
-            //  null,       //送信データ
-            //  function(jsonData, status) {
-            //     console.log('aaaaa');
-            //     console.log(jsonData);
-            //     data = jsonData;
-            //    // 通信成功時の処理
-            //  },
-            //  'json'
-            // );
             $.ajax({
                 url: location.pathname,
                 dataType: 'json',
@@ -124,9 +113,10 @@ $(function () {
         };
     });
 });
-
+// 契約画面のsubmitボタンを制限
 $("#contract_new_submit").prop("disabled", true);
 
+// フォームの開業に合わせて高さを変える
 $(function() {
   var $textarea = $('#textarea');
   var lineHeight = parseInt($textarea.css('lineHeight'));
@@ -135,5 +125,20 @@ $(function() {
     $(this).height(lineHeight * lines);
   });
 });
+
+// // フォームの非同期
+// $(function() {
+//   $(document).on('click', 'input[type=submit]', function() {
+//     if ($('input[type=text]').val() == '') {
+//       return false;
+//     };
+//   });
+//   // メッセージの受け取り
+// $(document).on('ajax:success', 'form', function(e) {
+//     console.log(e);
+//     $('#message_comment').val('');
+//     $('.message_left').prepend('<p>' + e.detail[0] + '</p>');
+//   });
+// });
 
 

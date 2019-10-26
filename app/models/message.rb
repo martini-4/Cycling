@@ -1,7 +1,7 @@
 class Message < ApplicationRecord
+	belongs_to :room
 	has_many :users
 	has_many :owners
-	has_many :rooms
 
 	validates :comment,
 			   presence: true

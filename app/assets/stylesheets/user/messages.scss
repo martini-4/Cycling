@@ -1,3 +1,58 @@
 // Place all the styles related to the user/messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.message_show h1{
+	background-color: #d6ffc8;
+}
+.message_box_right{
+	width: 80%;
+	float: right;
+}
+.message_box_left{
+	width: 80%;
+	float: left;
+}
+.message_right{
+	float: right;
+	border: 1px solid #000000;
+	background-color: #ffffff;
+	border-radius: 10px;
+	padding: 10px;
+	font-size: 30px;
+	margin-bottom: 20px;
+	margin-right: 1px;
+}
+.message_left{
+	float: left;
+	border: 1px solid #000000;
+	background-color: #b0ff8a;
+	border-radius: 10px;
+	padding: 10px;
+	font-size: 30px;
+	margin-bottom: 20px;
+	margin-left: 1px;
+}
+.message_form{
+	width: 100%;
+    background-color: #89c7de;
+    color: #000000;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.message_form_box{
+	width: 90%;
+	float: left;
+	margin: 0 auto;
+}
+.message_area{
+	width: 90%;
+}
+.message_submit{
+	float: left;
+	width: 10%;
+}
+.message_submit input{
+	font-size: 25px;
+}

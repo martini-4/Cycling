@@ -16,6 +16,10 @@ class Owner::BicyclesController < ApplicationController
   def show
     @bicycle = Bicycle.find(params[:id])
     @lend_day =@bicycle.lend_days
+
+    # メッセージルーム作成
+    @room_new = Room.new
+
     # レビュー
     @review = Review.new
     @reviews = @bicycle.reviews.page(params[:page]).reverse_order.per(5)
@@ -38,6 +42,15 @@ class Owner::BicyclesController < ApplicationController
     return_spots = bicycle_new.return_spots.build
     bicycle_accessories = bicycle_new.bicycle_accessories.build
     bicycle_picture = bicycle_new.bicycle_pictures.build
+
+    # 貸し出し予定日の検索
+    # @borrow_day = Hash.new
+    # @bicycle.contracts.each do |c|
+    #   c.borrow_days.each do |b|
+    #     @borrow_day.store(b.borrow_day)
+    #   end
+    # end
+
   end
 
   def create
@@ -45,7 +58,7 @@ class Owner::BicyclesController < ApplicationController
     bicycle.owner_id = current_owner.id
     if bicycle.save
       flash[:success] = "出品の更新が完了いたしました。"
-      redirect_to owner_bicycle_path(@bicycle.id)
+      redirect_to owner_bicycle_path(bicycle.id)
     else
       flash[:danger] = "出品更新に失敗しました。入力内容をご確認ください。"
       redirect_to new_owner_bicycle_path
@@ -65,6 +78,11 @@ class Owner::BicyclesController < ApplicationController
   end
 
   def destroy
+    bicycle = Bicycle.find(params[:id])
+    owner = current_owner.id
+    bicycle.destroy
+    flash[:success] = '自転車を削除しました。'
+    redirect_to owner_owner_path(owner)
   end
   private
     def bicycle_params

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_22_063100) do
+ActiveRecord::Schema.define(version: 2019_10_25_115109) do
 
   create_table "accessories", force: :cascade do |t|
     t.string "accessorie_name", limit: 30, null: false
@@ -148,11 +148,12 @@ ActiveRecord::Schema.define(version: 2019_10_22_063100) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "owner_id", null: false
+    t.integer "user_id"
+    t.integer "owner_id"
     t.string "comment", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "room_id"
   end
 
   create_table "owners", force: :cascade do |t|

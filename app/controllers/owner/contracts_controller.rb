@@ -1,7 +1,12 @@
 class Owner::ContractsController < ApplicationController
   def index
   	@owner = current_owner
-  	@contract = @owner.contracts
+  	@contract = @owner.contracts.page(params[:page]).reverse_order.per(15)
+  end
+
+  def bicycle
+  	@bicycle = Bicycle.find(params[:id])
+  	@contract = @bicycle.contracts.page(params[:page]).reverse_order.per(15)
   end
 
   def show

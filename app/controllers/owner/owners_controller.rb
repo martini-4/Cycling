@@ -7,22 +7,42 @@ class Owner::OwnersController < ApplicationController
     # カレンダー用のインスタンスを作成
     @lends = Hash.new
     @borrow = Hash.new
+
+
     @bicycles.each do |b|
+      
+      @lends.store(b.id, [])
 
-      @lends.store(b.id, b.lend_days)
+      b.lend_days.each do |l|
+        p l
+        @lends[b.id].push(l.lend_day)
+      end
+    end
 
+
+    @bicycles.each do |b|
+      @borrow.store(b.id, [])
       b.contracts.each do |c|
 
-        @borrow.store(b.id, c.borrow_days)
+        c.borrow_days.each do |borrow|
+
+          p borrow
+          @borrow[b.id].push(borrow.borrow_day)
+
+        end
+
       end
 
     end
 
+
+    p @lends
+    p @borrow
      # カレンダーへイベント情報を送る
       respond_to do |format|
         format.html
-        format.json { @lends.to_json }
-        format.json { @borrow.to_json }
+        format.json {render :show, status: :ok, location: @lends.to_json }
+        format.json {render :show, status: :ok, location: @borrow.to_json }
       end
 
   end

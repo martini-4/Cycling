@@ -1,5 +1,5 @@
 <div class="owner_contract">
-	<h1>全商品の契約履歴</h1>
+	<h1><%= @bicycle.name %>の契約履歴</h1>
 	<% @contract.each do |c| %>
 		<div class="owner_contract_index clearfix">
 			<div class="owner_contract_bicycle">
@@ -29,7 +29,7 @@
 		  		<h4>支払い方法　　<%= c.payment_method %></h4>
 		  	</div>
 		  	<div class="contract_show_link_box">
-		  		<%= link_to '契約詳細', user_contract_path(c.id), class: 'btn btn-light' %>
+		  		<%= link_to '契約詳細', owner_contract_path(c.id), class: 'btn btn-light' %>
 		  	</div>
 		</div>
 	<% end %>

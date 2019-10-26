@@ -9,12 +9,12 @@ class Owner::LendDaysController < ApplicationController
     # カレンダー用のインスタンスを作成
     @borrow = []
     @bicycle.contracts.each do |c|
-      p c
+
       c.borrow_days.each do |b|
-        p b
 
         @borrow.push(b.borrow_day)
       end
+
     end
     # カレンダーイベント表示
     respond_to do |format|

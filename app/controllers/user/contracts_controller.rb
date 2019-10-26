@@ -1,7 +1,7 @@
 class User::ContractsController < ApplicationController
   def index
     @user = current_user
-    @contract = @user.contracts
+    @contract = @user.contracts.page(params[:page]).reverse_order.per(15)
   end
 
   def show

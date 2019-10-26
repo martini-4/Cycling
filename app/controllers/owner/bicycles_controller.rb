@@ -69,10 +69,10 @@ class Owner::BicyclesController < ApplicationController
     bicycle = Bicycle.find(params[:id])
     if bicycle.update(bicycle_params)
       flash[:success] = '更新が完了しました。'
-      redirect_to owner_bicycle_path(@bicycle.id)
+      redirect_to owner_bicycle_path(bicycle.id)
     else
       flash[:danger] = '更新に失敗しました。入力内容をご確認ください。'
-      redirect_to edit_owner_bicycle_path(@bicycle.id)
+      redirect_to edit_owner_bicycle_path(bicycle.id)
     end
 
   end

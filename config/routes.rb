@@ -28,7 +28,13 @@ Rails.application.routes.draw do
     resources :lend_days, only: [:edit, :update, :destroy]
     resources :contracts, only: [:index, :show]
   	resources :rooms, only: [:index]
-  	get 'owners/withdrawal'
+    resources :contracts do
+      member do
+        get 'bicycle'
+      end
+    end
+
+  	get 'withdrawal'
   end
   namespace :user do
     resources :users, only: [:show, :edit, :update, :destroy]
@@ -41,7 +47,7 @@ Rails.application.routes.draw do
         post 'confirm'
       end
     end
-    get 'users/withdrawal'
+    get 'withdrawal'
   end
 	resources :inquiries, only: [:new, :create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -42,7 +42,8 @@
 					１日の料金　　<%= b.price %></div>
 					<div class="owner_show_bicycle_link">
 						<%= link_to '詳細', owner_bicycle_path(b), class: 'btn-secondary owner_show_bicycle_link_btn' %>
-						<%= link_to '編集', edit_owner_bicycle_path(b), class: 'btn-secondary owner_show_bicycle_link_btn' %>
+						<%= link_to '編集', edit_owner_bicycle_path(b), class: 'btn-secondary owner_show_bicycle_link_btn' %><br>
+						<%= link_to '契約履歴', bicycle_owner_contract_path(b), class: 'btn-secondary owner_show_bicycle_link_btn' %>
 					</div>
 				</div>
 				<!-- カレンダー -->

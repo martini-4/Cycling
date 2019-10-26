@@ -8,6 +8,6 @@ class Admin::MassagesController < ApplicationController
     message = Message.find(params[:id])
     room = message.room_id
     message.destroy
-    redirect_to admin_message_path(room)
+    redirect_to admin_massage_path(room)
   end
 end

@@ -1,2 +1,44 @@
-<h1>Admin::NewOwners#index</h1>
-<p>Find me in app/views/admin/new_owners/index.html.erb</p>
+<div class="admin_owner_index">
+	<h1>承認待ちオーナー　一覧</h1>
+	<table class="table ">
+		<thead>
+			<tr>
+				<th>ユーザー名(本名)</th>
+				<th>ニックネーム</th>
+				<th>アドレス</th>
+				<th>住所</th>
+				<th>申し込み日時</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @owner.each do |owner| %>
+			 		<tr>
+						<td>
+							<!-- ユーザー指名 -->
+							<%= link_to owner.lastname_kanji+owner.firstname_kanji,edit_admin_new_owner_path(owner)  %>
+						</td>
+						<td>
+							<!-- ニックネーム -->
+							<%= link_to owner.nickname, edit_admin_new_owner_path(owner) %>
+						</td>
+
+						<td>
+							<!-- アドレス -->
+							<%= owner.email %>
+						</td>
+						<td>
+							<!-- 住所 -->
+							<%= owner.address %>
+						</td>
+						<td>
+							<!-- 申し込み日時の表示 -->
+							<%= owner.created_at.strftime('%Y年%m月%d日 %H時%M分') %>
+						</td>
+					</tr>
+			<% end %>
+		</tbody>
+		<div class="">
+			<%= paginate @owner, class: "paginate" %>
+		</div>
+	</table>
+</div>

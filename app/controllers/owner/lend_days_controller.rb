@@ -7,13 +7,15 @@ class Owner::LendDaysController < ApplicationController
     @lend_day = @bicycle.lend_days
 
     # カレンダー用のインスタンスを作成
-    @borrow = Hash.new
+    @borrow = []
     @bicycle.contracts.each do |c|
+      p c
+      c.borrow_days.each do |b|
+        p b
 
-        @borrow.store(@bicycle.id, c.borrow_days)
-
+        @borrow.push(b.borrow_day)
+      end
     end
-
     # カレンダーイベント表示
     respond_to do |format|
       format.html {render :edit}

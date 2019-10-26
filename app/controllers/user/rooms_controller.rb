@@ -1,7 +1,7 @@
 class User::RoomsController < ApplicationController
   def index
     @user = current_user
-    @room = @user.rooms
+    @room = @user.rooms.order(updated_at: :desc)
   end
 
   def create

@@ -2,23 +2,31 @@
 	<h1>メッセージルーム一覧</h1>
 	<div class="clearfix room_index_boxs">
 		<% @room.each do |r| %>
-			<%if r.messages.last.user_id.blank? %>
-				<%= link_to(user_message_path(r), class: 'room_box_new') do %>
-					<div class="">
-						<h2>自転車　<%= r.bicycle.name %>の問い合わせ</h2>
-						<h3>NEW</h3>
-						オーナー　　<%= r.owner.nickname %>さん <br>
-						最終更新日　<%= r.messages.last.updated_at.strftime('%Y年%m月%d日 %H時%M分') %>
-					</div>
-				<% end %>
-			<% else %>
-				<%= link_to(user_message_path(r), class: 'room_box') do %>
-					<div class="">
-						<h2>自転車　<%= r.bicycle.name %>の問い合わせ</h2>
-						オーナー　　<%= r.owner.nickname %>さん <br>
-						最終更新日　<%= r.messages.last.updated_at.strftime('%Y年%m月%d日 %H時%M分') %>
-					</div>
-				<% end %>
+
+			<% if r.messages.present? %>
+
+				<%if r.messages.last.user_id.blank? %>
+					<%= link_to(user_message_path(r), class: 'room_box_new') do %>
+						<div class="">
+							<h2>自転車　<%= r.bicycle.name %>の問い合わせ</h2>
+							<h3>NEW</h3>
+							オーナー　　<%= r.owner.nickname %>さん <br>
+							最終更新日　<%= r.messages.last.updated_at.strftime('%Y年%m月%d日 %H時%M分') %>
+						</div>
+					<% end %>
+
+				<% else %>
+
+					<%= link_to(user_message_path(r), class: 'room_box') do %>
+						<div class="">
+							<h2>自転車　<%= r.bicycle.name %>の問い合わせ</h2>
+							オーナー　　<%= r.owner.nickname %>さん <br>
+							最終更新日　<%= r.messages.last.updated_at.strftime('%Y年%m月%d日 %H時%M分') %>
+						</div>
+					<% end %>
+
+				 <% end %>
+
 			<% end %>
 
 		<% end %>

@@ -1,6 +1,39 @@
-<div class="">
-	<h1><%= @room.owner.nickname %>さんとのメッセージ</h1>
+<div class="message_show">
+	<h1><%= @room.owner.nickname %>さんとのメッセージ(<%= @room.bicycle.name %>)</h1>
+	<% @message.each do |m| %>
+		<div class="clearfix">
+			<% if m.owner_id.blank? %>
+				<div class="message_box_right">
+					<div class="message_right">
+						<%= simple_format(m.comment) %>
+					</div>
+				</div>
+			<% else %>
+				<div class="message_box_left">
+					<div class="message_left">
+						<%= simple_format(m.comment) %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	<% end %>
 
+	<div class="fixed-bottom">
+		<div class="message_form clearfix">
+			<%= form_for @message_new, url: owner_messages_path do |f| %>
+
+				<%= f.hidden_field :owner_id, :value => current_owner.id %>
+				<%= f.hidden_field :room_id, :value => @room.id %>
+				<div class="message_form_box">
+					<%= f.text_area :comment, id: 'textarea', class: 'message_area' %>
+				</div>
+				<div class="message_submit">
+					<%= f.submit value: "送信", class: 'btn btn-dark' %>
+				</div>
+
+			<% end %>
+		</div>
+	</div>
 
 
 </div>

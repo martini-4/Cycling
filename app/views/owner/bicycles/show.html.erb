@@ -7,7 +7,7 @@
 				<%= attachment_image_tag @bicycle.owner, :picture, fallback: "img2.png", class: 'profile_picture'  %>
 		</div>
 		<div class="bicycle_show_owner">
-				出品者　　<%= link_to @bicycle.owner.nickname, owner_owner_path(@bicycle.owner) %><br>
+				出品者　　<%= @bicycle.owner.nickname %><br>
 				貸し出し料金　１日<%= @bicycle.price %>円
 		</div>
 	</div>
@@ -39,14 +39,23 @@
 			<p><%= r.return_spot %></p>
 		<% end %>
 	</div>
+	<div class="clearfix">
+		<h3>■付属品</h3>
+		<% @bicycle.bicycle_accessories.each do |a| %>
+			<div class="bicycle_show_accessory">
+				<%= a.accessory.accessorie_name %>
+			</div>
+		<% end %>
+	</div>
 	<div class="contract_new_link">
 		<% if user_signed_in? %>
 			<%= link_to 'この商品を借りる',new_user_contract_path(bicycle: @bicycle), class: 'btn btn-danger' %>
 		<% end %>
 	</div>
+	<!-- オーナーとのメッセージ -->
 	<% if user_signed_in? %>
 		<div class="bicycle_show_room">
-			<% if Room.find_by(owner_id: @bicycle.owner.id, user_id: current_user.id, bicycle_id: @bicycle.id) == nil %>
+			<% if Room.find_by(owner_id: @bicycle.owner.id, user_id: current_user.id, bicycle_id: @bicycle.id) == nil  %>
 				<%= form_for @room_new, url: user_rooms_path do |room| %>
 					<%= room.hidden_field :owner_id, :value => @bicycle.owner.id %>
 					<%= room.hidden_field :user_id, :value => current_user.id %>
@@ -105,7 +114,7 @@
 
 	        		<% if r.user_id == current_user %>
 	        			<%= link_to '削除', user_review_path(review: r), method: :delete, "data-confirm" => "本当に削除しますか？", class: 'btn btn-danger' %>
-	        		<% else @bicycle.owner_id == current_owner %>
+	        		<% elsif @bicycle.owner_id == current_owner %>
 	        			<%= link_to '削除', user_review_path(review: r), method: :delete, "data-confirm" => "本当に削除しますか？", class: 'btn btn-danger' %>
 	          		<% end %>
 

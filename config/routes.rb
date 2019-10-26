@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   end
   namespace :owner do
     resources :owners, only: [:show, :edit, :update, :destroy]
-  	resources :messages, only: [:index, :create, :destroy]
+  	resources :messages, only: [:show, :create, :destroy]
     resources :payees, only: [:edit, :update]
     resources :bicycles
     resources :bicycle_pictures, only: [:update, :destroy]

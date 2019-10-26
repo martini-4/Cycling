@@ -13,6 +13,10 @@ class User::MessagesController < ApplicationController
   end
 
   def destroy
+    message = Message.find(params[:id])
+    room = message.room_id
+    message.destroy
+    redirect_to owner_message_path(room)
   end
   private
   def message_params

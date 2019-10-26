@@ -30,9 +30,9 @@ $(function () {
         // カレンダー(貸し出し日変更画面)
         // lengthを呼び出すことで、#calendarが存在していた場合はtrueの処理がされ、無い場合はnillを返す
         if ($('#calendar').length) {
-            console.log(location.pathname)
+            console.log('http://localhost:3000/owner/lend_days/20/edit.json');
 
-            // 設定の読み込み
+            // 表示
             function eventCalendar() {
                 return $('#calendar').fullCalendar({
                 });
@@ -41,12 +41,7 @@ $(function () {
             function clearCalendar() {
                 $('#calendar').html('');
             };
-
-            // 呼び出し
-            $(document).on('turbolinks:load', function () {
-                eventCalendar();
-            });
-            $(document).on('turbolinks:before-cache', clearCalendar);
+            console.log(location.pathname);
                 // イベント
             $('#calendar').fullCalendar({
                 events: location.pathname,
@@ -54,6 +49,8 @@ $(function () {
                 lang: 'ja'
             });
         };
+
+
 
 
         // カレンダーオーナー詳細
@@ -85,7 +82,7 @@ $(function () {
                     };
                 };
 
-                // 設定の読み込み
+                // 表示
                 function eventCalendar() {
                     return $('.owner_calendar').fullCalendar({
                     });
@@ -94,12 +91,6 @@ $(function () {
                 function clearCalendar() {
                     $('.owner_calendar').html('');
                 };
-
-                // 呼び出imし
-                $(document).on('turbolinks:load', function () {
-                    eventCalendar();
-                });
-                $(document).on('turbolinks:before-cache', clearCalendar);
 
                 // イベント
                 $(this).fullCalendar({

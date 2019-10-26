@@ -18,7 +18,7 @@ class Owner::LendDaysController < ApplicationController
     respond_to do |format|
       format.html {render :edit}
       format.json {render :edit, status: :ok, location: @lend_day.to_json }
-      format.json { @borrow.to_json }
+      format.json {render :edit, status: :ok, location: @borrow.to_json }
     end
   end
 

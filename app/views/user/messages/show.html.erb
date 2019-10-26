@@ -13,6 +13,9 @@
 					<div class="message_left">
 						<%= simple_format(m.comment) %>
 					</div>
+					<div class="message_delete">
+						<%= link_to '✖️', user_message_path(m), method: :delete, "data-confirm" => "投稿を削除しますか？", class: 'btn-danger' %>
+					</div>
 				</div>
 			<% end %>
 		</div>

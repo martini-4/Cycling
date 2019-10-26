@@ -1,3 +1,41 @@
 // Place all the styles related to the user/rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.room_index{
+	background-color: #ffffff;
+	height: 100vh;
+}
+.room_index h1{
+	background-color: #d6ffc8;
+	margin: 0;
+}
+.room_index_boxs{
+	background-color: #ffffff;
+}
+.room_box_new{
+	background-color: #ffc2c2;
+	border: 1px solid #000000;
+	border-radius: 20px;
+	width: 40%;
+	margin: 10px 5%;
+	float: left;
+	padding: 5px;
+}
+.room_box_new:hover{
+	background-color: #ff7575;
+}
+.room_box_new h3{
+	color: red;
+}
+.room_box{
+	border: 1px solid #000000;
+	border-radius: 20px;
+	width: 40%;
+	margin: 10px 5%;
+	float: left;
+	padding: 5px;
+}
+.room_box:hover{
+	background-color: #f2f2f2;
+}

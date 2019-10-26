@@ -1,2 +1,38 @@
-<h1>Admin::Massages#show</h1>
-<p>Find me in app/views/admin/massages/show.html.erb</p>
+<div class="admin_message_show">
+	<h1>自転車　　(<%= link_to @room.bicycle.name, admin_bicycle_path(@room.bicycle) %>)</h1>
+	<div class="clearfix">
+		<div class="admin_message_owner">
+			<h2>オーナー</h2>
+		</div>
+		<div class="admin_message_user">
+			<h2>ユーザー</h2>
+		</div>
+	</div>
+	<% @message.each do |m| %>
+		<div class="clearfix">
+			<% if m.owner_id.blank? %>
+				<div class="message_box_right">
+					<%= @room.user.nickname %>
+					<div class="message_right">
+						<%= simple_format(m.comment) %>
+					</div>
+					<div class="message_delete_right">
+						<%= link_to '✖️', admin_massage_path(m), method: :delete, "data-confirm" => "投稿を削除しますか？", class: 'btn-danger' %>
+					</div>
+				</div>
+			<% else %>
+				<div class="message_box_left">
+					<%= @room.owner.nickname %>
+					<div class="message_left">
+						<%= simple_format(m.comment) %>
+					</div>
+					<div class="message_delete">
+						<%= link_to '✖️', admin_massage_path(m), method: :delete, "data-confirm" => "投稿を削除しますか？", class: 'btn-danger' %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	<% end %>
+
+
+</div>

@@ -1,2 +1,18 @@
-<h1>Admin::Rooms#index</h1>
-<p>Find me in app/views/admin/rooms/index.html.erb</p>
+<div class="room_index">
+	<h1>メッセージルーム一覧</h1>
+	<div class="clearfix room_index_boxs">
+		<% @room.each do |r| %>
+			<% if r.messages.present? %>
+				<%= link_to(admin_massage_path(r), class: 'room_box') do %>
+					<div class="">
+						<h2>自転車　<%= r.bicycle.name %>の問い合わせ</h2>
+						オーナー　　<%= r.owner.nickname %>さん<br>
+						ユーザー　　<%= r.user.nickname %>さん <br>
+						最終更新日　<%= r.messages.last.updated_at.strftime('%Y年%m月%d日 %H時%M分') %>
+					</div>
+				<% end %>
+			<% end %>
+
+		<% end %>
+	</div>
+</div>

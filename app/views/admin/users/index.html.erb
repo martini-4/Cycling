@@ -1,9 +1,9 @@
-<div class="admin_owner_index">
+<div class="admin_user_index">
 	<h1>ユーザー　一覧</h1>
 	<table class="table ">
 		<thead>
 			<tr>
-				<th>ユーザー名(本名)</th>
+				<th>本名</th>
 				<th>ニックネーム</th>
 				<th>アドレス</th>
 				<th>住所</th>
@@ -14,7 +14,7 @@
 			<% @user.each do |user| %>
 			 		<tr>
 						<td>
-							<!-- ユーザー指名 -->
+							<!-- 本名 -->
 							<%= link_to user.lastname_kanji+user.firstname_kanji,admin_user_path(user)  %>
 						</td>
 						<td>

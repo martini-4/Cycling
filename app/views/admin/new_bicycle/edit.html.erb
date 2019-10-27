@@ -1,0 +1,98 @@
+<div class="admin_bicycle_new_edit">
+	<h1>自転車の承認画面</h1>
+	<div class="admin_bicycle_new_content">
+		身分証明書の内容と照らし合わせて下さい。
+		<div class="admin_bicycle_proof">
+			<%= attachment_image_tag @bicycle, :proof_picture, format: 'jpeg', class: '' %>
+		</div>
+		<div class="clearfix">
+			○出品者<br>
+			<div class='admin_bicycle_contents'><%= @bicycle.owner.nickname %></div><br><br>
+
+			○自転車名<br>
+			<div class='admin_bicycle_contents'><%= @bicycle.name %></div><br><br>
+
+			○購入者指名<br>
+			<div class='admin_bicycle_contents'><%= @bicycle.buyer_name %></div><br><br>
+		</div>
+
+		<h2>自転車情報</h2>
+
+		<div class="clearfix">
+			<% @bicycle.bicycle_pictures.each do |picture| %>
+				<div class="admin_bicycle_picture">
+					<%= attachment_image_tag picture, :bicycle_picture, format: 'jpeg', class: 'proof_picture' %>
+				</div>
+			<% end %>
+		</div>
+
+		<div class="clearfix">
+			○ハンドル<br>
+			<div class='admin_bicycle_contents'><%= @bicycle.handle.handle_type %></div>
+		</div>
+
+		<div class="clearfix">
+			○車種<br>
+			<div class='admin_bicycle_contents'><%= @bicycle.bicycle_type.bicycle_type %></div>
+		</div>
+	</div>
+
+	<div class="admin_bicycle_each_box">
+
+		<div class="clearfix">
+			○付属品<br>
+			<div class="clearfix">
+				<% @bicycle.bicycle_accessories.each do |a| %>
+					<div class='admin_bicycle_each'><%= a.accessory.accessorie_name %></div>
+				 <% end %>
+			</div>
+		</div>
+
+		<h2>出品詳細情報</h2>
+
+		<div class="clearfix">
+			○出品地域<br>
+			<div class="">
+				 <% @bicycle.exhibition_spots.each do |e| %>
+					<div class='admin_bicycle_each'><%= e.city.city_name %></div>
+				<% end %>
+			</div>
+		</div>
+
+		<div class="clearfix">
+			○貸し出し場所<br>
+			<div class="">
+				<% @bicycle.lend_spots.each do |l| %>
+					<div class='admin_bicycle_each'><%= l.lend_spot %></div>
+				<% end %>
+			</div>
+		</div>
+
+		<div class="clearfix">
+			○返却場所<br>
+			<div class="">
+				<% @bicycle.return_spots.each do |r| %>
+					<div class='admin_bicycle_each'><%= r.return_spot %></div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<div class="admin_bicycle_new_content">
+		<h4>特記事項</h4>
+		<div class="clearfix">
+			<div class='admin_bicycle_description'><%= @bicycle.description %></div>
+		</div>
+
+		<div class="clearfix">
+			<%= form_for(@bicycle,url: admin_new_bicycle_path(@bicycle)) do |f| %>
+				<%= f.hidden_field :approval, :value => true %>
+				<div class="admin_bicycle_new_btn">
+					<%= f.submit '　承認　', class: 'btn-primary btn' %>
+				</div>
+			<% end %>
+			<div class="admin_bicycle_new_btn">
+				<%= link_to '　削除　', admin_new_bicycle_path, method: :delete, "data-confirm" => "本当に削除しますか？", class: 'btn-danger btn' %>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,2 +1,56 @@
-<h1>Admin::NewUsers#edit</h1>
-<p>Find me in app/views/admin/new_users/edit.html.erb</p>
+<div class="admin_user_new_edit">
+	<h1>オーナーの承認画面</h1>
+	<div class="admin_user_new_content">
+		<div class="clearfix">
+			○名前<br>
+			<div class='admin_user_contents'><%= @user.lastname_kanji %></div><div class='admin_user_contents'><%= @user.firstname_kanji %></div>
+		</div>
+
+		<div class="clearfix">
+			○名前(カナ)<br>
+			<div class='admin_user_contents'><%= @user.lastname_kana %></div><div class='admin_user_contents'><%= @user.firstname_kana %></div>
+		</div>
+
+		<div class="clearfix">
+			○性別<br>　　　<div class='admin_user_contents'><%= @user.sex.sex %></div>
+		</div>
+
+		<div class="clearfix">
+			○ニックネーム<br>
+			<div class='admin_user_contents'><%= @user.nickname %></div>
+		</div>
+
+		<div class="clearfix">
+			身分証明書の内容と照らし合わせて下さい。<br>
+			<%= attachment_image_tag @user, :proof_picture, format: 'jpeg', class: 'proof_picture' %>
+		</div>
+
+		<div class="clearfix">
+			○住所<br>
+			<div class='admin_user_contents'><%= @user.address %></div>
+		</div>
+
+		<div class="clearfix">
+			○電話番号<br>
+			<div class='admin_user_contents'><%= @user.mobile %></div>
+		</div>
+
+		<div class="clearfix">
+			○メールアドレス<br>
+			<div class='admin_user_contents'><%= @user.email %></div>
+		</div>
+
+
+		<div class="clearfix">
+			<%= form_for(@user,url: admin_new_user_path(@user)) do |f| %>
+				<%= f.hidden_field :approval, :value => true %>
+				<div class="admin_user_new_btn">
+					<%= f.submit '　承認　', class: 'btn-primary btn' %>
+				</div>
+			<% end %>
+			<div class="admin_user_new_btn">
+				<%= link_to '　削除　', admin_new_user_path, method: :delete, "data-confirm" => "本当に削除しますか？", class: 'btn-danger btn' %>
+			</div>
+		</div>
+	</div>
+</div>

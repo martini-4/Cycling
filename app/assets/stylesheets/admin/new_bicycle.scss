@@ -1,0 +1,73 @@
+// Place all the styles related to the admin/new_bicycle controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.admin_bicycle_index{
+	width: 80%;
+	margin: 0 auto;
+	background-color: #5bd9fd;
+}
+.admin_bicycle_proof{
+	float: right;
+	margin: 50px;
+}
+.admin_bicycle_new_edit{
+	width: 80%;
+	margin: 0 auto;
+	background-color: #fef4e3;
+	font-size: 30px;
+}
+.admin_bicycle_new_content{
+	padding-left: 20%;
+}
+.admin_bicycle_proof img{
+	height: 250px;
+	width: 250px;
+	margin: 50px;
+}
+.admin_bicycle_contents{
+	border: 1px solid #000000;
+	background-color: #f5f6f5;
+	border-radius: 10px;
+	padding: 5px;
+	margin: 10px;
+	float: left;
+	margin-left: 10%;
+}
+.admin_bicycle_picture{
+	width: 50%;
+	float: left;
+}
+.admin_bicycle_each_box{
+	text-align: center;
+}
+.admin_bicycle_each{
+	float: left;
+	width: 30%;
+	margin: 20px 0;
+	border: 1px solid #000000;
+	background-color: #f5f6f5;
+	border-radius: 10px;
+	padding: 5px;
+	margin-left: 2%;
+	text-align: center;
+}
+.admin_bicycle_description{
+	border: 1px solid #000000;
+	background-color: #f5f6f5;
+	border-radius: 10px;
+	padding: 5px;
+	width: 80%;
+	margin: 10px 0;
+	float: left;
+}
+.admin_bicycle_new_btn{
+	margin: 20px 10% 20px 10%;
+	float: left;
+}
+.admin_bicycle_new_btn input{
+	padding: 10px 20px;
+}
+.admin_bicycle_new_btn a{
+	padding: 10px 20px;
+}

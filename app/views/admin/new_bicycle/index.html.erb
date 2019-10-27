@@ -1,0 +1,44 @@
+<div class="admin_bicycle_index">
+	<h1>承認待ち自転車　一覧</h1>
+	<table class="table ">
+		<thead>
+			<tr>
+				<th>自転車名</th>
+				<th>出品者(オーナー)</th>
+				<th>１日の料金</th>
+				<th>自転車の種類</th>
+				<th>申し込み日時</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @bicycle.each do |bicycle| %>
+			 		<tr>
+						<td>
+							<!-- 自転車名 -->
+							<%= link_to bicycle.name,edit_admin_new_bicycle_path(bicycle)  %>
+						</td>
+						<td>
+							<!-- 出品者 -->
+							<%= link_to bicycle.owner.nickname, admin_owner_path(bicycle.owner.id) %>
+						</td>
+
+						<td>
+							<!-- １日の料金 -->
+							<%= bicycle.price %>
+						</td>
+						<td>
+							<!-- 自転車の種類 -->
+							<%= bicycle.bicycle_type.bicycle_type %>
+						</td>
+						<td>
+							<!-- 申し込み日時の表示 -->
+							<%= bicycle.created_at.strftime('%Y年%m月%d日 %H時%M分') %>
+						</td>
+					</tr>
+			<% end %>
+		</tbody>
+		<div class="">
+			<%= paginate @bicycle, class: "paginate" %>
+		</div>
+	</table>
+</div>

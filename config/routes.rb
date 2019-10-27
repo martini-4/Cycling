@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :new_owners, only: [:index, :edit, :update, :destroy]
     resources :new_users, only: [:index, :edit, :update, :destroy]
+    resources :new_bicycle, only: [:index, :edit, :update, :destroy]
     resources :owners, only: [:index, :show, :destroy]
     resources :users, only: [:index, :show, :destroy]
-    resources :bicycles, only: [:index, :show, :edit, :update, :destroy]
+    resources :bicycles, only: [:show, :destroy]
     resources :contracts, only: [:index, :show]
     resources :massages, only: [:show, :destroy]
     resources :rooms, only: [:index]

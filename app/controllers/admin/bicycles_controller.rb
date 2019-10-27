@@ -1,7 +1,4 @@
 class Admin::BicyclesController < ApplicationController
-  def index
-  end
-
   def show
     @bicycle = Bicycle.find(params[:id])
     @lend_day =@bicycle.lend_days
@@ -14,12 +11,6 @@ class Admin::BicyclesController < ApplicationController
       format.html {render :show}
       format.json {render :show, status: :ok, location: @lend_day.to_json }
     end
-  end
-
-  def edit
-  end
-
-  def update
   end
 
   def destroy

@@ -1,6 +1,6 @@
 class Contract < ApplicationRecord
-	belongs_to :owner
-	belongs_to :user
+	belongs_to :owner, optional: true
+	belongs_to :user, optional: true
 	belongs_to :bicycle, optional: true
 	has_many :borrow_days
 

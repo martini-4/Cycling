@@ -14,7 +14,7 @@ class Owner::OwnersController < ApplicationController
       @lends.store(b.id, [])
 
       b.lend_days.each do |l|
-        p l
+        
         @lends[b.id].push(l.lend_day)
       end
     end

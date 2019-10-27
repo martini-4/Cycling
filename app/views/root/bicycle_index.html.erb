@@ -5,12 +5,14 @@
 			<div class="bicycle_index_box">
 				<div class="">
 					<% if admin_signed_in? %>
-						<%= link_to(admin_bicycle_path(e.bicycle)) do %>
-							<% @picture = e.bicycle.bicycle_pictures.find_by(default: :true) %>
+						<%= link_to(admin_bicycle_path(e.bicycle_id)) do %>
+							<% if e.bicycle_id == BicyclePicture.find_by(bicycle_id: e.bicycle_id ) %>
+								<% @picture = e.bicycle.bicycle_pictures.where(default: :true) %>
+							<% end %>
 				  			<%= attachment_image_tag @picture, :bicycle_picture, fallback: "img1.png", class: 'bicycle_index_picture'%>
 				  		<% end %>
 					<% else %>
-						<%= link_to(owner_bicycle_path(e.bicycle)) do %>
+						<%= link_to(owner_bicycle_path(e.bicycle_id)) do %>
 							<% @picture = e.bicycle.bicycle_pictures.find_by(default: :true) %>
 				  			<%= attachment_image_tag @picture, :bicycle_picture, fallback: "img1.png", class: 'bicycle_index_picture'%>
 				  		<% end %>
@@ -49,6 +51,9 @@
 				</div>
 			</div>
 		<% end %>
+		<div class="">
+			<%= paginate @exhibition, class: "paginate" %>
+		</div>
 	<% else %>
 		<h1>現在<%= @city.city_name %>の出品はありません</h1>
 	<% end %>

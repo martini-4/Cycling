@@ -1,4 +1,5 @@
 class Admin::RepliesController < ApplicationController
+	before_action :authenticate_admin!
   def new
   	@inquiry = Inquiry.find(params[:id])
   	@reply = Reply.new

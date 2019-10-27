@@ -131,5 +131,11 @@ $(function() {
 //     $('.message_left').prepend('<p>' + e.detail[0] + '</p>');
 //   });
 // });
-
+$(function(){
+    $(document).ready(function(){
+      $('.single').slick({
+        autoplay: true, //自動再生
+      });
+    });
+});
 

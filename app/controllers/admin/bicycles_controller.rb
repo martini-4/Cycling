@@ -1,4 +1,5 @@
 class Admin::BicyclesController < ApplicationController
+  before_action :authenticate_admin!
   def show
     @bicycle = Bicycle.find(params[:id])
     @lend_day =@bicycle.lend_days

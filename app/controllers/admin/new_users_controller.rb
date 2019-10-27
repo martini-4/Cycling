@@ -1,4 +1,5 @@
 class Admin::NewUsersController < ApplicationController
+  before_action :authenticate_admin!
   def index
   	@user = User.all.where(approval: false).page(params[:page]).per(30)
   end

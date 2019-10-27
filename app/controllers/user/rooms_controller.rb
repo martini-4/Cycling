@@ -1,5 +1,9 @@
 class User::RoomsController < ApplicationController
+    before_action :authenticate_user!
   def index
+    if current_user.approval == false
+      redirect_to wait_path
+    end
     @user = current_user
     @room = @user.rooms.order(updated_at: :desc)
   end

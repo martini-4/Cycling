@@ -1,4 +1,4 @@
 class LendDay < ApplicationRecord
-	belongs_to :bicycle, optional: true
+	belongs_to :bicycle
 
 end

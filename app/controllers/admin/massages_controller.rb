@@ -1,4 +1,5 @@
 class Admin::MassagesController < ApplicationController
+  before_action :authenticate_admin!
   def show
   	@room = Room.find(params[:id])
     @message = @room.messages.order(id: "DESC")

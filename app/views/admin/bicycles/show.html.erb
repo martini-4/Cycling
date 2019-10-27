@@ -1,4 +1,7 @@
-<div class="bicycle_show_picture">
+<div class="single">
+	<% @bicycle.bicycle_pictures.each do |picture| %>
+		<%= attachment_image_tag picture, :bicycle_picture, class: '' %>
+	<% end %>
 </div>
 <div class="bicycle_show">
 	<h1>商品名　　<%= @bicycle.name %></h1>

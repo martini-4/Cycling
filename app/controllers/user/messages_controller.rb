@@ -1,5 +1,10 @@
 class User::MessagesController < ApplicationController
+  before_action :authenticate_user!
   def show
+    # 承認確認
+    if current_user.approval == false
+      redirect_to wait_path
+    end
   	@room = Room.find(params[:id])
     @message = @room.messages.order(id: "DESC")
   	@message_new = Message.new

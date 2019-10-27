@@ -43,6 +43,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :id_picture, null: false
       t.string :nickname, null: false
       t.string :picture
+      t.string :proof_picture, null: false
       t.boolean :approval, default: false, null: false
 
 

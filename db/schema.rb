@@ -103,15 +103,6 @@ ActiveRecord::Schema.define(version: 2019_10_25_115109) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "events", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.date "start_date"
-    t.date "end_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "exhibition_spots", force: :cascade do |t|
     t.integer "bicycle_id", null: false
     t.integer "city_id", null: false
@@ -245,6 +236,7 @@ ActiveRecord::Schema.define(version: 2019_10_25_115109) do
     t.string "proof_picture_id", null: false
     t.string "nickname", null: false
     t.string "picture_id"
+    t.string "proof_picture", null: false
     t.boolean "approval", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

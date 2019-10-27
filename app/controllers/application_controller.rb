@@ -13,6 +13,15 @@ class ApplicationController < ActionController::Base
  		#管理者メニューへのパス
     end
  end
+  def after_sign_up_path_for(resource)
+ 	# userがsign_inした場合
+ 	if current_user
+ 	    wait_path
+ 	# ownerがsign_inした場合
+ 	elsif current_owner
+ 		wait_path
+ 	end
+ end
  def after_sign_out_path_for(resource)
 	top_path
  end

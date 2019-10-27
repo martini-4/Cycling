@@ -1,4 +1,5 @@
 class Admin::OwnersController < ApplicationController
+  before_action :authenticate_admin!
   def index
   	@owner = Owner.all.page(params[:page]).per(30)
   end

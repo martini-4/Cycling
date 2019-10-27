@@ -1,6 +1,6 @@
-<div class="center">
+<div class="single">
 	<% @bicycle.bicycle_pictures.each do |picture| %>
-		<div><%= attachment_image_tag picture, :bicycle_picture, class: '' %></div>
+		<%= attachment_image_tag picture, :bicycle_picture, class: '' %>
 	<% end %>
 </div>
 <div class="bicycle_show">
@@ -155,18 +155,3 @@
 	</div>
 
 </div>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script type="text/javascript" src="slick/slick.min.js"></script>
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('.center').slick({
-    	infinite: true, //スライドのループ有効化
-	    dots:true, //ドットのナビゲーションを表示
-	    centerMode: true, //要素を中央寄せ
-	    centerPadding:'10%', //両サイドの見えている部分のサイズ
-	    autoplay:true, //自動再生
-    });
-  });
-</script>

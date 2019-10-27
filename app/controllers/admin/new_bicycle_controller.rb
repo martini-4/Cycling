@@ -1,4 +1,5 @@
 class Admin::NewBicycleController < ApplicationController
+  before_action :authenticate_admin!
   def index
   	@bicycle = Bicycle.all.where(approval: false).page(params[:page]).per(30)
   end

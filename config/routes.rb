@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   resources :events
-  devise_for :owners
+  devise_for :owners, controllers: { registrations: 'registrations' }
   devise_for :admins
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'registrations' }
+
   namespace :admin do
     resources :new_owners, only: [:index, :edit, :update, :destroy]
     resources :new_users, only: [:index, :edit, :update, :destroy]

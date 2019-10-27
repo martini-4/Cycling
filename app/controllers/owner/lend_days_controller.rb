@@ -1,5 +1,10 @@
 class Owner::LendDaysController < ApplicationController
+  before_action :authenticate_owner!
   def edit
+    # 承認確認
+    if current_owner.approval == false
+      redirect_to wait_path
+    end
     # 自転車情報の表示
     @bicycle = Bicycle.find(params[:id])
     @lend_spot = @bicycle.lend_spots

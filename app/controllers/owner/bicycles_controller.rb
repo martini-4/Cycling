@@ -5,6 +5,10 @@ class Owner::BicyclesController < ApplicationController
 
   def new
     authenticate_owner!
+    # 承認確認
+    if current_owner.approval == false
+      redirect_to wait_path
+    end
     @bicycle = Bicycle.new
     @exhibition_spots = @bicycle.exhibition_spots.build
     @lend_spots =@bicycle.lend_spots.build
@@ -32,6 +36,11 @@ class Owner::BicyclesController < ApplicationController
   end
 
   def edit
+    authenticate_owner!
+    # 承認確認
+    if current_owner.approval == false
+      redirect_to wait_path
+    end
     @bicycle = Bicycle.find(params[:id])
     @picture = @bicycle.bicycle_pictures
     @accessory = @bicycle.bicycle_accessories
@@ -58,7 +67,7 @@ class Owner::BicyclesController < ApplicationController
     bicycle.owner_id = current_owner.id
     if bicycle.save
       flash[:success] = "出品の更新が完了いたしました。"
-      redirect_to owner_bicycle_path(bicycle.id)
+      redirect_to wait_path
     else
       flash[:danger] = "出品更新に失敗しました。入力内容をご確認ください。"
       redirect_to new_owner_bicycle_path

@@ -1,15 +1,28 @@
 class User::ContractsController < ApplicationController
+  before_action :authenticate_user!
   def index
+    # 承認確認
+    if current_user.approval == false
+      redirect_to wait_path
+    end
     @user = current_user
     @contract = @user.contracts.page(params[:page]).reverse_order.per(15)
   end
 
   def show
+    # 承認確認
+    if current_user.approval == false
+      redirect_to wait_path
+    end
     @contract = Contract.find(params[:id])
     @bicycle = @contract.bicycle
   end
 
   def new
+    # 承認確認
+    if current_user.approval == false
+      redirect_to wait_path
+    end
     @contract = Contract.new
     borrow_day = @contract.borrow_days.build
     @bicycle = Bicycle.find(params[:bicycle])
@@ -23,6 +36,10 @@ class User::ContractsController < ApplicationController
   end
 
   def confirm
+    # 承認確認
+    if current_user.approval == false
+      redirect_to wait_path
+    end
     @contract = Contract.new(contract_params)
     @bicycle = @contract.bicycle
     @owner = @contract.owner

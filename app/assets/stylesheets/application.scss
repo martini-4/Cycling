@@ -16,6 +16,8 @@
  */
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+@import "slick-theme"; 
+@import "slick";
 *{
 	margin: 0;
 	padding: 0;
@@ -82,7 +84,7 @@ footer{
 
 // owner 新規登録画面
 .sign_up{
-	width: 40%;
+	width: 50%;
 	margin: 50px auto;
 	background-color: #fef4e3;
 	padding: 30px 100px;
@@ -110,4 +112,10 @@ footer{
     background-color: #fef4e3;
     padding: 50px 100px;
     height: 500px;
+}
+
+// flashメッセージ
+.flash{
+	font-size: 20px;
+	text-align: center;
 }

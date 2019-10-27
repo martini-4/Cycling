@@ -1,5 +1,10 @@
 class Owner::MessagesController < ApplicationController
+  before_action :authenticate_owner!
   def show
+    # 承認確認
+    if current_owner.approval == false
+      redirect_to wait_path
+    end
   	@room = Room.find(params[:id])
     @message = @room.messages.order(id: "DESC")
   	@message_new = Message.new

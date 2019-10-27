@@ -1,43 +1,38 @@
 class Owner::OwnersController < ApplicationController
+  before_action :authenticate_owner!
   def show
+    # 承認確認
+    if current_owner.approval == false
+      redirect_to wait_path
+    end
     @owner = current_owner
-    @bicycle = @owner.bicycles.page(params[:page]).reverse_order.per(3)
+    @bicycle = @owner.bicycles.where(approval: true).page(params[:page]).reverse_order.per(3)
     @bicycles = @owner.bicycles
 
     # カレンダー用のインスタンスを作成
     @lends = Hash.new
-    @borrow = Hash.new
-
-
     @bicycles.each do |b|
-      
+
       @lends.store(b.id, [])
 
       b.lend_days.each do |l|
-        
+
         @lends[b.id].push(l.lend_day)
       end
     end
 
-
+    @borrow = Hash.new
     @bicycles.each do |b|
       @borrow.store(b.id, [])
       b.contracts.each do |c|
 
         c.borrow_days.each do |borrow|
 
-          p borrow
           @borrow[b.id].push(borrow.borrow_day)
 
         end
-
       end
-
     end
-
-
-    p @lends
-    p @borrow
      # カレンダーへイベント情報を送る
       respond_to do |format|
         format.html
@@ -48,6 +43,10 @@ class Owner::OwnersController < ApplicationController
   end
 
   def edit
+    # 承認確認
+    if current_owner.approval == false
+      redirect_to wait_path
+    end
     @owner = current_owner
   end
 

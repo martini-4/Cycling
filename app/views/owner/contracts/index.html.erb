@@ -14,7 +14,11 @@
 		  			<h3>出品者　　<%= c.owner.nickname %></h3>
 		  		</div>
 		  		<div class="">
-		  			<h3>借り出し者　　<%= c.user.nickname %></h3>
+		  			<% if c.user ==nil %>
+		  				<h3>契約者　　undefined</h3>
+		  			<% else %>
+						<h3>契約者　　<%= c.user.nickname %></h3>
+					<% end %>
 		  		</div>
 		  		<P>
 		  			契約確定日　　<%= c.created_at.strftime('%Y年%m月%d日 %H時%M分') %>

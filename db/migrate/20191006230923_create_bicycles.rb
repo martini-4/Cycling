@@ -7,7 +7,6 @@ class CreateBicycles < ActiveRecord::Migration[5.2]
       t.string :name, null: false, index: true
       t.integer :price, null: false
       t.string :description, limit: 200
-      t.string :id_picture, null: false
       t.string :buyer_name, null: false
       t.string :proof_picture_id, null: false
       t.boolean :approval, default: false, null: false

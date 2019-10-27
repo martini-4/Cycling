@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // 自転車新規登録画面
 .bicycle_new{
-	width: 60%;
+	width: 80%;
 	margin: 50px auto;
 	background-color: #fef4e3;
 	padding: 30px 100px;
@@ -16,6 +16,12 @@
 	margin: 10px 0;
 }
 .accessory_form{
+	font-size: 20px;
+}
+.bicycle_new_accessory{
+	width: 20%;
+	margin: 10px 0 10px 5%;
+	float: left;
 	font-size: 20px;
 }
 .bicycle_description_box{
@@ -105,14 +111,12 @@
 .bicycle_show_city_link{
 	padding: 20px 30px;
 	margin: 20px 20px 0;
-	color: #ffffff;
-	background-color: #5fd0c7;
 	border: 1px solid #000000;
 	border-radius: 10px;
 	width: 20%;
     float: left;
     text-align: center;
-    font-size: 15px;
+    font-size: 12px;
 }
 .bicycle_show_city_link:hover{
 	background-color: #42928b;

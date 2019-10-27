@@ -5,7 +5,7 @@ class Bicycle < ApplicationRecord
 	belongs_to  :bicycle_type
 	has_many :exhibition_spots, dependent: :destroy
 	has_many :rooms, dependent: :destroy
-	has_many :contracts
+	has_many :contracts, dependent: :destroy
 	has_many :bicycle_accessories, dependent: :destroy
 	has_many :accessories, through: :bicycle_accessories
 	has_many :bicycle_pictures, dependent: :destroy

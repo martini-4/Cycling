@@ -1,6 +1,6 @@
 class User::ReviewsController < ApplicationController
-	before_action :authenticate_user!
 	def create
+		authenticate_user!
 		review = Review.new(review_params)
 		bicycle = review.bicycle_id
 		if review.save

@@ -1,19 +1,19 @@
 <div class="bicycle_index">
 	<% unless @city.exhibition_spots.empty? %>
 		<h1><%= @city.city_name %>の出品一覧</h1>
-		<% @exhibition.each do |e| %>
-			<div class="bicycle_index_box">
+		<% @bicycle.each do |b| %>
+			<div class="bicycle_index_box clearfix">
 				<div class="">
 					<% if admin_signed_in? %>
-						<%= link_to(admin_bicycle_path(e.bicycle_id)) do %>
-							<% if e.bicycle_id == BicyclePicture.find_by(bicycle_id: e.bicycle_id ) %>
-								<% @picture = e.bicycle.bicycle_pictures.where(default: :true) %>
+						<%= link_to(admin_bicycle_path(b)) do %>
+							<% if b == BicyclePicture.find_by(bicycle_id: b ) %>
+								<% @picture = b.bicycle_pictures.where(default: :true) %>
 							<% end %>
 				  			<%= attachment_image_tag @picture, :bicycle_picture, fallback: "img1.png", class: 'bicycle_index_picture'%>
 				  		<% end %>
 					<% else %>
-						<%= link_to(owner_bicycle_path(e.bicycle_id)) do %>
-							<% @picture = e.bicycle.bicycle_pictures.find_by(default: :true) %>
+						<%= link_to(owner_bicycle_path(b)) do %>
+							<% @picture = b.bicycle_pictures.find_by(default: :true) %>
 				  			<%= attachment_image_tag @picture, :bicycle_picture, fallback: "img1.png", class: 'bicycle_index_picture'%>
 				  		<% end %>
 				  	<% end %>
@@ -21,30 +21,16 @@
 				<div class="bicycle_index_box2">
 					<div class="bicycle_index_content">
 						<p>自転車名<br>
-							　　<%= link_to e.bicycle.name, owner_bicycle_path(e.bicycle) %></p>
-						<p>１日の料金　<%= e.bicycle.price %>円</p>
+							　　<%= link_to b.name, owner_bicycle_path(b) %></p>
+						<p>１日の料金　<%= b.price %>円</p>
 						<p>出費者<br>
-							　　<%= e.bicycle.owner.nickname %>(<%= e.bicycle.owner.sex.sex %>)</p>
+						<%= b.owner.nickname %>(<%= b.owner.sex.sex %>)</p>
 					</div>
-					<div class="bicycle_index_content">
+					<div class="bicycle_index_accessories">
 						<h4>付属品一覧</h4>
-						<% e.bicycle.bicycle_accessories.each do |a| %>
-							<div class="bicycle_indew_text">
+						<% b.bicycle_accessories.each do |a| %>
+							<div class="bicycle_index_accessory">
 								■<%= a.accessory.accessorie_name %>
-							</div>
-						<% end %>
-					</div>
-					<div class="bicycle_index_content">
-						<h4>貸し出し場所</h4>
-						<% e.bicycle.lend_spots.each do |l| %>
-							<div class="bicycle_indew_text">
-								●<%= l.lend_spot %>
-							</div>
-						<% end %>
-						<h4>返却場所</h4>
-						<% e.bicycle.return_spots.each do |r| %>
-							<div class="bicycle_indew_text">
-								●<%= r.return_spot %>
 							</div>
 						<% end %>
 					</div>
@@ -52,7 +38,7 @@
 			</div>
 		<% end %>
 		<div class="">
-			<%= paginate @exhibition, class: "paginate" %>
+			<%= paginate @bicycle, class: "paginate" %>
 		</div>
 	<% else %>
 		<h1>現在<%= @city.city_name %>の出品はありません</h1>

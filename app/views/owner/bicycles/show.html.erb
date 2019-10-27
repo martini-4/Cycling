@@ -57,51 +57,54 @@
 			</div>
 		<% end %>
 	</div>
-	<div class="contract_new_link">
-		<% if user_signed_in? %>
-			<%= link_to 'この商品を借りる',new_user_contract_path(bicycle: @bicycle), class: 'btn btn-danger' %>
-		<% end %>
-	</div>
-	<!-- オーナーとのメッセージ -->
 	<% if user_signed_in? %>
-		<div class="bicycle_show_room">
-			<% if Room.find_by(owner_id: @bicycle.owner.id, user_id: current_user.id, bicycle_id: @bicycle.id) == nil  %>
-				<%= form_for @room_new, url: user_rooms_path do |room| %>
-					<%= room.hidden_field :owner_id, :value => @bicycle.owner.id %>
-					<%= room.hidden_field :user_id, :value => current_user.id %>
-					<%= room.hidden_field :bicycle_id, :value => @bicycle.id %>
+		<% if current_user.approval == true %>
+			<div class="contract_new_link">
 
-					<%= room.submit 'オーナーにメッセージを送る', class: 'btn btn-success' %>
+				<%= link_to 'この商品を借りる',new_user_contract_path(bicycle: @bicycle), class: 'btn btn-danger' %>
+			</div>
+			<!-- オーナーとのメッセージ -->
+			<div class="bicycle_show_room">
+				<% if Room.find_by(owner_id: @bicycle.owner.id, user_id: current_user.id, bicycle_id: @bicycle.id) == nil  %>
+					<%= form_for @room_new, url: user_rooms_path do |room| %>
+						<%= room.hidden_field :owner_id, :value => @bicycle.owner.id %>
+						<%= room.hidden_field :user_id, :value => current_user.id %>
+						<%= room.hidden_field :bicycle_id, :value => @bicycle.id %>
 
+						<%= room.submit 'オーナーにメッセージを送る', class: 'btn btn-success' %>
+
+					<% end %>
+				<% else %>
+					<% @room = Room.find_by(owner_id: @bicycle.owner.id, user_id: current_user.id, bicycle_id: @bicycle.id) %>
+					<%= link_to 'オーナーにメッセージを送る', user_message_path(@room.id), class: 'btn btn-success' %>
 				<% end %>
-			<% else %>
-				<% @room = Room.find_by(owner_id: @bicycle.owner.id, user_id: current_user.id, bicycle_id: @bicycle.id) %>
-				<%= link_to 'オーナーにメッセージを送る', user_message_path(@room.id), class: 'btn btn-success' %>
-			<% end %>
-		</div>
-	 <% end %>
+			</div>
+		<% end %>
+	<% end %>
 	<!-- レビューを書く -->
 	<% if user_signed_in?%>
-		<div class="review_post">
-		    <div class="review_post_title">
-		    	<h2 class="">レビューを書く</h2>
-		    </div>
-		    <div class="review_post_content_box">
+		<% if current_user.approval == true %>
+			<div class="review_post">
+			    <div class="review_post_title">
+			    	<h2 class="">レビューを書く</h2>
+			    </div>
+			    <div class="review_post_content_box">
 
-		    	<%= form_for @review, url: user_reviews_path do |review| %>
+			    	<%= form_for @review, url: user_reviews_path do |review| %>
 
 
-		        	<%= review.hidden_field :user_id, :value => current_user.id %>
-		        	<%= review.hidden_field :bicycle_id, :value => @bicycle.id %>
-		        	<%= review.text_area :review_message , class: "review_post_content" %>
-		        	<div class="review_submit">
-			        	<%= review.submit '投稿する', class: "btn-success btn" %>
-			        </div>
+			        	<%= review.hidden_field :user_id, :value => current_user.id %>
+			        	<%= review.hidden_field :bicycle_id, :value => @bicycle.id %>
+			        	<%= review.text_area :review_message , class: "review_post_content" %>
+			        	<div class="review_submit">
+				        	<%= review.submit '投稿する', class: "btn-success btn" %>
+				        </div>
 
-		      	<% end %>
+			      	<% end %>
 
-	    	</div>
-	  	</div>
+		    	</div>
+		  	</div>
+	  	<% end %>
 	<% end %>
 
 	<!-- レビュー表示 -->
@@ -122,7 +125,7 @@
 		    	<div class="review_user_name">
 	        		<%= r.user.nickname %>さん
 
-	        		<% if r.user_id == current_user %>
+	        		<% if r.user_id == current_user.id %>
 	        			<%= link_to '削除', user_review_path(review: r), method: :delete, "data-confirm" => "本当に削除しますか？", class: 'btn btn-danger' %>
 	        		<% elsif @bicycle.owner_id == current_owner %>
 	        			<%= link_to '削除', user_review_path(review: r), method: :delete, "data-confirm" => "本当に削除しますか？", class: 'btn btn-danger' %>
@@ -144,7 +147,7 @@
 
 		<% @bicycle.exhibition_spots.each do |b| %>
 
-			<%= link_to(:controller=>"/root",:action=>"bicycle_index",:q=>{:ExhibitionSpot_city_id_eq=> b.city.id }, class: '') do %>
+			<%= link_to(:controller=>"/root",:action=>"bicycle_index",id: b.city_id) do %>
 				<div class="bicycle_show_city_link btn-info">
 					<%= b.city.city_name %>の自転車一覧
 				</div>

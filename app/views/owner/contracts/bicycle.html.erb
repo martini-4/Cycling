@@ -1,40 +1,48 @@
 <div class="owner_contract">
-	<h1><%= @bicycle.name %>の契約履歴</h1>
-	<% @contract.each do |c| %>
-		<div class="owner_contract_index clearfix">
-			<div class="owner_contract_bicycle">
-				<%= link_to(owner_bicycle_path(c.bicycle)) do %>
-					<% @picture = c.bicycle.bicycle_pictures.find_by(default: :true) %>
-		  			<%= attachment_image_tag @picture, :bicycle_picture, fallback: "img1.png", class: 'contract_index_picture'%>
-		  		<% end %>
-		  	</div>
-		  	<div class="owner_contract_contents">
-		  		<h2>商品名　　　<%= link_to c.bicycle.name, owner_bicycle_path(c.bicycle) %></h2>
-		  		<div class="">
-		  			<h3>出品者　　<%= c.owner.nickname %></h3>
-		  		</div>
-		  		<div class="">
-		  			<h3>借り出し者　　<%= c.user.nickname %></h3>
-		  		</div>
-		  		<P>
-		  			契約確定日　　<%= c.created_at.strftime('%Y年%m月%d日 %H時%M分') %>
-		  		</P>
-		  		<h4>■貸し出し日</h4>
-		  		<% c.borrow_days do |b| %>
-		  			<div class="">
-		  				<%= b.borrow_day %>
-		  			</div>
-		  		<% end %>
-		  		<h4>合計金額　　<%= c.total_price %>円</h4>
-		  		<h4>支払い方法　　<%= c.payment_method %></h4>
-		  	</div>
-		  	<div class="contract_show_link_box">
-		  		<%= link_to '契約詳細', owner_contract_path(c.id), class: 'btn btn-light' %>
-		  	</div>
+	<% unless @contract.empty? %>
+		<h1><%= @bicycle.name %>の契約履歴</h1>
+		<% @contract.each do |c| %>
+			<div class="owner_contract_index clearfix">
+				<div class="owner_contract_bicycle">
+					<%= link_to(owner_bicycle_path(c.bicycle)) do %>
+						<% @picture = c.bicycle.bicycle_pictures.find_by(default: :true) %>
+			  			<%= attachment_image_tag @picture, :bicycle_picture, fallback: "img1.png", class: 'contract_index_picture'%>
+			  		<% end %>
+			  	</div>
+			  	<div class="owner_contract_contents">
+			  		<h2>商品名　　　<%= link_to c.bicycle.name, owner_bicycle_path(c.bicycle) %></h2>
+			  		<div class="">
+			  			<h3>出品者　　<%= c.owner.nickname %></h3>
+			  		</div>
+			  		<div class="">
+			  		<% if c.user ==nil %>
+		  				<h3>契約者　　undefined</h3>
+		  			<% else %>
+						<h3>契約者　　<%= c.user.nickname %></h3>
+					<% end %>
+			  		</div>
+			  		<P>
+			  			契約確定日　　<%= c.created_at.strftime('%Y年%m月%d日 %H時%M分') %>
+			  		</P>
+			  		<h4>■貸し出し日</h4>
+			  		<% c.borrow_days do |b| %>
+			  			<div class="">
+			  				<%= b.borrow_day %>
+			  			</div>
+			  		<% end %>
+			  		<h4>合計金額　　<%= c.total_price %>円</h4>
+			  		<h4>支払い方法　　<%= c.payment_method %></h4>
+			  	</div>
+			  	<div class="contract_show_link_box">
+			  		<%= link_to '契約詳細', owner_contract_path(c.id), class: 'btn btn-light' %>
+			  	</div>
+			</div>
+		<% end %>
+		<div class="owner_show_paginate">
+			<%= paginate @contract, class: "paginate" %>
 		</div>
+	<% else %>
+		<h1><%= @bicycle.name %>の契約履歴はありません。</h1>
 	<% end %>
-	<div class="owner_show_paginate">
-		<%= paginate @contract, class: "paginate" %>
-	</div>
 </div>
 

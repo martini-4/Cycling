@@ -16,6 +16,11 @@ Rails.application.routes.draw do
     resources :rooms, only: [:index]
     resources :inquiries, only: [:index]
   	resources :replies, only: [:new, :create]
+    resources :contracts do
+      member do
+        get 'bicycle'
+      end
+    end
   end
   namespace :owner do
     resources :owners, only: [:show, :edit, :update, :destroy]

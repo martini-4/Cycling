@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_25_115109) do
+ActiveRecord::Schema.define(version: 2019_10_25_114542) do
 
   create_table "accessories", force: :cascade do |t|
     t.string "accessorie_name", limit: 30, null: false
@@ -63,8 +63,8 @@ ActiveRecord::Schema.define(version: 2019_10_25_115109) do
     t.string "name", null: false
     t.integer "price", null: false
     t.string "description", limit: 200
-    t.string "proof_picture_id", null: false
     t.string "buyer_name", null: false
+    t.string "proof_picture_id", null: false
     t.boolean "approval", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -74,10 +74,10 @@ ActiveRecord::Schema.define(version: 2019_10_25_115109) do
   create_table "borrow_days", force: :cascade do |t|
     t.integer "contract_id", null: false
     t.date "borrow_day", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "lend_spot", null: false
     t.string "return_spot", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "cities", force: :cascade do |t|
@@ -165,9 +165,9 @@ ActiveRecord::Schema.define(version: 2019_10_25_115109) do
     t.string "firstname_kana", null: false
     t.string "mobile", null: false
     t.string "address", null: false
-    t.string "proof_picture_id", null: false
     t.string "nickname", null: false
     t.string "picture_id"
+    t.string "proof_picture_id", null: false
     t.boolean "approval", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -233,10 +233,9 @@ ActiveRecord::Schema.define(version: 2019_10_25_115109) do
     t.string "firstname_kana", null: false
     t.string "mobile", null: false
     t.string "address", null: false
-    t.string "proof_picture_id", null: false
     t.string "nickname", null: false
     t.string "picture_id"
-    t.string "proof_picture", null: false
+    t.string "proof_picture_id", null: false
     t.boolean "approval", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

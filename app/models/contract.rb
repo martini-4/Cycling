@@ -2,7 +2,7 @@ class Contract < ApplicationRecord
 	belongs_to :owner, optional: true
 	belongs_to :user, optional: true
 	belongs_to :bicycle, optional: true
-	has_many :borrow_days
+	has_many :borrow_days, dependent: :destroy
 
 	validates :price,:total_price,:payment_method,
 			   presence: true

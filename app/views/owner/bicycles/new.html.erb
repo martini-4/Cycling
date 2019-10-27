@@ -20,10 +20,12 @@
 			<h2>自転車装備</h2>
 			<%= b.fields_for :bicycle_accessories do |f| %>
 				<p>該当するものにチェックを入れて下さい</p>
-				<div class="bicycle_new_form accessory_form">
+				<div class="bicycle_new_form accessory_form clearfix">
 					<% Accessory.all.each do |accessory| %>
-				        <%= check_box_tag "bicycle[accessory_ids][]", accessory.id %>
-				        <%= accessory.accessorie_name %>
+						<div class="bicycle_new_accessory">
+					        <%= check_box_tag "bicycle[accessory_ids][]", accessory.id %>
+					        <%= accessory.accessorie_name %>
+				    	</div>
 				    <% end %>
 				</div>
 			<% end %>

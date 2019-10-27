@@ -10,7 +10,7 @@ class RootController < ApplicationController
 
 	def bicycle_index
 		@city = City.find(params[:id])
-		@exhibition = ExhibitionSpot.where(city_id: @city).includes(:bicycle).where('bicycle.approval: true').page(params[:page]).reverse_order.per(15)
+		@bicycle = Bicycle.all.where(approval: true).joins(:exhibition_spots).where(exhibition_spots: {city_id: params[:id]}).page(params[:page]).reverse_order.per(15)
 	end
 
 	def bicycle_show

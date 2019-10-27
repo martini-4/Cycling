@@ -3,5 +3,5 @@ class BorrowDay < ApplicationRecord
 
 	validates :borrow_day,:lend_spot,:return_spot,
 			   presence: true
-	
+
 end

@@ -11,7 +11,6 @@
 			１日の貸し出し料金　　<%= @contract.price %>円
 			<br><br>
 			ハンドル　　<%= @bicycle.handle.handle_type %>
-			
 		</div>
 		<h3>■付属品一覧</h3>
 		<div class="clearfix">
@@ -24,7 +23,11 @@
 	</div>
 	<div class="contract_show_content">
 		<h2>契約内容</h2>
-		<h3 class="contract_user_name">契約者　　<%= @contract.user.nickname %></h3>
+	  	<% if @contract.user ==nil %>
+			<h3 class="contract_user_name">契約書　　undefined</h3>
+		<% else %>
+			<h3 class="contract_user_name">契約者　　<%= @contract.user.nickname %></h3>
+		<% end %>
 		<h3>契約確定日　　<%= @contract.created_at.strftime('%Y年%m月%d日 %H時%M分') %></h3>
 		<h3>■契約日</h3>
 		<div class="clearfix">

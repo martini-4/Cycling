@@ -2,16 +2,27 @@ class User::UsersController < ApplicationController
   before_action :authenticate_user!
   def show
     # 承認確認
-    if current_user.approval == false
-      redirect_to wait_path
-    end
-    @user = current_user
-    @contracts = @user.contracts
+    if current_user.approval == true
 
-    # カレンダーイベント表示
-    respond_to do |format|
-      format.html {render :show}
-      format.json {render :show, status: :ok, location: @contracts.to_json }
+      @user = current_user
+      @contracts = @user.contracts
+
+      @borrow = []
+      @contracts.each do |c|
+        c.borrow_days.each do |b|
+
+            @borrow.push(b.borrow_day)
+
+        end
+      end
+
+      # カレンダーイベント表示
+      respond_to do |format|
+        format.html {render :show}
+        format.json {render :show, status: :ok, location: @borrow.to_json }
+      end
+    else
+      redirect_to wait_path
     end
   end
 

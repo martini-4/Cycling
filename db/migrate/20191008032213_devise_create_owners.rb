@@ -33,16 +33,14 @@ class DeviseCreateOwners < ActiveRecord::Migration[5.2]
       # t.datetime :locked_at
 
       t.integer :sex_id, null: false
-      t.string :password_confirmation, null: false
       t.string :lastname_kanji, null: false
       t.string :firstname_kanji, null: false
       t.string :lastname_kana, null: false
       t.string :firstname_kana, null: false
       t.string :mobile, null: false
       t.string :address, null: false
-      t.string :id_picture, null: false
       t.string :nickname, null: false
-      t.string :picture
+      t.string :picture_id
       t.string :proof_picture_id, null: false
       t.boolean :approval, default: false, null: false
 

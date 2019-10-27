@@ -45,9 +45,9 @@
 					<div class="owner_show_bicycle_content_text">商品名　　<%= link_to b.name, admin_bicycle_path(b) %><br>
 					１日の料金　　<%= b.price %></div>
 					<div class="owner_show_bicycle_link">
-						<%= link_to '詳細', owner_bicycle_path(b), class: 'btn-secondary owner_show_bicycle_link_btn' %>
+						<%= link_to '詳細', admin_bicycle_path(b), class: 'btn-secondary owner_show_bicycle_link_btn' %>
 						<%= link_to '削除', admin_bicycle_path(b),method: :delete, "data-confirm" => "本当に削除しますか？", class: 'btn-danger owner_show_bicycle_link_btn' %><br>
-						<%= link_to '契約履歴', bicycle_owner_contract_path(@bicycle), class: 'btn-secondary owner_show_bicycle_link_btn' %>
+						<%= link_to '契約履歴', bicycle_admin_contract_path(b), class: 'btn-secondary owner_show_bicycle_link_btn' %>
 					</div>
 				</div>
 				<!-- カレンダー -->

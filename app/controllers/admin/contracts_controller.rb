@@ -4,6 +4,10 @@ class Admin::ContractsController < ApplicationController
   	@contract = Contract.all.page(params[:page]).reverse_order.per(15)
   end
 
+  def bicycle
+  	@bicycle = Bicycle.find(params[:id])
+  	@contract = @bicycle.contracts.page(params[:page]).reverse_order.per(15)
+  end
   def show
   	@contract = Contract.find(params[:id])
   	@bicycle = @contract.bicycle

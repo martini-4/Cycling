@@ -25,5 +25,8 @@ class RootController < ApplicationController
 	end
 
 	def admin_menu
+		@owner = Owner.all
+		@user = User.all
+		@bicycle = Bicycle.all
 	end
 end

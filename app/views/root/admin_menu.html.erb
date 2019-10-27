@@ -3,13 +3,25 @@
 	<div class="">
 		<ul class="admin_menu_links">
  			<li>
- 			 	<%= link_to '新規ユーザー承認(オーナー)',admin_new_owners_path, class: 'btn btn-secondary'  %>
+ 				<% if @owner.exists?(approval: false) %>
+ 			 		<%= link_to '新規ユーザー承認(オーナー)',admin_new_owners_path, class: 'btn btn-danger'  %>
+ 			 	<% else %>
+ 			 		<%= link_to '新規ユーザー承認(オーナー)',admin_new_owners_path, class: 'btn btn-secondary'  %>
+ 			 	<% end %>
  			</li>
  			<li>
- 				<%= link_to '新規ユーザー承認(利用者)',admin_new_users_path, class: 'btn btn-secondary'  %>
+ 				<% if @user.exists?(approval: false) %>
+ 					<%= link_to '新規ユーザー承認(利用者)',admin_new_users_path, class: 'btn btn-danger'  %>
+ 				<% else %>
+ 			 		<%= link_to '新規ユーザー承認(利用者)',admin_new_users_path, class: 'btn btn-secondary'  %>
+ 			 	<% end %>
  			</li>
  			<li>
- 			 	<%= link_to '新規出品　自転車一覧',admin_bicycles_path, class: 'btn btn-secondary'  %>
+ 				<% if @bicycle.exists?(approval: false) %>
+ 					<%= link_to '新規出品　自転車一覧',admin_bicycles_path, class: 'btn btn-danger'  %>
+ 				<% else %>
+ 			 		<%= link_to '新規出品　自転車一覧',admin_bicycles_path, class: 'btn btn-secondary'  %>
+ 			 	<% end %>
  			</li>
  			<li>
  				<%= link_to 'オーナー　一覧',admin_owners_path, class: 'btn btn-secondary' %>

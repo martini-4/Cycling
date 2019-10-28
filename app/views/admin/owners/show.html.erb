@@ -2,7 +2,7 @@
 	<h1>マイページ</h1>
 	<div class="owner_information clearfix">
 		<div class="profile_picture_box">
-			<%= attachment_image_tag @owner, :picture, fallback: "img2.png", format: 'jpeg', class: 'profile_picture'  %>
+			<%= attachment_image_tag @owner, :picture, fallback: "/images/img2.png", format: 'jpeg', class: 'profile_picture'  %>
 		</div>
 
 			<p>氏名<br><br>
@@ -40,7 +40,7 @@
 				<div class="owner_show_bicycle_content">
 					<div class="owner_bicycle_picture_box">
 						<% @picture = b.bicycle_pictures.find_by(default: :true) %>
-			  			<%= attachment_image_tag @picture, :bicycle_picture, fallback: "img1.png", class: 'owner_bicycle_picture'%>
+			  			<%= attachment_image_tag @picture, :bicycle_picture, fallback: "/images/img1.png", class: 'owner_bicycle_picture'%>
 					</div>
 					<div class="owner_show_bicycle_content_text">商品名　　<%= link_to b.name, admin_bicycle_path(b) %><br>
 					１日の料金　　<%= b.price %></div>

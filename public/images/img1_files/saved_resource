@@ -1,0 +1,4 @@
+var error = new Error("Module: 'ads' with package: 'search' not found!");
+error.toString = function() { return this.message; }
+throw error;
+

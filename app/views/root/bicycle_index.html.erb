@@ -9,12 +9,12 @@
 							<% if b == BicyclePicture.find_by(bicycle_id: b ) %>
 								<% @picture = b.bicycle_pictures.where(default: :true) %>
 							<% end %>
-				  			<%= attachment_image_tag @picture, :bicycle_picture, fallback: "img1.png", class: 'bicycle_index_picture'%>
+				  			<%= attachment_image_tag @picture, :bicycle_picture, fallback: "/images/img1.png", class: 'bicycle_index_picture'%>
 				  		<% end %>
 					<% else %>
 						<%= link_to(owner_bicycle_path(b)) do %>
 							<% @picture = b.bicycle_pictures.find_by(default: :true) %>
-				  			<%= attachment_image_tag @picture, :bicycle_picture, fallback: "img1.png", class: 'bicycle_index_picture'%>
+				  			<%= attachment_image_tag @picture, :bicycle_picture, fallback: "/images/img1.png", class: 'bicycle_index_picture'%>
 				  		<% end %>
 				  	<% end %>
 				</div>

@@ -14,7 +14,7 @@
 	<h1>商品名　　<%= @bicycle.name %></h1>
 	<div class="clearfix">
 		<div class="profile_picture_box">
-				<%= attachment_image_tag @bicycle.owner, :picture, fallback: "img2.png", class: 'profile_picture'  %>
+				<%= attachment_image_tag @bicycle.owner, :picture, fallback: "/images/img2.png", class: 'profile_picture'  %>
 		</div>
 		<div class="bicycle_show_owner">
 				出品者　　<%= @bicycle.owner.nickname %><br>

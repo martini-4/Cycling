@@ -5,7 +5,7 @@
 			<div class="owner_contract_bicycle">
 				<%= link_to(owner_bicycle_path(c.bicycle)) do %>
 					<% @picture = c.bicycle.bicycle_pictures.find_by(default: :true) %>
-		  			<%= attachment_image_tag @picture, :bicycle_picture, fallback: "img1.png", class: 'contract_index_picture'%>
+		  			<%= attachment_image_tag @picture, :bicycle_picture, fallback: "/images/img1.png", class: 'contract_index_picture'%>
 		  		<% end %>
 		  	</div>
 		  	<div class="owner_contract_contents">

@@ -12,10 +12,14 @@ class Owner::MessagesController < ApplicationController
 
   def create
   	message = Message.new(message_params)
-  	message.save
-    room = Room.find(message.room_id)
-    room.touch
-    redirect_to owner_message_path(message.room_id)
+  	if message.save
+      room = Room.find(message.room_id)
+      room.touch
+      redirect_to owner_message_path(message.room_id)
+    else
+      flash[:danger] = 'メッセージを入力して下さい'
+      redirect_to owner_message_path(message.room_id)
+    end
     # render :json => message.comment
   end
 

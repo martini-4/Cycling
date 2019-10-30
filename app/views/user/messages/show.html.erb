@@ -1,5 +1,5 @@
 <div class="message_show">
-	<h1><%= @room.owner.nickname %>さんとのメッセージ(<%= @room.bicycle.name %>)</h1>
+	<h1><%= @room.owner.nickname %>さんとのメッセージ(<%= link_to @room.bicycle.name, owner_bicycle_path(@room.bicycle_id) %>)</h1>
 	<% @message.each do |m| %>
 		<div class="clearfix">
 			<% if m.user_id.blank? %>

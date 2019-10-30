@@ -12,7 +12,7 @@
 
 
 
-		
+
 		<h2>１日の料金　　<%= @bicycle.price %></h2>
 		<div class="contract_new_form">
 			 <%= f.fields_for :borrow_days do |b| %>
@@ -43,49 +43,58 @@
 </div>
 
 <script>
-	$(function() {
+$(function() {
 
-		var counter = 0;
-		// フォームの数を計算
-	    $('.count').each(function(){
-	        counter++;
-	    });
-	    // 変数の取得
-		var price = $('#price').val()
-		// 文字列を変更
-		price = Number(price)
-		// 合計金額の計算
-	    var total_price = counter*price
-	    // console.log(price)
-	    // console.log(counter)
-	    // console.log(total_price)
+	var counter = 0;
+	// フォームの数を計算
+    $('.count').each(function(){
+        counter++;
+    });
+    // 変数の取得
+	var price = $('#price').val()
+	// 文字列を変更
+	price = Number(price)
+	// 合計金額の計算
+    var total_price = counter*price
+    // console.log(price)
+    // console.log(counter)
+    // console.log(total_price)
 
-	    // hidden_fieldに代入
-	    $('#total').val(total_price)
-	    // viewに表示
+    // hidden_fieldに代入
+    $('#total').val(total_price);
+    // viewに表示
+    $("#output").html(total_price);
+
+    // coccon動作時
+    $('.contract_new_btn').click(function(){
+
+    	total_price += price
+    	$('#total').val(total_price);
 	    $("#output").html(total_price);
+    });
 
-	    // coccon動作時
-	    $('.contract_new_btn').click(function(){
+    // form削除時
+    $(document).on('click', '.dynamic',function(){
+		console.log('aaaaaaaaaaaaa');
 
-	    	total_price+=price
-	    	$('#total').val(total_price)
-		    $("#output").html(total_price);
-	    })
+    	total_price -= price
+    	$('#total').val(total_price);
+	    $("#output").html(total_price);
+    });
 
+});
+
+$(document).on('click', '.submit_btn',function(){
+	ggg = true;
+	$('select').each(function(index, element){
+		if ($(this).val() == "") {
+			ggg = false;
+			alert('内容を選択して下さい。')
+			return false;
+		}
 	});
-
-	$(document).on('click', '.submit_btn',function(){
-		ggg = true;
-		$('select').each(function(index, element){
-			if ($(this).val() == "") {
-				ggg = false;
-				alert('内容を選択して下さい。')
-				return false;
-			}
-		});
-		return ggg;
-	});
+	return ggg;
+});
 
 
 	// $(document).on("click", '.contract_new_form', function(){

@@ -125,7 +125,7 @@
 		    	<div class="review_user_name">
 	        		<%= r.user.nickname %>さん
 
-	        		<% if r.user_id == current_user.id %>
+	        		<% if r.user_id == current_user %>
 	        			<%= link_to '削除', user_review_path(review: r), method: :delete, "data-confirm" => "本当に削除しますか？", class: 'btn btn-danger' %>
 	        		<% elsif @bicycle.owner_id == current_owner %>
 	        			<%= link_to '削除', user_review_path(review: r), method: :delete, "data-confirm" => "本当に削除しますか？", class: 'btn btn-danger' %>

@@ -18,7 +18,9 @@
 			 <%= f.fields_for :borrow_days do |b| %>
 			 	<%= b.label :借り入れ日 %>
 			 	<%= b.collection_select(:borrow_day, @bicycle.lend_days, :lend_day, :lend_day, {prompt: ''},class: 'count') %>
+			 	<%= f.label :借り入れ場所 %>
 				<%= b.collection_select(:lend_spot, @bicycle.lend_spots, :lend_spot, :lend_spot, {prompt: ''}) %>
+				<%= f.label :返却場所 %>
 				<%= b.collection_select(:return_spot, @bicycle.return_spots, :return_spot, :return_spot, {prompt: ''}) %><br>
 			 <% end %><br>
 		</div>

@@ -13,7 +13,7 @@
 			　　<%= @owner.nickname %><br>
 			住所<br><br>
 			　　<%= @owner.address %></p>
-			<h4>振り込め先</h4>
+			<h4>振り込み先</h4>
 			<p>支店名<br><br>
 			　　<%= @owner.bank_stor_name %><br><br>
 			口座番号<br><br>
@@ -21,7 +21,7 @@
 			口座名義<br><br>
 			　　<%= @owner.bank_account_name %></p>
 		<div class="clearfix">
-			<%= link_to '振り込め先の変更', edit_owner_payee_path(@owner.id), class: 'payee_edit_link btn btn-secondary' %>
+			<%= link_to '振り込み先の変更', edit_owner_payee_path(@owner.id), class: 'payee_edit_link btn btn-secondary' %>
 		</div>
 		<%= link_to(new_owner_bicycle_path, class: '') do %>
 			<div class="owner_show_new_bicycle">自転車を出品する</div>

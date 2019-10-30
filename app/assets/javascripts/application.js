@@ -97,7 +97,11 @@ $(function () {
                     events: eventData,
                     eventColor: '#63ceef',
                     lang: 'ja',
-                    height: 500
+                    height: 500,
+                    // eventRender: function (events) {
+                     // if (title == "貸し出し予定")
+                     //  {
+                     //  };
                 });
 
             });

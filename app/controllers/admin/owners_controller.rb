@@ -1,7 +1,7 @@
 class Admin::OwnersController < ApplicationController
   before_action :authenticate_admin!
   def index
-  	@owner = Owner.all.page(params[:page]).per(30)
+  	@owner = Owner.all.where(approval: true).page(params[:page]).per(30)
   end
 
   def show

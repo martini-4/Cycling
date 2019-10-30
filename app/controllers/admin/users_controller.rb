@@ -1,7 +1,7 @@
 class Admin::UsersController < ApplicationController
   before_action :authenticate_admin!
   def index
-  	@user = User.all.page(params[:page]).per(30)
+  	@user = User.all.where(approval: true).page(params[:page]).per(30)
   end
 
   def show
